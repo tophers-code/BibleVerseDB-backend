@@ -38,3 +38,8 @@
 *.swp
 *.swo
 .vscode/
+log/.keep
+storage/.keep
+tmp/.keep
+tmp/pids/.keep
+tmp/storage/.keep
