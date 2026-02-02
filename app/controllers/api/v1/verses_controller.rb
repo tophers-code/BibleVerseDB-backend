@@ -62,7 +62,7 @@ module Api
           # Return all cached texts
           render json: {
             supported_versions: VerseText::SUPPORTED_VERSIONS,
-            texts: @verse.verse_texts.map { |vt| { version: vt.version, text: vt.text } }
+            texts: @verse.verse_texts.map { |vt| { version: vt.version, text: vt.text, version_name: VerseText::SUPPORTED_VERSIONS[vt.version] } }
           }
         end
       rescue BibleApiService::ApiError => e
@@ -77,7 +77,7 @@ module Api
 
         render json: {
           reference: @verse.reference,
-          texts: results.map { |version, text| { version: version, text: text, version_name: VerseText::SUPPORTED_VERSIONS[version] } }
+          texts: results.filter { |_, text| text.present? }.map { |version, text| { version: version, text: text, version_name: VerseText::SUPPORTED_VERSIONS[version] } }
         }
       rescue BibleApiService::ApiError => e
         render json: { error: e.message }, status: :service_unavailable
