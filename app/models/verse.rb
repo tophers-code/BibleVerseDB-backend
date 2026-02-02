@@ -18,7 +18,7 @@ class Verse < ApplicationRecord
   validates :bible_book_id, uniqueness: { scope: [:chapter, :verse_start, :verse_end] }
 
   def reference
-    verse_text = verse_end.present? ? "#{verse_start}-#{verse_end}" : verse_start.to_s
+    verse_text = verse_end.present? && verse_end != verse_start ? "#{verse_start}-#{verse_end}" : verse_start.to_s
     "#{bible_book.name} #{chapter}:#{verse_text}"
   end
 end
