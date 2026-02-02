@@ -91,7 +91,23 @@ class BibleApiService
 
   def make_request(url)
     uri = URI(url)
-    response = Net::HTTP.get_response(uri)
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    # SSL configuration - in development, we may need to skip verification
+    # due to macOS certificate chain issues
+    if Rails.env.development? && ENV['SKIP_SSL_VERIFY']
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    else
+      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      cert_store = OpenSSL::X509::Store.new
+      cert_store.set_default_paths
+      http.cert_store = cert_store
+    end
+
+    request = Net::HTTP::Get.new(uri)
+    response = http.request(request)
 
     unless response.is_a?(Net::HTTPSuccess)
       raise ApiError, "API request failed: #{response.code} #{response.message}"
@@ -100,6 +116,8 @@ class BibleApiService
     JSON.parse(response.body)
   rescue JSON::ParserError => e
     raise ApiError, "Invalid JSON response: #{e.message}"
+  rescue OpenSSL::SSL::SSLError => e
+    raise ApiError, "SSL error: #{e.message}"
   rescue StandardError => e
     raise ApiError, "Request failed: #{e.message}"
   end
