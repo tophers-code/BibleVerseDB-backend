@@ -1,5 +1,6 @@
 class VerseText < ApplicationRecord
   SUPPORTED_VERSIONS = {
+    'esv' => 'English Standard Version',
     'en-asv' => 'American Standard Version',
     'en-t4t' => 'Translation for Translators',
     'en-bsb' => 'Berean Study Bible',
