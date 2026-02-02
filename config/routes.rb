@@ -11,7 +11,11 @@ Rails.application.routes.draw do
         end
       end
       resources :progressions, controller: 'verse_progressions' do
-        resources :steps, only: [:create, :update, :destroy], controller: 'progression_steps'
+        resources :steps, only: [:create, :update, :destroy], controller: 'progression_steps' do
+          collection do
+            post :reorder
+          end
+        end
       end
     end
   end

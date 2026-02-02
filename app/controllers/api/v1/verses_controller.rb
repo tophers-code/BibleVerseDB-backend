@@ -3,6 +3,8 @@ module Api
     class VersesController < BaseController
       def index
         @verses = Verse.includes(:bible_book, :categories)
+                       .joins(:bible_book)
+                       .order('bible_books.book_order, verses.chapter, verses.verse_start')
 
         if params[:bible_book_id].present?
           @verses = @verses.where(bible_book_id: params[:bible_book_id])

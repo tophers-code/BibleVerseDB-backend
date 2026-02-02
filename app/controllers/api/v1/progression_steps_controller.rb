@@ -18,7 +18,36 @@ module Api
       def destroy
         @step = @progression.progression_steps.find(params[:id])
         @step.destroy!
+        # Reorder remaining steps to close gaps
+        @progression.progression_steps.order(:step_order).each_with_index do |step, index|
+          step.update_column(:step_order, index + 1) if step.step_order != index + 1
+        end
         head :no_content
+      end
+
+      # POST /progressions/:progression_id/steps/reorder
+      def reorder
+        step_ids = params[:step_ids]
+
+        unless step_ids.is_a?(Array) && step_ids.length == @progression.progression_steps.count
+          render json: { error: 'Invalid step_ids array' }, status: :unprocessable_entity
+          return
+        end
+
+        ActiveRecord::Base.transaction do
+          # First, set all to negative values to avoid uniqueness conflicts
+          @progression.progression_steps.each_with_index do |step, i|
+            step.update_column(:step_order, -(i + 1))
+          end
+
+          # Then set to the new order
+          step_ids.each_with_index do |step_id, index|
+            step = @progression.progression_steps.find(step_id)
+            step.update_column(:step_order, index + 1)
+          end
+        end
+
+        render json: { success: true }
       end
 
       private
