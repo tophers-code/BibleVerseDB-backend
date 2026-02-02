@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         member do
           get :texts
           post :fetch_texts
+          delete 'texts/:version', to: 'verses#delete_text', as: :delete_text
         end
       end
       resources :progressions, controller: 'verse_progressions' do

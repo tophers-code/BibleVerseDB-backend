@@ -85,6 +85,19 @@ module Api
         render json: { error: e.message }, status: :service_unavailable
       end
 
+      # DELETE /verses/:id/texts/:version
+      def delete_text
+        @verse = Verse.find(params[:id])
+        verse_text = @verse.verse_texts.find_by(version: params[:version])
+
+        if verse_text
+          verse_text.destroy!
+          head :no_content
+        else
+          render json: { error: 'Verse text not found' }, status: :not_found
+        end
+      end
+
       private
 
       def verse_params
