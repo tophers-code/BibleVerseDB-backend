@@ -4,9 +4,13 @@ require 'json'
 class BibleApiService
   WLDEH_BASE_URL = 'https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles'.freeze
   ESV_BASE_URL = 'https://api.esv.org/v3/passage/text/'.freeze
+  NLT_BASE_URL = 'https://api.nlt.to/api/passages'.freeze
 
   # ESV API versions
   ESV_VERSIONS = ['esv'].freeze
+
+  # NLT API versions
+  NLT_VERSIONS = ['nlt'].freeze
 
   # wldeh/bible-api versions
   WLDEH_VERSIONS = ['en-asv', 'en-t4t', 'en-bsb', 'en-web'].freeze
@@ -27,6 +31,8 @@ class BibleApiService
     # Fetch from appropriate API
     text = if ESV_VERSIONS.include?(version)
              fetch_from_esv_api
+           elsif NLT_VERSIONS.include?(version)
+             fetch_from_nlt_api
            else
              fetch_from_wldeh_api(version)
            end
@@ -112,6 +118,79 @@ class BibleApiService
   def esv_api_token
     # Try environment variable first, then Rails credentials
     ENV['ESV_API_TOKEN'] || Rails.application.credentials.dig(:esv, :api_token) || '91ccf9f7f76587426e9d033cc2f2b71cb380baa1'
+  end
+
+  # ============================================
+  # NLT API Methods
+  # ============================================
+
+  def fetch_from_nlt_api
+    reference = build_nlt_reference
+    url = "#{NLT_BASE_URL}?ref=#{URI.encode_www_form_component(reference)}&key=#{nlt_api_token}"
+
+    html = make_nlt_request(url)
+    extract_text_from_nlt_html(html)
+  end
+
+  def build_nlt_reference
+    book_name = @verse.bible_book.name.gsub(' ', '')
+    if @verse.verse_end.present? && @verse.verse_end != @verse.verse_start
+      "#{book_name}.#{@verse.chapter}:#{@verse.verse_start}-#{@verse.verse_end}"
+    else
+      "#{book_name}.#{@verse.chapter}:#{@verse.verse_start}"
+    end
+  end
+
+  def make_nlt_request(url)
+    uri = URI(url)
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    configure_ssl(http)
+
+    request = Net::HTTP::Get.new(uri)
+    response = http.request(request)
+
+    unless response.is_a?(Net::HTTPSuccess)
+      raise ApiError, "NLT API request failed: #{response.code} #{response.message}"
+    end
+
+    response.body
+  end
+
+  def extract_text_from_nlt_html(html)
+    # Extract text from verse_export tags
+    # Remove HTML tags but keep the text content
+    text = html.dup
+
+    # Remove footnote markers and their content
+    text.gsub!(/<a class="a-tn">.*?<\/a>/m, '')
+    text.gsub!(/<span class="tn">.*?<\/span>/m, '')
+
+    # Remove verse numbers but keep track we're in verse content
+    text.gsub!(/<span class="vn">\d+<\/span>/, '')
+
+    # Extract just the content from verse_export
+    if text =~ /<verse_export[^>]*>(.*?)<\/verse_export>/m
+      text = $1
+    end
+
+    # Remove remaining HTML tags
+    text.gsub!(/<[^>]+>/, ' ')
+
+    # Clean up whitespace
+    text.gsub!(/\s+/, ' ')
+    text.strip!
+
+    # Add NLT copyright notice
+    text += " (NLT)"
+
+    text
+  end
+
+  def nlt_api_token
+    # Try environment variable first, then Rails credentials
+    ENV['NLT_API_TOKEN'] || Rails.application.credentials.dig(:nlt, :api_token) || 'b003ce3e-5f39-4fce-8b62-fa688192b413'
   end
 
   # ============================================
