@@ -12,7 +12,7 @@ module Api
           @verses = @verses.joins(:categories).where(categories: { id: params[:category_id] })
         end
 
-        render json: @verses, include: [:bible_book, :categories]
+        render json: @verses.map { |v| verse_summary(v) }
       end
 
       def show
@@ -28,7 +28,7 @@ module Api
         end
 
         @verse.save!
-        render json: @verse, include: [:bible_book, :categories], status: :created
+        render json: verse_summary(@verse), status: :created
       end
 
       def update
@@ -39,7 +39,7 @@ module Api
           @verse.category_ids = params[:category_ids]
         end
 
-        render json: @verse, include: [:bible_book, :categories]
+        render json: verse_summary(@verse)
       end
 
       def destroy
@@ -52,6 +52,21 @@ module Api
 
       def verse_params
         params.require(:verse).permit(:bible_book_id, :chapter, :verse_start, :verse_end, :notes)
+      end
+
+      def verse_summary(verse)
+        {
+          id: verse.id,
+          reference: verse.reference,
+          bible_book: verse.bible_book,
+          chapter: verse.chapter,
+          verse_start: verse.verse_start,
+          verse_end: verse.verse_end,
+          notes: verse.notes,
+          categories: verse.categories,
+          created_at: verse.created_at,
+          updated_at: verse.updated_at
+        }
       end
 
       def verse_with_associations(verse)
