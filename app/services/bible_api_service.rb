@@ -126,7 +126,7 @@ class BibleApiService
 
   def fetch_from_nlt_api
     reference = build_nlt_reference
-    url = "#{NLT_BASE_URL}?ref=#{URI.encode_www_form_component(reference)}&key=#{nlt_api_token}"
+    url = "#{NLT_BASE_URL}?ref=#{URI.encode_www_form_component(reference)}&version=NLT&key=#{nlt_api_token}"
 
     html = make_nlt_request(url)
     extract_text_from_nlt_html(html)
