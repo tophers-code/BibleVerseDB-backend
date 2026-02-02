@@ -12,6 +12,8 @@ class Verse < ApplicationRecord
   has_many :progression_steps, dependent: :destroy
   has_many :verse_progressions, through: :progression_steps
 
+  has_many :verse_texts, dependent: :destroy
+
   validates :chapter, presence: true, numericality: { greater_than: 0 }
   validates :verse_start, presence: true, numericality: { greater_than: 0 }
   validates :verse_end, numericality: { greater_than_or_equal_to: :verse_start }, allow_nil: true

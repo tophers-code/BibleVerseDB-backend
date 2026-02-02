@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_01_152352) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_02_022414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -46,6 +46,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_01_152352) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "mood"
     t.index ["user_id"], name: "index_daily_entries_on_user_id"
   end
 
@@ -202,6 +203,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_01_152352) do
     t.index ["verse_id"], name: "index_verse_references_on_verse_id"
   end
 
+  create_table "verse_texts", force: :cascade do |t|
+    t.bigint "verse_id", null: false
+    t.string "version", null: false
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["verse_id", "version"], name: "index_verse_texts_on_verse_id_and_version", unique: true
+    t.index ["verse_id"], name: "index_verse_texts_on_verse_id"
+  end
+
   create_table "verses", force: :cascade do |t|
     t.bigint "bible_book_id", null: false
     t.integer "chapter", null: false
@@ -234,5 +245,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_01_152352) do
   add_foreign_key "verse_categories", "verses"
   add_foreign_key "verse_references", "verses"
   add_foreign_key "verse_references", "verses", column: "referenced_verse_id"
+  add_foreign_key "verse_texts", "verses"
   add_foreign_key "verses", "bible_books"
 end

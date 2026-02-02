@@ -48,6 +48,41 @@ module Api
         head :no_content
       end
 
+      # GET /verses/:id/texts
+      def texts
+        @verse = Verse.includes(:bible_book, :verse_texts).find(params[:id])
+        version = params[:version]
+
+        if version.present?
+          # Fetch specific version
+          service = BibleApiService.new(@verse)
+          text = service.fetch_text(version)
+          render json: { version: version, text: text, version_name: VerseText::SUPPORTED_VERSIONS[version] }
+        else
+          # Return all cached texts
+          render json: {
+            supported_versions: VerseText::SUPPORTED_VERSIONS,
+            texts: @verse.verse_texts.map { |vt| { version: vt.version, text: vt.text } }
+          }
+        end
+      rescue BibleApiService::ApiError => e
+        render json: { error: e.message }, status: :service_unavailable
+      end
+
+      # POST /verses/:id/fetch_texts
+      def fetch_texts
+        @verse = Verse.includes(:bible_book).find(params[:id])
+        service = BibleApiService.new(@verse)
+        results = service.fetch_all_versions
+
+        render json: {
+          reference: @verse.reference,
+          texts: results.map { |version, text| { version: version, text: text, version_name: VerseText::SUPPORTED_VERSIONS[version] } }
+        }
+      rescue BibleApiService::ApiError => e
+        render json: { error: e.message }, status: :service_unavailable
+      end
+
       private
 
       def verse_params

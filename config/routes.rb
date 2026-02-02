@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :show]
       resources :verses do
         resources :references, only: [:create, :destroy], controller: 'verse_references'
+        member do
+          get :texts
+          post :fetch_texts
+        end
       end
       resources :progressions, controller: 'verse_progressions' do
         resources :steps, only: [:create, :update, :destroy], controller: 'progression_steps'
