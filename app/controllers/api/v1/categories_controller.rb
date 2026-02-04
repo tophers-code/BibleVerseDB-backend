@@ -2,9 +2,24 @@ module Api
   module V1
     class CategoriesController < BaseController
       def index
+        # Base query with verse count
         @categories = Category.left_joins(:verses)
                               .select('categories.*, COUNT(verses.id) as verses_count')
                               .group('categories.id')
+
+        # Filter to only categories that have verses
+        if params[:with_verses].present?
+          @categories = @categories.having('COUNT(verses.id) > 0')
+        end
+
+        # Filter to only categories that have verses in a specific book
+        if params[:bible_book_id].present?
+          @categories = Category.joins(:verses)
+                                .where(verses: { bible_book_id: params[:bible_book_id] })
+                                .select('categories.*, COUNT(verses.id) as verses_count')
+                                .group('categories.id')
+        end
+
         render json: @categories.map { |c| category_with_count(c) }
       end
 
