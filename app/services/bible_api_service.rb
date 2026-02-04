@@ -5,6 +5,7 @@ class BibleApiService
   WLDEH_BASE_URL = 'https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles'.freeze
   ESV_BASE_URL = 'https://api.esv.org/v3/passage/text/'.freeze
   NLT_BASE_URL = 'https://api.nlt.to/api/passages'.freeze
+  API_BIBLE_BASE_URL = 'https://rest.api.bible/v1'.freeze
 
   # ESV API versions
   ESV_VERSIONS = ['esv'].freeze
@@ -12,8 +13,37 @@ class BibleApiService
   # NLT API versions
   NLT_VERSIONS = ['nlt'].freeze
 
+  # API.Bible versions (NIV, NASB, CSB)
+  API_BIBLE_VERSIONS = ['niv', 'nasb', 'csb'].freeze
+  API_BIBLE_IDS = {
+    'niv' => '78a9f6124f344018-01',   # New International Version 2011
+    'nasb' => 'b8ee27bcd1cae43a-01',  # New American Standard Bible 1995
+    'csb' => 'a556c5305ee15c3f-01'    # Christian Standard Bible
+  }.freeze
+
   # wldeh/bible-api versions
   WLDEH_VERSIONS = ['en-asv', 'en-t4t', 'en-bsb', 'en-web'].freeze
+
+  # Book name to API.Bible book ID mapping
+  API_BIBLE_BOOK_IDS = {
+    'Genesis' => 'GEN', 'Exodus' => 'EXO', 'Leviticus' => 'LEV', 'Numbers' => 'NUM',
+    'Deuteronomy' => 'DEU', 'Joshua' => 'JOS', 'Judges' => 'JDG', 'Ruth' => 'RUT',
+    '1 Samuel' => '1SA', '2 Samuel' => '2SA', '1 Kings' => '1KI', '2 Kings' => '2KI',
+    '1 Chronicles' => '1CH', '2 Chronicles' => '2CH', 'Ezra' => 'EZR', 'Nehemiah' => 'NEH',
+    'Esther' => 'EST', 'Job' => 'JOB', 'Psalms' => 'PSA', 'Proverbs' => 'PRO',
+    'Ecclesiastes' => 'ECC', 'Song of Solomon' => 'SNG', 'Isaiah' => 'ISA', 'Jeremiah' => 'JER',
+    'Lamentations' => 'LAM', 'Ezekiel' => 'EZK', 'Daniel' => 'DAN', 'Hosea' => 'HOS',
+    'Joel' => 'JOL', 'Amos' => 'AMO', 'Obadiah' => 'OBA', 'Jonah' => 'JON',
+    'Micah' => 'MIC', 'Nahum' => 'NAM', 'Habakkuk' => 'HAB', 'Zephaniah' => 'ZEP',
+    'Haggai' => 'HAG', 'Zechariah' => 'ZEC', 'Malachi' => 'MAL', 'Matthew' => 'MAT',
+    'Mark' => 'MRK', 'Luke' => 'LUK', 'John' => 'JHN', 'Acts' => 'ACT',
+    'Romans' => 'ROM', '1 Corinthians' => '1CO', '2 Corinthians' => '2CO', 'Galatians' => 'GAL',
+    'Ephesians' => 'EPH', 'Philippians' => 'PHP', 'Colossians' => 'COL',
+    '1 Thessalonians' => '1TH', '2 Thessalonians' => '2TH', '1 Timothy' => '1TI', '2 Timothy' => '2TI',
+    'Titus' => 'TIT', 'Philemon' => 'PHM', 'Hebrews' => 'HEB', 'James' => 'JAS',
+    '1 Peter' => '1PE', '2 Peter' => '2PE', '1 John' => '1JN', '2 John' => '2JN',
+    '3 John' => '3JN', 'Jude' => 'JUD', 'Revelation' => 'REV'
+  }.freeze
 
   class ApiError < StandardError; end
 
@@ -33,6 +63,8 @@ class BibleApiService
              fetch_from_esv_api
            elsif NLT_VERSIONS.include?(version)
              fetch_from_nlt_api
+           elsif API_BIBLE_VERSIONS.include?(version)
+             fetch_from_api_bible(version)
            else
              fetch_from_wldeh_api(version)
            end
@@ -191,6 +223,79 @@ class BibleApiService
   def nlt_api_token
     # Try environment variable first, then Rails credentials
     ENV['NLT_API_TOKEN'] || Rails.application.credentials.dig(:nlt, :api_token) || 'b003ce3e-5f39-4fce-8b62-fa688192b413'
+  end
+
+  # ============================================
+  # API.Bible Methods (NIV, NASB, CSB)
+  # ============================================
+
+  def fetch_from_api_bible(version)
+    bible_id = API_BIBLE_IDS[version]
+    passage_id = build_api_bible_passage_id
+
+    url = "#{API_BIBLE_BASE_URL}/bibles/#{bible_id}/passages/#{passage_id}?content-type=text&include-notes=false&include-titles=false&include-chapter-numbers=false&include-verse-numbers=true"
+
+    response = make_api_bible_request(url)
+    content = response.dig('data', 'content')
+    copyright = response.dig('data', 'copyright')
+
+    if content.nil? || content.empty?
+      raise ApiError, "No passage found for #{@verse.reference}"
+    end
+
+    # Clean up the text and append abbreviated copyright
+    clean_api_bible_text(content, version, copyright)
+  end
+
+  def build_api_bible_passage_id
+    book_id = API_BIBLE_BOOK_IDS[@verse.bible_book.name]
+    raise ApiError, "Unknown book: #{@verse.bible_book.name}" if book_id.nil?
+
+    if @verse.verse_end.present? && @verse.verse_end != @verse.verse_start
+      "#{book_id}.#{@verse.chapter}.#{@verse.verse_start}-#{book_id}.#{@verse.chapter}.#{@verse.verse_end}"
+    else
+      "#{book_id}.#{@verse.chapter}.#{@verse.verse_start}"
+    end
+  end
+
+  def make_api_bible_request(url)
+    uri = URI(url)
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    configure_ssl(http)
+
+    request = Net::HTTP::Get.new(uri)
+    request['api-key'] = api_bible_token
+
+    response = http.request(request)
+
+    unless response.is_a?(Net::HTTPSuccess)
+      raise ApiError, "API.Bible request failed: #{response.code} #{response.message}"
+    end
+
+    JSON.parse(response.body)
+  rescue JSON::ParserError => e
+    raise ApiError, "Invalid JSON response: #{e.message}"
+  end
+
+  def clean_api_bible_text(content, version, copyright)
+    # Remove leading/trailing whitespace and normalize internal whitespace
+    text = content.strip.gsub(/\s+/, ' ')
+
+    # Add short version indicator
+    version_label = case version
+                    when 'niv' then 'NIV'
+                    when 'nasb' then 'NASB'
+                    when 'csb' then 'CSB'
+                    end
+
+    "#{text} (#{version_label})"
+  end
+
+  def api_bible_token
+    # Try environment variable first, then Rails credentials
+    ENV['API_BIBLE_TOKEN'] || Rails.application.credentials.dig(:api_bible, :api_token) || 'xBKtZBC7hMR5v0T_4Vmj7'
   end
 
   # ============================================

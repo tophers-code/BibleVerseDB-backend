@@ -2,6 +2,9 @@ class VerseText < ApplicationRecord
   SUPPORTED_VERSIONS = {
     'esv' => 'English Standard Version',
     'nlt' => 'New Living Translation',
+    'niv' => 'New International Version',
+    'nasb' => 'New American Standard Bible',
+    'csb' => 'Christian Standard Bible',
     'en-asv' => 'American Standard Version',
     'en-t4t' => 'Translation for Translators',
     'en-bsb' => 'Berean Study Bible',
