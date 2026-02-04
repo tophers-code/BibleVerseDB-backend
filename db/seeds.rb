@@ -96,7 +96,8 @@ categories = [
   { name: "Soteriology", meaning: "Salvation", color_code: "red" },
   { name: "Ecclesiology", meaning: "the Church", color_code: "green" },
   { name: "Missiology", meaning: "the mission of the Church", color_code: "light-green" },
-  { name: "Eschatology", meaning: "the End Times", color_code: "brown" }
+  { name: "Eschatology", meaning: "the End Times", color_code: "brown" },
+  { name: "Ouranology", meaning: "Heaven", color_code: "light-orange" }
 ]
 
 puts "Seeding categories..."
