@@ -24,12 +24,10 @@ module Api
 
       def create
         @verse = Verse.new(verse_params)
-
-        if params[:category_ids].present?
-          @verse.category_ids = params[:category_ids]
-        end
-
         @verse.save!
+
+        update_category_assignments(@verse)
+
         render json: verse_summary(@verse), status: :created
       end
 
@@ -37,9 +35,7 @@ module Api
         @verse = Verse.find(params[:id])
         @verse.update!(verse_params)
 
-        if params[:category_ids].present?
-          @verse.category_ids = params[:category_ids]
-        end
+        update_category_assignments(@verse)
 
         render json: verse_summary(@verse)
       end
@@ -104,6 +100,23 @@ module Api
         params.require(:verse).permit(:bible_book_id, :chapter, :verse_start, :verse_end, :notes)
       end
 
+      def update_category_assignments(verse)
+        return unless params[:category_ids].present?
+
+        category_ids = params[:category_ids].map(&:to_i)
+        category_notes = params[:category_notes] || {}
+
+        # Remove categories that are no longer selected
+        verse.verse_categories.where.not(category_id: category_ids).destroy_all
+
+        # Add or update categories
+        category_ids.each do |cat_id|
+          vc = verse.verse_categories.find_or_initialize_by(category_id: cat_id)
+          vc.notes = category_notes[cat_id.to_s]
+          vc.save!
+        end
+      end
+
       def verse_summary(verse)
         {
           id: verse.id,
@@ -113,7 +126,7 @@ module Api
           verse_start: verse.verse_start,
           verse_end: verse.verse_end,
           notes: verse.notes,
-          categories: verse.categories,
+          categories: categories_with_notes(verse),
           created_at: verse.created_at,
           updated_at: verse.updated_at
         }
@@ -128,12 +141,24 @@ module Api
           verse_start: verse.verse_start,
           verse_end: verse.verse_end,
           notes: verse.notes,
-          categories: verse.categories,
+          categories: categories_with_notes(verse),
           referenced_verses: verse.referenced_verses.map { |v| { id: v.id, reference: v.reference } },
           referencing_verses: verse.referencing_verses.map { |v| { id: v.id, reference: v.reference } },
           created_at: verse.created_at,
           updated_at: verse.updated_at
         }
+      end
+
+      def categories_with_notes(verse)
+        verse.verse_categories.includes(:category).map do |vc|
+          {
+            id: vc.category.id,
+            name: vc.category.name,
+            meaning: vc.category.meaning,
+            color_code: vc.category.color_code,
+            category_note: vc.notes
+          }
+        end
       end
     end
   end
