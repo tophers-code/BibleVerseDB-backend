@@ -105,6 +105,7 @@ module Api
 
         category_ids = params[:category_ids].map(&:to_i)
         category_notes = params[:category_notes] || {}
+        category_prominent = params[:category_prominent] || {}
 
         # Remove categories that are no longer selected
         verse.verse_categories.where.not(category_id: category_ids).destroy_all
@@ -113,6 +114,7 @@ module Api
         category_ids.each do |cat_id|
           vc = verse.verse_categories.find_or_initialize_by(category_id: cat_id)
           vc.notes = category_notes[cat_id.to_s]
+          vc.prominent = category_prominent[cat_id.to_s] == true || category_prominent[cat_id.to_s] == 'true'
           vc.save!
         end
       end
@@ -156,7 +158,8 @@ module Api
             name: vc.category.name,
             meaning: vc.category.meaning,
             color_code: vc.category.color_code,
-            category_note: vc.notes
+            category_note: vc.notes,
+            prominent: vc.prominent
           }
         end
       end
