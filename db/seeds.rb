@@ -94,6 +94,7 @@ categories = [
   { name: "Hamartiology", meaning: "Study of Sin", color_code: "red-black" },
   { name: "Ponerology", meaning: "Study of Evil (the nature, existence)", color_code: "black" },
   { name: "Soteriology", meaning: "Study of Salvation", color_code: "red" },
+  { name: "Hagiasmology", meaning: "Study of Sanctification", color_code: "light-red" },
   { name: "Ecclesiology", meaning: "Study of the Church", color_code: "green" },
   { name: "Missiology", meaning: "Study of the mission of the Church", color_code: "light-green" },
   { name: "Eschatology", meaning: "Study of the End Times", color_code: "brown" },
@@ -108,5 +109,90 @@ categories.each do |cat|
   end
 end
 puts "Created #{Category.count} categories"
+
+# Seed Verses
+puts "Seeding verses..."
+
+genesis = BibleBook.find_by!(name: "Genesis")
+
+genesis_verses = [
+  {
+    chapter: 1, verse_start: 1, verse_end: nil,
+    notes: "God created all things",
+    categories: [
+      { name: "Theology", notes: "Shows God's creativity" }
+    ]
+  },
+  {
+    chapter: 1, verse_start: 25, verse_end: 27,
+    notes: '"in our image", "in our likeness"',
+    categories: [
+      { name: "Theological Anthropology", notes: "Shows humanity created in God's image; also shows hints at the trinity" }
+    ]
+  },
+  {
+    chapter: 1, verse_start: 28, verse_end: 30,
+    notes: nil,
+    categories: [
+      { name: "Theological Anthropology", notes: "Humanity given dominion over creation" }
+    ]
+  },
+  {
+    chapter: 2, verse_start: 16, verse_end: 17,
+    notes: nil,
+    categories: [
+      { name: "Theological Anthropology", notes: "God's command to not sin and consequences of that action" },
+      { name: "Soteriology", notes: "God's command to not sin and consequences of that action" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 1, verse_end: nil,
+    notes: nil,
+    categories: [
+      { name: "Demonology", notes: "Satan appears as the serpent" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 2, verse_end: 3,
+    notes: nil,
+    categories: [
+      { name: "Hamartiology", notes: "Beginning of Sin" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 6, verse_end: nil,
+    notes: nil,
+    categories: [
+      { name: "Hamartiology", notes: "The man was with her during the conversation and did nothing" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 7, verse_end: nil,
+    notes: nil,
+    categories: [
+      { name: "Hamartiology", notes: "Their eyes were open to the sin and understanding of their deeds" }
+    ]
+  }
+]
+
+genesis_verses.each do |verse_data|
+  verse = Verse.find_or_create_by!(
+    bible_book: genesis,
+    chapter: verse_data[:chapter],
+    verse_start: verse_data[:verse_start],
+    verse_end: verse_data[:verse_end]
+  ) do |v|
+    v.notes = verse_data[:notes]
+  end
+
+  verse_data[:categories].each do |cat_data|
+    category = Category.find_by!(name: cat_data[:name])
+    VerseCategory.find_or_create_by!(verse: verse, category: category) do |vc|
+      vc.notes = cat_data[:notes]
+    end
+  end
+end
+
+puts "Created #{Verse.count} verses with #{VerseCategory.count} category associations"
 
 puts "Seeding complete!"
