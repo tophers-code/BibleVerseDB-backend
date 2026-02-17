@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_08_050834) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_09_000006) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+  enable_extension "pgcrypto"
 
   create_table "bible_books", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +27,44 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_08_050834) do
     t.index ["name"], name: "index_bible_books_on_name", unique: true
   end
 
+  create_table "book_copies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "book_id", null: false
+    t.uuid "registered_by_id", null: false
+    t.string "condition"
+    t.text "notes"
+    t.string "qr_code_token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_book_copies_on_book_id"
+    t.index ["qr_code_token"], name: "index_book_copies_on_qr_code_token", unique: true
+    t.index ["registered_by_id"], name: "index_book_copies_on_registered_by_id"
+  end
+
+  create_table "book_isbns", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "book_id", null: false
+    t.string "isbn", null: false
+    t.string "isbn_type"
+    t.string "edition"
+    t.string "publisher"
+    t.string "cover_image_url"
+    t.integer "page_count"
+    t.integer "publish_year"
+    t.text "edition_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_book_isbns_on_book_id"
+    t.index ["isbn"], name: "index_book_isbns_on_isbn", unique: true
+  end
+
+  create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title", null: false
+    t.string "author"
+    t.text "description"
+    t.string "genre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "meaning", null: false
@@ -35,119 +74,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_08_050834) do
     t.index ["name"], name: "index_categories_on_name", unique: true
   end
 
-  create_table "daily_entries", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.date "date"
-    t.decimal "weight"
-    t.decimal "sleep_hours"
-    t.integer "water_intake"
-    t.integer "fitness_minutes"
-    t.decimal "compliance_score"
-    t.text "notes"
+  create_table "ownerships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "book_copy_id", null: false
+    t.uuid "user_id", null: false
+    t.boolean "is_current", default: true
+    t.datetime "acquired_at", default: -> { "CURRENT_TIMESTAMP" }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "mood"
-    t.index ["user_id"], name: "index_daily_entries_on_user_id"
-  end
-
-  create_table "food_categories", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "food_items", force: :cascade do |t|
-    t.bigint "food_category_id", null: false
-    t.string "name"
-    t.string "serving_size"
-    t.decimal "cost_per_package"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_category_id"], name: "index_food_items_on_food_category_id"
-  end
-
-  create_table "inventory_entries", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "food_item_id", null: false
-    t.decimal "packages_remaining"
-    t.date "last_ordered"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_item_id"], name: "index_inventory_entries_on_food_item_id"
-    t.index ["user_id"], name: "index_inventory_entries_on_user_id"
-  end
-
-  create_table "meal_entries", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "meal_time"
-    t.datetime "scheduled_time"
-    t.datetime "actual_time"
-    t.text "free_text_items"
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_meal_entries_on_user_id"
-  end
-
-  create_table "meal_items", force: :cascade do |t|
-    t.bigint "meal_entry_id", null: false
-    t.bigint "food_item_id", null: false
-    t.integer "quantity", default: 1, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_item_id"], name: "index_meal_items_on_food_item_id"
-    t.index ["meal_entry_id"], name: "index_meal_items_on_meal_entry_id"
-  end
-
-  create_table "meal_plan_items", force: :cascade do |t|
-    t.bigint "meal_plan_id", null: false
-    t.bigint "food_item_id", null: false
-    t.integer "quantity", default: 1, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_item_id"], name: "index_meal_plan_items_on_food_item_id"
-    t.index ["meal_plan_id", "food_item_id"], name: "index_meal_plan_items_on_meal_plan_id_and_food_item_id", unique: true
-    t.index ["meal_plan_id"], name: "index_meal_plan_items_on_meal_plan_id"
-  end
-
-  create_table "meal_plan_template_items", force: :cascade do |t|
-    t.bigint "meal_plan_template_id", null: false
-    t.bigint "food_item_id", null: false
-    t.integer "day_number", null: false
-    t.string "meal_slot", null: false
-    t.integer "quantity", default: 1, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_item_id"], name: "index_meal_plan_template_items_on_food_item_id"
-    t.index ["meal_plan_template_id", "day_number", "meal_slot", "food_item_id"], name: "idx_meal_plan_template_items_unique", unique: true
-    t.index ["meal_plan_template_id"], name: "index_meal_plan_template_items_on_meal_plan_template_id"
-  end
-
-  create_table "meal_plan_templates", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "name", null: false
-    t.text "description"
-    t.boolean "is_default", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "name"], name: "index_meal_plan_templates_on_user_id_and_name", unique: true
-    t.index ["user_id"], name: "index_meal_plan_templates_on_user_id"
-  end
-
-  create_table "meal_plans", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.date "plan_date", null: false
-    t.string "meal_slot", null: false
-    t.string "name"
-    t.text "notes"
-    t.bigint "meal_plan_template_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["meal_plan_template_id"], name: "index_meal_plans_on_meal_plan_template_id"
-    t.index ["user_id", "plan_date", "meal_slot"], name: "index_meal_plans_on_user_id_and_plan_date_and_meal_slot", unique: true
-    t.index ["user_id", "plan_date"], name: "index_meal_plans_on_user_id_and_plan_date"
-    t.index ["user_id"], name: "index_meal_plans_on_user_id"
+    t.index ["book_copy_id", "is_current"], name: "index_ownerships_on_book_copy_id_and_is_current"
+    t.index ["book_copy_id"], name: "index_ownerships_on_book_copy_id"
+    t.index ["user_id"], name: "index_ownerships_on_user_id"
   end
 
   create_table "progression_steps", force: :cascade do |t|
@@ -161,18 +97,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_08_050834) do
     t.index ["verse_progression_id"], name: "index_progression_steps_on_verse_progression_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "name"
-    t.decimal "target_weight"
-    t.decimal "current_weight"
-    t.decimal "height"
-    t.date "date_of_birth"
-    t.string "gender"
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "username"
+    t.string "role", default: "buyer"
+    t.string "supabase_uid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "mamr_tracking_enabled", default: false, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["supabase_uid"], name: "index_users_on_supabase_uid", unique: true
   end
 
   create_table "verse_categories", force: :cascade do |t|
@@ -227,20 +161,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_08_050834) do
     t.index ["bible_book_id"], name: "index_verses_on_bible_book_id"
   end
 
-  add_foreign_key "daily_entries", "users"
-  add_foreign_key "food_items", "food_categories"
-  add_foreign_key "inventory_entries", "food_items"
-  add_foreign_key "inventory_entries", "users"
-  add_foreign_key "meal_entries", "users"
-  add_foreign_key "meal_items", "food_items"
-  add_foreign_key "meal_items", "meal_entries"
-  add_foreign_key "meal_plan_items", "food_items"
-  add_foreign_key "meal_plan_items", "meal_plans"
-  add_foreign_key "meal_plan_template_items", "food_items"
-  add_foreign_key "meal_plan_template_items", "meal_plan_templates"
-  add_foreign_key "meal_plan_templates", "users"
-  add_foreign_key "meal_plans", "meal_plan_templates"
-  add_foreign_key "meal_plans", "users"
+  add_foreign_key "book_copies", "books"
+  add_foreign_key "book_copies", "users", column: "registered_by_id"
+  add_foreign_key "book_isbns", "books"
+  add_foreign_key "ownerships", "book_copies"
+  add_foreign_key "ownerships", "users"
   add_foreign_key "progression_steps", "verse_progressions"
   add_foreign_key "progression_steps", "verses"
   add_foreign_key "verse_categories", "categories"
