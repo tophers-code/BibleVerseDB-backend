@@ -11,6 +11,12 @@ Rails.application.routes.draw do
           delete 'texts/:version', to: 'verses#delete_text', as: :delete_text
         end
       end
+      resources :verse_texts, only: [] do
+        collection do
+          get :status
+          post :batch_fetch
+        end
+      end
       resources :progressions, controller: 'verse_progressions' do
         resources :steps, only: [:create, :update, :destroy], controller: 'progression_steps' do
           collection do
