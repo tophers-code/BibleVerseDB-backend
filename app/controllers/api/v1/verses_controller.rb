@@ -2,7 +2,7 @@ module Api
   module V1
     class VersesController < BaseController
       def index
-        @verses = Verse.includes(:bible_book, :categories)
+        @verses = Verse.includes(:bible_book, :categories, :tags)
                        .joins(:bible_book)
                        .order('bible_books.book_order, verses.chapter, verses.verse_start')
 
@@ -14,11 +14,15 @@ module Api
           @verses = @verses.joins(:categories).where(categories: { id: params[:category_id] })
         end
 
+        if params[:tag_id].present?
+          @verses = @verses.joins(:tags).where(tags: { id: params[:tag_id] })
+        end
+
         render json: @verses.map { |v| verse_summary(v) }
       end
 
       def show
-        @verse = Verse.includes(:bible_book, :categories, :referenced_verses, :referencing_verses).find(params[:id])
+        @verse = Verse.includes(:bible_book, :categories, :tags, :referenced_verses, :referencing_verses).find(params[:id])
         render json: verse_with_associations(@verse)
       end
 
@@ -27,6 +31,7 @@ module Api
         @verse.save!
 
         update_category_assignments(@verse)
+        update_tag_assignments(@verse)
 
         render json: verse_summary(@verse), status: :created
       end
@@ -36,6 +41,7 @@ module Api
         @verse.update!(verse_params)
 
         update_category_assignments(@verse)
+        update_tag_assignments(@verse)
 
         render json: verse_summary(@verse)
       end
@@ -119,6 +125,21 @@ module Api
         end
       end
 
+      def update_tag_assignments(verse)
+        return unless params[:tag_names].is_a?(Array)
+
+        tag_names = params[:tag_names].map { |n| n.to_s.downcase.strip }.reject(&:blank?)
+        tags = tag_names.map { |name| Tag.find_or_create_by!(name: name) }
+
+        # Remove tags that are no longer selected
+        verse.verse_tags.where.not(tag_id: tags.map(&:id)).destroy_all
+
+        # Add new tags
+        tags.each do |tag|
+          verse.verse_tags.find_or_create_by!(tag: tag)
+        end
+      end
+
       def verse_summary(verse)
         {
           id: verse.id,
@@ -129,6 +150,7 @@ module Api
           verse_end: verse.verse_end,
           notes: verse.notes,
           categories: categories_with_notes(verse),
+          tags: verse.tags.map { |t| { id: t.id, name: t.name } },
           created_at: verse.created_at,
           updated_at: verse.updated_at
         }
@@ -144,6 +166,7 @@ module Api
           verse_end: verse.verse_end,
           notes: verse.notes,
           categories: categories_with_notes(verse),
+          tags: verse.tags.map { |t| { id: t.id, name: t.name } },
           referenced_verses: verse.referenced_verses.map { |v| { id: v.id, reference: v.reference } },
           referencing_verses: verse.referencing_verses.map { |v| { id: v.id, reference: v.reference } },
           created_at: verse.created_at,

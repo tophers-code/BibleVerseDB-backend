@@ -4,6 +4,9 @@ class Verse < ApplicationRecord
   has_many :verse_categories, dependent: :destroy
   has_many :categories, through: :verse_categories
 
+  has_many :verse_tags, dependent: :destroy
+  has_many :tags, through: :verse_tags
+
   has_many :outgoing_references, class_name: 'VerseReference', foreign_key: :verse_id, dependent: :destroy
   has_many :incoming_references, class_name: 'VerseReference', foreign_key: :referenced_verse_id, dependent: :destroy
   has_many :referenced_verses, through: :outgoing_references

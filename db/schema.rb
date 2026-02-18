@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_09_000006) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_17_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -97,6 +97,13 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_09_000006) do
     t.index ["verse_progression_id"], name: "index_progression_steps_on_verse_progression_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "full_name"
@@ -139,6 +146,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_09_000006) do
     t.index ["verse_id"], name: "index_verse_references_on_verse_id"
   end
 
+  create_table "verse_tags", force: :cascade do |t|
+    t.bigint "verse_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_verse_tags_on_tag_id"
+    t.index ["verse_id", "tag_id"], name: "index_verse_tags_on_verse_id_and_tag_id", unique: true
+    t.index ["verse_id"], name: "index_verse_tags_on_verse_id"
+  end
+
   create_table "verse_texts", force: :cascade do |t|
     t.bigint "verse_id", null: false
     t.string "version", null: false
@@ -172,6 +189,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_09_000006) do
   add_foreign_key "verse_categories", "verses"
   add_foreign_key "verse_references", "verses"
   add_foreign_key "verse_references", "verses", column: "referenced_verse_id"
+  add_foreign_key "verse_tags", "tags"
+  add_foreign_key "verse_tags", "verses"
   add_foreign_key "verse_texts", "verses"
   add_foreign_key "verses", "bible_books"
 end
