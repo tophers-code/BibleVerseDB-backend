@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :bible_books, only: [:index, :show]
       resources :categories
-      resources :tags, only: [:index]
+      resources :tags
       resources :verses do
         resources :references, only: [:create, :destroy], controller: 'verse_references'
         member do

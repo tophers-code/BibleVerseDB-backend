@@ -24,7 +24,47 @@ module Api
                      .group('tags.id')
         end
 
-        render json: @tags.order(:name).map { |t| { id: t.id, name: t.name, verses_count: t.verses_count.to_i } }
+        render json: @tags.order(:name).map { |t| tag_with_count(t) }
+      end
+
+      def show
+        @tag = Tag.find(params[:id])
+        render json: @tag
+      end
+
+      def create
+        @tag = Tag.new(tag_params)
+        @tag.save!
+        render json: @tag, status: :created
+      end
+
+      def update
+        @tag = Tag.find(params[:id])
+        @tag.update!(tag_params)
+        render json: @tag
+      end
+
+      def destroy
+        @tag = Tag.find(params[:id])
+        @tag.destroy!
+        head :no_content
+      end
+
+      private
+
+      def tag_params
+        params.require(:tag).permit(:name, :description)
+      end
+
+      def tag_with_count(tag)
+        {
+          id: tag.id,
+          name: tag.name,
+          description: tag.description,
+          verses_count: tag.verses_count.to_i,
+          created_at: tag.created_at,
+          updated_at: tag.updated_at
+        }
       end
     end
   end
