@@ -49,7 +49,7 @@ module Api
       private
 
       def category_params
-        params.require(:category).permit(:name, :meaning, :color_code)
+        params.require(:category).permit(:name, :meaning, :color_code, :description)
       end
 
       def category_with_count(category)
@@ -58,6 +58,7 @@ module Api
           name: category.name,
           meaning: category.meaning,
           color_code: category.color_code,
+          description: category.description,
           verses_count: category.verses_count.to_i,
           created_at: category.created_at,
           updated_at: category.updated_at
