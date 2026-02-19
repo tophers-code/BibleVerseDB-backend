@@ -32,13 +32,14 @@ module Api
       private
 
       def progression_params
-        params.require(:progression).permit(:name, :description)
+        params.require(:progression).permit(:name, :definition, :description)
       end
 
       def progression_with_steps(progression)
         {
           id: progression.id,
           name: progression.name,
+          definition: progression.definition,
           description: progression.description,
           steps: progression.progression_steps.map do |step|
             {

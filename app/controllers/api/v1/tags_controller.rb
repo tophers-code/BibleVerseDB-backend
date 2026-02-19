@@ -53,13 +53,14 @@ module Api
       private
 
       def tag_params
-        params.require(:tag).permit(:name, :description)
+        params.require(:tag).permit(:name, :definition, :description)
       end
 
       def tag_with_count(tag)
         {
           id: tag.id,
           name: tag.name,
+          definition: tag.definition,
           description: tag.description,
           verses_count: tag.verses_count.to_i,
           created_at: tag.created_at,
