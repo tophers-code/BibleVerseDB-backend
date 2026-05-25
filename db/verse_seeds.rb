@@ -746,7 +746,7 @@ verse_tag_data.each do |entry|
     verse_end:   entry[:verse_end]
   )
   entry[:tags].each do |tag_name|
-    tag = Tag.find_by!(name: tag_name)
+    tag = Tag.find_by!(name: tag_name.downcase.strip)
     VerseTag.find_or_create_by!(verse: verse, tag: tag)
   end
 end
