@@ -1,11 +1,23 @@
 # db/verse_seeds.rb
 # Loaded by db/seeds.rb after bible_books and categories are seeded.
-# Add new verse batches here grouped by book as your study grows.
+# Add new verse batches here grouped by book as your study grows,
+# then add a seed_verses.call("BookName", array) line at the bottom.
+#
+# ============================================================
+# FUTURE FEATURE NOTES
+# ============================================================
+# - Progressions: Rom 2:5 is step 5 in the salvation message progression.
+#   No seed structure exists yet for Progressions.
+# - Phrase-level highlighting: Several entries have specific phrases marked
+#   (e.g. "repentance", "storing up wrath", "day of wrath", "as it is written").
+#   A future `highlight_text` field on VerseCategory would allow storing
+#   the exact phrase alongside the category note.
+# ============================================================
 
 puts "Seeding additional verses..."
 
 # ------------------------------------------------------------
-# GENESIS (additions)
+# GENESIS
 # ------------------------------------------------------------
 
 genesis_verses_additions = [
@@ -76,8 +88,149 @@ exodus_verses = [
 ]
 
 # ------------------------------------------------------------
-# ROMANS
+# DEUTERONOMY
 # ------------------------------------------------------------
+
+deuteronomy_verses = [
+  {
+    chapter: 6, verse_start: 4, verse_end: 5,
+    notes: 'The Shema — "The LORD our God, the LORD is one" and the greatest commandment to love God with all heart, soul, and might',
+    categories: [
+      { name: "Theology", notes: "The foundational declaration of God's oneness (monotheism) and the corresponding call to total devotion" }
+    ]
+  },
+  {
+    chapter: 6, verse_start: 5, verse_end: 9,
+    notes: 'No highlight yet (to be added). Daily embodied practices of devotion — loving God wholly and keeping his words ever-present in life, home, and family',
+    categories: [
+      { name: "Hagiasmology", notes: "Sanctification lived out daily — God's word on the heart, taught to children, spoken constantly, bound on the body, written on the home" }
+    ]
+  },
+  {
+    chapter: 10, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight on "the heaven of heavens, the earth with all that is in it" — God\'s total ownership of all creation',
+    categories: [
+      { name: "Theology", notes: "God's absolute sovereignty and ownership over all creation — heaven, earth, and everything in it belongs to him" }
+    ]
+  },
+  {
+    chapter: 18, verse_start: 18, verse_end: 19,
+    notes: 'Teal underline — God promises a prophet like Moses through whom his words will be spoken; whoever does not listen will be held accountable',
+    categories: [
+      { name: "Bibliology", notes: "God's words placed directly in the prophet's mouth — establishes the divine origin and authority of prophetic Scripture" }
+    ]
+  },
+  {
+    chapter: 21, verse_start: 8, verse_end: nil,
+    notes: 'Red box around "atonement" and "redeemed" — the prayer pairs atonement and redemption together in a single plea to the LORD',
+    categories: [
+      { name: "Soteriology", notes: "Atonement and redemption linked — God both covers guilt and redeems his people; an early pairing of two key salvation concepts" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# JUDGES
+# ------------------------------------------------------------
+
+judges_verses = [
+  {
+    chapter: 19, verse_start: 22, verse_end: 23,
+    notes: 'Black underline — worthless men demand the visitor be brought out; the host pleads "do not act so wickedly...do not do this vile thing"',
+    categories: [
+      { name: "Ponerology", notes: "The nature of evil on full display — collective depravity mirroring the sin of Sodom in Genesis 19" },
+      { name: "Hamartiology", notes: "Collective, unrestrained sin; the moral collapse of Israel echoing the wickedness of Sodom" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# JOSHUA
+# ------------------------------------------------------------
+
+joshua_verses = [
+  {
+    chapter: 24, verse_start: 14, verse_end: nil,
+    notes: 'Light-red underline on "fear the LORD and serve him in sincerity and in faithfulness"',
+    categories: [
+      { name: "Hagiasmology", notes: "The call to wholehearted, sincere, and faithful service to God as the mark of a sanctified life" }
+    ]
+  },
+  {
+    chapter: 24, verse_start: 15, verse_end: nil,
+    notes: 'Light-red underline on "choose this day whom you will serve...but as for me and my house, we will serve the LORD"',
+    categories: [
+      { name: "Hagiasmology", notes: "Sanctification requires a decisive, daily choice — Joshua's household commitment to serve the LORD as a model of whole-life devotion" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# ACTS
+# ------------------------------------------------------------
+
+acts_verses = [
+  {
+    chapter: 3, verse_start: 22, verse_end: nil,
+    notes: 'NT fulfillment of Deut 18:18-19 — Peter identifies Jesus as the prophet like Moses that God promised to raise up',
+    categories: [
+      { name: "Christology", notes: "Jesus as the fulfillment of the Mosaic prophetic promise — the prophet like Moses through whom God speaks definitively" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# VERSE REFERENCES
+# (Cross-book connections — seeded after all verses are created)
+# ------------------------------------------------------------
+
+verse_references = [
+  {
+    verse:            { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 },
+    referenced_verse: { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil }
+  },
+  {
+    verse:            { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil },
+    referenced_verse: { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 }
+  },
+  {
+    verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
+    referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
+  },
+  {
+    verse:            { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 },
+    referenced_verse: { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 }
+  },
+]
+
+# ------------------------------------------------------------
+# NUMBERS
+# ------------------------------------------------------------
+
+numbers_verses = [
+  {
+    chapter: 23, verse_start: 19, verse_end: nil,
+    notes: 'Yellow highlight on "he should lie", "he should change his mind", and "will he not fulfill it?" — God\'s immutability and absolute truthfulness declared through Balaam\'s oracle',
+    categories: [
+      { name: "Theology", notes: "God is not a man — he does not lie, does not change his mind, and always fulfills what he has spoken" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# LEVITICUS
+# ------------------------------------------------------------
+
+leviticus_verses = [
+  {
+    chapter: 11, verse_start: 44, verse_end: 45,
+    notes: '"Be holy, for I am holy" — God grounds the call to consecration in his own holy nature',
+    categories: [
+      { name: "Theology", notes: "God's holiness as his defining attribute — the basis for all moral commands" },
+      { name: "Hagiasmology", notes: "The call to consecration and sanctification flows directly from the holiness of God himself" }
+    ]
+  },
+]
 
 romans_verses = [
   {
@@ -215,17 +368,17 @@ romans_verses = [
 ]
 
 # ------------------------------------------------------------
-# Insertion logic — shared helper
+# Insertion logic
 # ------------------------------------------------------------
 
 seed_verses = lambda do |book_name, verses|
   book = BibleBook.find_by!(name: book_name)
   verses.each do |verse_data|
     verse = Verse.find_or_create_by!(
-      bible_book: book,
-      chapter: verse_data[:chapter],
+      bible_book:  book,
+      chapter:     verse_data[:chapter],
       verse_start: verse_data[:verse_start],
-      verse_end: verse_data[:verse_end]
+      verse_end:   verse_data[:verse_end]
     ) do |v|
       v.notes = verse_data[:notes]
     end
@@ -237,11 +390,46 @@ seed_verses = lambda do |book_name, verses|
       end
     end
   end
-  puts "Created #{Verse.count} verses with #{VerseCategory.count} category associations for #{book}"
 end
 
-seed_verses.call("Genesis", genesis_verses_additions)
-seed_verses.call("Exodus", exodus_verses)
-seed_verses.call("Romans", romans_verses)
+seed_verses.call("Genesis",     genesis_verses_additions)
+seed_verses.call("Exodus",      exodus_verses)
+seed_verses.call("Leviticus",   leviticus_verses)
+seed_verses.call("Numbers",     numbers_verses)
+seed_verses.call("Deuteronomy", deuteronomy_verses)
+seed_verses.call("Joshua",      joshua_verses)
+seed_verses.call("Judges",      judges_verses)
+seed_verses.call("Acts",        acts_verses)
+seed_verses.call("Romans",      romans_verses)
 
 puts "Additional verse seeding complete (#{Verse.count} total verses, #{VerseCategory.count} total category associations)"
+
+# ------------------------------------------------------------
+# Verse references (cross-book connections — run after all verses exist)
+# ------------------------------------------------------------
+
+verse_references.each do |ref|
+  v_book = BibleBook.find_by!(name: ref[:verse][:book])
+  r_book = BibleBook.find_by!(name: ref[:referenced_verse][:book])
+
+  verse = Verse.find_by!(
+    bible_book:  v_book,
+    chapter:     ref[:verse][:chapter],
+    verse_start: ref[:verse][:verse_start],
+    verse_end:   ref[:verse][:verse_end]
+  )
+
+  referenced_verse = Verse.find_by!(
+    bible_book:  r_book,
+    chapter:     ref[:referenced_verse][:chapter],
+    verse_start: ref[:referenced_verse][:verse_start],
+    verse_end:   ref[:referenced_verse][:verse_end]
+  )
+
+  VerseReference.find_or_create_by!(
+    verse:            verse,
+    referenced_verse: referenced_verse
+  )
+end
+
+puts "Verse references seeded (#{VerseReference.count} total)"
