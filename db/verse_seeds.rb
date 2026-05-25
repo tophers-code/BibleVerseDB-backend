@@ -530,7 +530,7 @@ tags = [
 
 puts "Seeding tags..."
 tags.each do |tag_data|
-  Tag.find_or_create_by!(name: tag_data[:name]) do |t|
+  Tag.find_or_create_by!(name: tag_data[:name].downcase.strip) do |t|
     t.description = tag_data[:description]
   end
 end
