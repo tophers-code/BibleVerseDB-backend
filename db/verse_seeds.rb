@@ -88,6 +88,35 @@ exodus_verses = [
 ]
 
 # ------------------------------------------------------------
+# LEVITICUS
+# ------------------------------------------------------------
+
+leviticus_verses = [
+  {
+    chapter: 11, verse_start: 44, verse_end: 45,
+    notes: '"Be holy, for I am holy" — God grounds the call to consecration in his own holy nature',
+    categories: [
+      { name: "Theology", notes: "God's holiness as his defining attribute — the basis for all moral commands" },
+      { name: "Hagiasmology", notes: "The call to consecration and sanctification flows directly from the holiness of God himself" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# NUMBERS
+# ------------------------------------------------------------
+
+numbers_verses = [
+  {
+    chapter: 23, verse_start: 19, verse_end: nil,
+    notes: 'Yellow highlight on "he should lie", "he should change his mind", and "will he not fulfill it?" — God\'s immutability and absolute truthfulness declared through Balaam\'s oracle',
+    categories: [
+      { name: "Theology", notes: "God is not a man — he does not lie, does not change his mind, and always fulfills what he has spoken" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
 # DEUTERONOMY
 # ------------------------------------------------------------
 
@@ -130,21 +159,6 @@ deuteronomy_verses = [
 ]
 
 # ------------------------------------------------------------
-# JUDGES
-# ------------------------------------------------------------
-
-judges_verses = [
-  {
-    chapter: 19, verse_start: 22, verse_end: 23,
-    notes: 'Black underline — worthless men demand the visitor be brought out; the host pleads "do not act so wickedly...do not do this vile thing"',
-    categories: [
-      { name: "Ponerology", notes: "The nature of evil on full display — collective depravity mirroring the sin of Sodom in Genesis 19" },
-      { name: "Hamartiology", notes: "Collective, unrestrained sin; the moral collapse of Israel echoing the wickedness of Sodom" }
-    ]
-  },
-]
-
-# ------------------------------------------------------------
 # JOSHUA
 # ------------------------------------------------------------
 
@@ -166,6 +180,67 @@ joshua_verses = [
 ]
 
 # ------------------------------------------------------------
+# 2 SAMUEL
+# ------------------------------------------------------------
+
+samuel2_verses = [
+  {
+    chapter: 7, verse_start: 12, verse_end: 14,
+    notes: 'Purple highlight — the Davidic Covenant: God promises an eternal offspring, an eternal kingdom, and a father-son relationship; ultimately fulfilled in Christ',
+    categories: [
+      { name: "Christology", notes: "The Davidic Covenant as messianic promise — the eternal offspring from David's body whose throne is established forever points to Christ" },
+      { name: "Theology", notes: "God's covenant-keeping faithfulness — he binds himself by promise to David and fulfills it across generations" },
+      { name: "Eschatology", notes: "The eternal throne and kingdom established forever — an eschatological promise reaching its fulfillment in the reign of Christ" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# 2 CHRONICLES
+# ------------------------------------------------------------
+
+chronicles2_verses = [
+  {
+    chapter: 7, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight — "if my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land"',
+    categories: [
+      { name: "Theology", notes: "God's conditional promise reveals his character — he hears prayer, forgives sin, and heals; responsive to humility and repentance" },
+      { name: "Hagiasmology", notes: "Humbling, praying, seeking God's face, and turning from wickedness are sanctification lived out — the marks of a people growing in holiness" },
+      { name: "Ecclesiology", notes: '"My people who are called by my name" — the covenant community, the Church, called to corporate repentance and renewal' }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# 1 KINGS
+# ------------------------------------------------------------
+
+kings1_verses = [
+  {
+    chapter: 8, verse_start: 23, verse_end: nil,
+    notes: 'Yellow highlight — Solomon\'s declaration of God\'s incomparability: "there is no God like you, in heaven above or on earth beneath, keeping covenant and showing steadfast love"',
+    categories: [
+      { name: "Theology", notes: "God's absolute uniqueness and incomparability — no other god exists like him; he keeps covenant and shows steadfast love to those who walk before him" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# JUDGES
+# ------------------------------------------------------------
+
+judges_verses = [
+  {
+    chapter: 19, verse_start: 22, verse_end: 23,
+    notes: 'Black underline — worthless men demand the visitor be brought out; the host pleads "do not act so wickedly...do not do this vile thing"',
+    categories: [
+      { name: "Ponerology", notes: "The nature of evil on full display — collective depravity mirroring the sin of Sodom in Genesis 19" },
+      { name: "Hamartiology", notes: "Collective, unrestrained sin; the moral collapse of Israel echoing the wickedness of Sodom" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
 # ACTS
 # ------------------------------------------------------------
 
@@ -180,57 +255,8 @@ acts_verses = [
 ]
 
 # ------------------------------------------------------------
-# VERSE REFERENCES
-# (Cross-book connections — seeded after all verses are created)
+# ROMANS
 # ------------------------------------------------------------
-
-verse_references = [
-  {
-    verse:            { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 },
-    referenced_verse: { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil }
-  },
-  {
-    verse:            { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil },
-    referenced_verse: { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 }
-  },
-  {
-    verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
-    referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
-  },
-  {
-    verse:            { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 },
-    referenced_verse: { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 }
-  },
-]
-
-# ------------------------------------------------------------
-# NUMBERS
-# ------------------------------------------------------------
-
-numbers_verses = [
-  {
-    chapter: 23, verse_start: 19, verse_end: nil,
-    notes: 'Yellow highlight on "he should lie", "he should change his mind", and "will he not fulfill it?" — God\'s immutability and absolute truthfulness declared through Balaam\'s oracle',
-    categories: [
-      { name: "Theology", notes: "God is not a man — he does not lie, does not change his mind, and always fulfills what he has spoken" }
-    ]
-  },
-]
-
-# ------------------------------------------------------------
-# LEVITICUS
-# ------------------------------------------------------------
-
-leviticus_verses = [
-  {
-    chapter: 11, verse_start: 44, verse_end: 45,
-    notes: '"Be holy, for I am holy" — God grounds the call to consecration in his own holy nature',
-    categories: [
-      { name: "Theology", notes: "God's holiness as his defining attribute — the basis for all moral commands" },
-      { name: "Hagiasmology", notes: "The call to consecration and sanctification flows directly from the holiness of God himself" }
-    ]
-  },
-]
 
 romans_verses = [
   {
@@ -392,21 +418,43 @@ seed_verses = lambda do |book_name, verses|
   end
 end
 
-seed_verses.call("Genesis",     genesis_verses_additions)
-seed_verses.call("Exodus",      exodus_verses)
-seed_verses.call("Leviticus",   leviticus_verses)
-seed_verses.call("Numbers",     numbers_verses)
-seed_verses.call("Deuteronomy", deuteronomy_verses)
-seed_verses.call("Joshua",      joshua_verses)
-seed_verses.call("Judges",      judges_verses)
-seed_verses.call("Acts",        acts_verses)
-seed_verses.call("Romans",      romans_verses)
+seed_verses.call("Genesis",      genesis_verses_additions)
+seed_verses.call("Exodus",       exodus_verses)
+seed_verses.call("Leviticus",    leviticus_verses)
+seed_verses.call("Numbers",      numbers_verses)
+seed_verses.call("Deuteronomy",  deuteronomy_verses)
+seed_verses.call("Joshua",       joshua_verses)
+seed_verses.call("Judges",       judges_verses)
+seed_verses.call("1 Kings",      kings1_verses)
+seed_verses.call("2 Samuel",     samuel2_verses)
+seed_verses.call("2 Chronicles", chronicles2_verses)
+seed_verses.call("Acts",         acts_verses)
+seed_verses.call("Romans",       romans_verses)
 
 puts "Additional verse seeding complete (#{Verse.count} total verses, #{VerseCategory.count} total category associations)"
 
 # ------------------------------------------------------------
 # Verse references (cross-book connections — run after all verses exist)
 # ------------------------------------------------------------
+
+verse_references = [
+  {
+    verse:            { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 },
+    referenced_verse: { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil }
+  },
+  {
+    verse:            { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil },
+    referenced_verse: { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 }
+  },
+  {
+    verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
+    referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
+  },
+  {
+    verse:            { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 },
+    referenced_verse: { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 }
+  },
+]
 
 verse_references.each do |ref|
   v_book = BibleBook.find_by!(name: ref[:verse][:book])
