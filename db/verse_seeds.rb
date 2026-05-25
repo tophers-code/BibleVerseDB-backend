@@ -443,16 +443,8 @@ verse_references = [
     referenced_verse: { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil }
   },
   {
-    verse:            { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil },
-    referenced_verse: { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 }
-  },
-  {
     verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
     referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
-  },
-  {
-    verse:            { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 },
-    referenced_verse: { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 }
   },
 ]
 
@@ -481,3 +473,281 @@ verse_references.each do |ref|
 end
 
 puts "Verse references seeded (#{VerseReference.count} total)"
+
+# ------------------------------------------------------------
+# Tags & Verse Tags (run after all verses exist)
+# ------------------------------------------------------------
+
+# Seed tags
+tags = [
+  { name: "atonement",         description: "Passages referencing the covering or removal of sin through sacrifice or Christ's work" },
+  { name: "consecration",      description: "Being set apart as holy unto the LORD" },
+  { name: "conscience",        description: "The innate moral awareness written on the human heart" },
+  { name: "covenant",          description: "A binding promise or agreement between God and his people" },
+  { name: "creation",          description: "God's act of bringing the world into existence" },
+  { name: "Davidic Covenant",  description: "God's promise to David of an eternal throne and offspring, fulfilled in Christ" },
+  { name: "Day of Wrath",      description: "The specific eschatological event of God's final judgment and outpouring of wrath" },
+  { name: "dominion",          description: "Humanity's God-given authority over creation" },
+  { name: "end of days",       description: "General references to the last days, end times, or eschatological future" },
+  { name: "eternal life",      description: "The gift of everlasting life granted to those who are justified by faith" },
+  { name: "faith",             description: "Trust and belief directed toward God or Christ as the instrument of salvation" },
+  { name: "faithfulness",      description: "God's unwavering reliability to his promises and covenant" },
+  { name: "forgiveness",       description: "The remission of sin and guilt by God" },
+  { name: "glory of God",      description: "The visible or manifest splendor and presence of God" },
+  { name: "grace",             description: "God's unmerited favor toward sinners" },
+  { name: "holiness",          description: "The state of being set apart and morally pure, as God is holy" },
+  { name: "humility",          description: "The posture of lowering oneself before God or others" },
+  { name: "I AM",              description: "God's self-revelation of his eternal, self-existent name (YHWH)" },
+  { name: "image of God",      description: "Humanity created in the likeness and image of God (imago Dei)" },
+  { name: "immutability",      description: "God's unchanging nature — he does not lie or alter his purposes" },
+  { name: "jealousy",          description: "God's righteous jealousy — he will not share his glory or worship with another" },
+  { name: "judgment",          description: "God's act of rendering justice and accountability for sin" },
+  { name: "justification",     description: "Being declared righteous before God, by faith apart from works" },
+  { name: "mercy",             description: "God's compassionate withholding of deserved punishment" },
+  { name: "Messianic promise", description: "OT passages that point forward to the coming of Christ" },
+  { name: "monotheism",        description: "The foundational truth that there is only one God" },
+  { name: "natural law",       description: "The moral law written on human hearts by God, knowable apart from Scripture" },
+  { name: "prayer",            description: "Communication directed toward God" },
+  { name: "prophet",           description: "A spokesperson for God; passages referencing the prophetic office" },
+  { name: "propitiation",      description: "The satisfaction of God's wrath through Christ's atoning sacrifice" },
+  { name: "radiance",          description: "The shining of God's glory, often physically manifested" },
+  { name: "redemption",        description: "Being bought back or delivered from bondage, sin, or death" },
+  { name: "repentance",        description: "Turning away from sin and toward God" },
+  { name: "righteousness",     description: "Moral uprightness; God's perfect standard; imputed to believers through faith" },
+  { name: "sanctification",    description: "The ongoing process of being made holy" },
+  { name: "seeking",           description: "Actively pursuing God in prayer, worship, or obedience" },
+  { name: "Shema",             description: "The foundational Jewish confession: 'The LORD our God, the LORD is one'" },
+  { name: "sin",               description: "Transgression against God's law and character" },
+  { name: "slow to anger",     description: "God's patient forbearance — he is not quick to judge or punish" },
+  { name: "Sodom",             description: "Passages referencing the wickedness of Sodom or its parallel patterns" },
+  { name: "sovereignty",       description: "God's supreme authority and control over all creation and history" },
+  { name: "steadfast love",    description: "God's hesed — his loyal, covenantal, unfailing love" },
+  { name: "throne",            description: "References to God's throne or the establishment of a royal/eternal throne" },
+  { name: "truthfulness",      description: "God's absolute honesty — he cannot lie or be deceived" },
+  { name: "wickedness",        description: "Extreme moral evil and depravity" },
+  { name: "wrath",             description: "God's righteous anger and opposition toward sin" },
+]
+
+puts "Seeding tags..."
+tags.each do |tag_data|
+  Tag.find_or_create_by!(name: tag_data[:name]) do |t|
+    t.description = tag_data[:description]
+  end
+end
+puts "Created #{Tag.count} tags"
+
+# Verse tag associations
+# Format: { book:, chapter:, verse_start:, verse_end:, tags: [] }
+verse_tag_data = [
+  # Genesis
+  {
+    book: "Genesis", chapter: 1, verse_start: 1, verse_end: nil,
+    tags: ["creation"]
+  },
+  {
+    book: "Genesis", chapter: 1, verse_start: 25, verse_end: 27,
+    tags: ["image of God"]
+  },
+  {
+    book: "Genesis", chapter: 1, verse_start: 28, verse_end: 30,
+    tags: ["dominion"]
+  },
+  {
+    book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8,
+    tags: ["sin", "wickedness", "Sodom"]
+  },
+
+  # Exodus
+  {
+    book: "Exodus", chapter: 3, verse_start: 14, verse_end: nil,
+    tags: ["I AM", "sovereignty"]
+  },
+  {
+    book: "Exodus", chapter: 20, verse_start: 5, verse_end: nil,
+    tags: ["jealousy"]
+  },
+  {
+    book: "Exodus", chapter: 29, verse_start: 36, verse_end: 37,
+    tags: ["atonement"]
+  },
+  {
+    book: "Exodus", chapter: 30, verse_start: 10, verse_end: nil,
+    tags: ["atonement"]
+  },
+  {
+    book: "Exodus", chapter: 30, verse_start: 15, verse_end: 16,
+    tags: ["atonement", "redemption"]
+  },
+  {
+    book: "Exodus", chapter: 34, verse_start: 6, verse_end: 7,
+    tags: ["mercy", "grace", "slow to anger", "faithfulness", "forgiveness", "steadfast love"]
+  },
+  {
+    book: "Exodus", chapter: 34, verse_start: 35, verse_end: nil,
+    tags: ["glory of God", "radiance"]
+  },
+
+  # Leviticus
+  {
+    book: "Leviticus", chapter: 11, verse_start: 44, verse_end: 45,
+    tags: ["holiness", "consecration", "sanctification"]
+  },
+
+  # Numbers
+  {
+    book: "Numbers", chapter: 23, verse_start: 19, verse_end: nil,
+    tags: ["immutability", "truthfulness", "sovereignty"]
+  },
+
+  # Deuteronomy
+  {
+    book: "Deuteronomy", chapter: 6, verse_start: 4, verse_end: 5,
+    tags: ["Shema", "monotheism"]
+  },
+  {
+    book: "Deuteronomy", chapter: 6, verse_start: 5, verse_end: 9,
+    tags: ["sanctification"]
+  },
+  {
+    book: "Deuteronomy", chapter: 10, verse_start: 14, verse_end: nil,
+    tags: ["sovereignty", "creation"]
+  },
+  {
+    book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19,
+    tags: ["prophet", "Messianic promise", "covenant"]
+  },
+  {
+    book: "Deuteronomy", chapter: 21, verse_start: 8, verse_end: nil,
+    tags: ["atonement", "redemption"]
+  },
+
+  # Joshua
+  {
+    book: "Joshua", chapter: 24, verse_start: 14, verse_end: nil,
+    tags: ["holiness", "sanctification"]
+  },
+  {
+    book: "Joshua", chapter: 24, verse_start: 15, verse_end: nil,
+    tags: ["sanctification"]
+  },
+
+  # Judges
+  {
+    book: "Judges", chapter: 19, verse_start: 22, verse_end: 23,
+    tags: ["sin", "wickedness", "Sodom"]
+  },
+
+  # 2 Samuel
+  {
+    book: "2 Samuel", chapter: 7, verse_start: 12, verse_end: 14,
+    tags: ["Davidic Covenant", "Messianic promise", "covenant", "throne", "steadfast love"]
+  },
+
+  # 1 Kings
+  {
+    book: "1 Kings", chapter: 8, verse_start: 23, verse_end: nil,
+    tags: ["covenant", "steadfast love", "faithfulness", "mercy", "monotheism", "prayer"]
+  },
+
+  # 2 Chronicles
+  {
+    book: "2 Chronicles", chapter: 7, verse_start: 14, verse_end: nil,
+    tags: ["prayer", "humility", "seeking", "repentance", "forgiveness"]
+  },
+
+  # Acts
+  {
+    book: "Acts", chapter: 3, verse_start: 22, verse_end: nil,
+    tags: ["prophet", "Messianic promise"]
+  },
+
+  # Romans
+  {
+    book: "Romans", chapter: 2, verse_start: 4, verse_end: nil,
+    tags: ["repentance", "mercy"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 5, verse_end: nil,
+    tags: ["wrath", "Day of Wrath", "judgment", "end of days"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 6, verse_end: nil,
+    tags: ["judgment"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 7, verse_end: nil,
+    tags: ["eternal life"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 12, verse_end: nil,
+    tags: ["sin", "judgment"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 14, verse_end: 15,
+    tags: ["natural law", "conscience"]
+  },
+  {
+    book: "Romans", chapter: 2, verse_start: 16, verse_end: nil,
+    tags: ["judgment", "end of days"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 10, verse_end: nil,
+    tags: ["sin"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 19, verse_end: nil,
+    tags: ["sin", "judgment"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 20, verse_end: nil,
+    tags: ["sin", "justification", "righteousness"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 21, verse_end: 22,
+    tags: ["righteousness", "faith"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 22, verse_end: nil,
+    tags: ["faith", "justification"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 22, verse_end: 25,
+    tags: ["faith", "justification", "righteousness"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 24, verse_end: 25,
+    tags: ["redemption", "propitiation", "atonement"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 25, verse_end: 26,
+    tags: ["righteousness", "justification", "atonement"]
+  },
+  {
+    book: "Romans", chapter: 3, verse_start: 30, verse_end: nil,
+    tags: ["monotheism", "justification", "faith"]
+  },
+  {
+    book: "Romans", chapter: 4, verse_start: 2, verse_end: nil,
+    tags: ["justification", "righteousness", "faith"]
+  },
+  {
+    book: "Romans", chapter: 4, verse_start: 5, verse_end: nil,
+    tags: ["justification", "righteousness", "faith"]
+  },
+]
+
+puts "Seeding verse tags..."
+verse_tag_data.each do |entry|
+  book  = BibleBook.find_by!(name: entry[:book])
+  verse = Verse.find_by!(
+    bible_book:  book,
+    chapter:     entry[:chapter],
+    verse_start: entry[:verse_start],
+    verse_end:   entry[:verse_end]
+  )
+  entry[:tags].each do |tag_name|
+    tag = Tag.find_by!(name: tag_name)
+    VerseTag.find_or_create_by!(verse: verse, tag: tag)
+  end
+end
+puts "Verse tags seeded (#{VerseTag.count} total)"
