@@ -195,6 +195,8 @@ end
 
 puts "Created #{Verse.count} verses with #{VerseCategory.count} category associations"
 
+load Rails.root.join("db/verse_seeds.rb")
+
 puts "Seeding complete!"
 
 # Seed default admin user
