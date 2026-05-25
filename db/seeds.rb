@@ -196,3 +196,11 @@ end
 puts "Created #{Verse.count} verses with #{VerseCategory.count} category associations"
 
 puts "Seeding complete!"
+
+# Seed default admin user
+puts "Seeding admin user..."
+User.find_or_create_by!(email: "admin@bibleversedb.local") do |user|
+  user.password = "changeme123"
+  user.role = "admin"
+end
+puts "Admin user ready (email: admin@bibleversedb.local)"

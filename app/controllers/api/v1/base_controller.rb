@@ -1,10 +1,17 @@
 module Api
   module V1
     class BaseController < ApplicationController
+      before_action :authenticate!
+      before_action :require_admin!, unless: :read_request?
+
       rescue_from ActiveRecord::RecordNotFound, with: :not_found
       rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity
 
       private
+
+      def read_request?
+        request.get? || request.head?
+      end
 
       def not_found(exception)
         render json: { error: exception.message }, status: :not_found

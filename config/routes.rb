@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      post "sessions", to: "sessions#create"
       resources :bible_books, only: [:index, :show]
       resources :categories
       resources :tags
@@ -30,4 +31,9 @@ Rails.application.routes.draw do
 
   # Health check for load balancers
   get "up" => "rails/health#show", as: :rails_health_check
+
+  # Serve the React SPA for all non-API routes
+  get "*path", to: proc {
+    [200, { "Content-Type" => "text/html" }, [File.read(Rails.root.join("public/index.html"))]]
+  }, constraints: ->(req) { !req.path.start_with?("/api", "/rails", "/up") }
 end
