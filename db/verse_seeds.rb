@@ -180,6 +180,334 @@ joshua_verses = [
 ]
 
 # ------------------------------------------------------------
+# MATTHEW
+# ------------------------------------------------------------
+
+matthew_verses = [
+  {
+    chapter: 22, verse_start: 44, verse_end: nil,
+    notes: 'NT citation — Jesus quotes Psalm 110:1 to establish his divine identity: "The Lord said to my Lord, Sit at my right hand, until I put your enemies under your feet"',
+    categories: [
+      { name: "Christology", notes: "Jesus cites Psalm 110:1 to reveal his pre-existence and divine lordship — if David calls him Lord, how can he merely be David's son?" },
+      { name: "Bibliology", notes: "Jesus' use of Psalm 110:1 demonstrates OT-NT continuity — the earlier scripture is fulfilled and clarified in Christ" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# PSALMS
+# ------------------------------------------------------------
+
+psalms_verses = [
+  {
+    chapter: 12, verse_start: 6, verse_end: nil,
+    notes: 'Teal highlight on full verse; yellow highlight on "pure words, like silver refined" — the words of the LORD are absolutely pure, refined like silver seven times over',
+    categories: [
+      { name: "Bibliology", notes: "God's words are perfectly pure and trustworthy — refined beyond any impurity, the standard of truth" },
+      { name: "Theology", notes: "God's purity reflected in his word — \"pure words, like silver refined\" reveals his own unblemished character" }
+    ]
+  },
+  {
+    chapter: 16, verse_start: 8, verse_end: nil,
+    notes: 'Yellow highlight on "because he is at my right hand, I shall not be shaken" — David\'s unshakeable confidence rooted in God\'s constant presence',
+    categories: [
+      { name: "Theology", notes: "God's constant presence as the source of stability and confidence — he is at the right hand, therefore nothing can shake" }
+    ]
+  },
+  {
+    chapter: 19, verse_start: 1, verse_end: 2,
+    notes: 'Yellow highlight — "The heavens declare the glory of God, and the sky above proclaims his handiwork. Day to day pours out speech, and night to night reveals knowledge."',
+    categories: [
+      { name: "Theology", notes: "Creation as continuous, universal declaration of God's glory — the heavens and sky testify to his handiwork day and night" }
+    ]
+  },
+  {
+    chapter: 19, verse_start: 7, verse_end: 11,
+    notes: 'Teal highlight — the law of the LORD is perfect, sure, right, pure, clean, true, and righteous; reviving the soul, making wise, rejoicing the heart, enlightening the eyes; more desirable than gold, sweeter than honey; great reward in keeping them',
+    categories: [
+      { name: "Bibliology", notes: "The perfection and sufficiency of God's word — each attribute of the law (perfect, sure, right, pure, clean, true) paired with its benefit to the one who keeps it" }
+    ]
+  },
+  {
+    chapter: 24, verse_start: 8, verse_end: nil,
+    notes: 'Yellow highlight — "The LORD, strong and mighty, the LORD, mighty in battle!" — God declared as the all-powerful warrior King',
+    categories: [
+      { name: "Theology", notes: "God's omnipotence on display — he is strong, mighty, and mighty in battle; no force can stand against him" }
+    ]
+  },
+  {
+    chapter: 27, verse_start: 4, verse_end: nil,
+    notes: 'Yellow highlight on "the beauty of the LORD" — David\'s singular desire to dwell in God\'s house and gaze upon his beauty',
+    categories: [
+      { name: "Theology", notes: "God's beauty as an attribute — David's one desire is to behold it; points to the transcendent loveliness of God's own nature and presence" }
+    ]
+  },
+  {
+    chapter: 33, verse_start: 13, verse_end: 14,
+    notes: 'Yellow highlight — "The LORD looks down from heaven; he sees all the children of man; from where he sits enthroned he looks out on all the inhabitants of the earth"',
+    categories: [
+      { name: "Theology", notes: "God's omniscience and sovereign oversight — enthroned in heaven, he sees and observes all humanity without exception" }
+    ]
+  },
+  {
+    chapter: 51, verse_start: 5, verse_end: nil,
+    notes: 'Blue underline — "I was brought forth in iniquity, and in sin did my mother conceive me" — original sin declared; humanity is sinful from conception',
+    categories: [
+      { name: "Theological Anthropology", notes: "Humanity's sinful nature is not acquired but innate — conceived and brought forth in iniquity; the doctrine of original sin" },
+      { name: "Hamartiology", notes: "Sin is not merely behavioral but ontological — present from conception, embedded in human nature from the start" }
+    ]
+  },
+  {
+    chapter: 53, verse_start: 3, verse_end: nil,
+    notes: 'Red underline — "there is none who does good, not even one" — universal human depravity; cited by Paul in Romans 3:10-12',
+    categories: [
+      { name: "Hamartiology", notes: "Universal depravity — not one person does good; the total corruption of human nature apart from God" }
+    ]
+  },
+  {
+    chapter: 90, verse_start: 2, verse_end: nil,
+    notes: 'Yellow highlight on "from everlasting to everlasting you are God" — Moses declares God\'s eternal, self-existent nature outside of time',
+    categories: [
+      { name: "Theology", notes: "God's eternality — he exists from everlasting to everlasting, uncreated and unbound by time" }
+    ]
+  },
+  {
+    chapter: 90, verse_start: 4, verse_end: nil,
+    notes: 'Yellow highlight on "a thousand years in your sight are but as yesterday when it is past, or as a watch in the night" — God\'s transcendence over time',
+    categories: [
+      { name: "Theology", notes: "God's relationship to time — a thousand years is as a day to him; he is utterly unbound by temporal limitations" }
+    ]
+  },
+  {
+    chapter: 102, verse_start: 26, verse_end: 27,
+    notes: 'Yellow highlight on "but you are the same, and your years have no end" — creation perishes but God remains unchanged and eternal',
+    categories: [
+      { name: "Theology", notes: "God's immutability and eternality — all creation wears out like a garment, but he is the same and his years have no end" }
+    ]
+  },
+  {
+    chapter: 103, verse_start: 8, verse_end: nil,
+    notes: 'Yellow highlight — "The LORD is merciful and gracious, slow to anger and abounding in steadfast love" — David echoes God\'s own self-description from Exodus 34:6-7',
+    categories: [
+      { name: "Theology", notes: "God's character attributes declared in worship — merciful, gracious, slow to anger, abounding in steadfast love; an echo of Exodus 34:6-7" }
+    ]
+  },
+  {
+    chapter: 103, verse_start: 11, verse_end: nil,
+    notes: 'Red underline — "as high as the heavens are above the earth, so great is his steadfast love toward those who fear him"',
+    categories: [
+      { name: "Theology", notes: "The immeasurable height of God's steadfast love — as vast as the heavens above the earth toward those who fear him" }
+    ]
+  },
+  {
+    chapter: 103, verse_start: 12, verse_end: nil,
+    notes: 'Red underline — "as far as the east is from the west, so far does he remove our transgressions from us"',
+    categories: [
+      { name: "Soteriology", notes: "The complete removal of transgressions — as immeasurably far as east is from west; the totality of God's forgiveness" }
+    ]
+  },
+  {
+    chapter: 106, verse_start: 1, verse_end: nil,
+    notes: 'Yellow highlight — "Oh give thanks to the LORD, for he is good, for his steadfast love endures forever! Who can utter the mighty deeds of the LORD"',
+    categories: [
+      { name: "Theology", notes: "God's goodness, steadfast love, and mighty deeds declared in worship — his love endures forever and his deeds are beyond telling" }
+    ]
+  },
+  {
+    chapter: 110, verse_start: 1, verse_end: nil,
+    notes: 'Full verse — Theology + Christology: "The LORD says to my Lord" — the Father speaks to the Son; a Trinitarian window showing the distinction of persons',
+    categories: [
+      { name: "Theology", notes: "God the Father's sovereign declaration — the LORD speaks, establishing divine authority and the eternal relationship between Father and Son" },
+      { name: "Christology", notes: "\"My Lord\" is the pre-incarnate Christ — the Father addresses the Son, pointing to Christ's divine identity and lordship" }
+    ]
+  },
+  {
+    chapter: 110, verse_start: 1, verse_end: nil,
+    notes: 'Christology only — "Sit at my right hand" — the exaltation of Christ to the place of supreme honor at the Father\'s right hand',
+    categories: [
+      { name: "Christology", notes: "Christ's exaltation to the right hand of the Father — the position of supreme authority, honor, and intercession" }
+    ]
+  },
+  {
+    chapter: 115, verse_start: 3, verse_end: nil,
+    notes: 'Yellow highlight on "he does all that he pleases" — God\'s absolute sovereign freedom; he is in the heavens and does whatever he wills',
+    categories: [
+      { name: "Theology", notes: "God's absolute sovereignty and freedom — enthroned in the heavens, he does all that he pleases without constraint or limitation" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 1, verse_end: nil,
+    notes: 'Blue underline — "O LORD, you have searched me and known me!" — God\'s complete knowledge of each person',
+    categories: [
+      { name: "Theological Anthropology", notes: "Humanity is fully known by God — he searches and knows each person completely, leaving nothing hidden" },
+      { name: "Theology", notes: "God's omniscience applied personally — he has searched and known the psalmist entirely" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 4, verse_end: nil,
+    notes: 'Yellow highlight on "behold, O LORD, you know it altogether" — God knows every word before it is spoken',
+    categories: [
+      { name: "Theology", notes: "God's omniscience — he knows every word on the tongue before it is uttered; nothing escapes his knowledge" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 6, verse_end: nil,
+    notes: 'Yellow highlight — "Such knowledge is too wonderful for me; it is high; I cannot attain it" — the incomprehensibility of God\'s omniscience',
+    categories: [
+      { name: "Theology", notes: "God's knowledge is beyond human comprehension — too wonderful, too high; points to his incomprehensible nature" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 7, verse_end: nil,
+    notes: 'Orange highlight — "Where shall I go from your Spirit? Or where shall I flee from your presence?" — the omnipresence of the Holy Spirit',
+    categories: [
+      { name: "Pneumatology", notes: "The Holy Spirit's omnipresence — there is nowhere one can go to escape God's Spirit; he fills all of creation" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 10, verse_end: nil,
+    notes: 'Yellow highlight — "even there your hand shall lead me, and your right hand shall hold me" — God\'s sustaining presence everywhere',
+    categories: [
+      { name: "Theology", notes: "God's guiding and sustaining hand reaches everywhere — even to the uttermost parts of the sea, he leads and holds his people" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 12, verse_end: nil,
+    notes: 'Yellow highlight — "even the darkness is not dark to you; the night is bright as the day, for darkness is as light with you"',
+    categories: [
+      { name: "Theology", notes: "God's omniscience transcends darkness — no darkness can hide anything from him; light and dark are the same to his all-seeing eyes" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 13, verse_end: nil,
+    notes: 'Blue underline on "you knitted me together in my mother\'s womb" — God as the deliberate creator of each individual person',
+    categories: [
+      { name: "Theology", notes: "God as the personal creator of each human being — he formed the inward parts and knitted each person together in the womb" },
+      { name: "Theological Anthropology", notes: "Humanity is personally and deliberately formed by God — each person knit together in the womb by his hand" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight on "Wonderful are your works"; blue underline on "I am fearfully and wonderfully made"',
+    categories: [
+      { name: "Theology", notes: "God's works are wonderful — the creation of each human being reflects the awesome skill and care of the Creator" },
+      { name: "Theological Anthropology", notes: "Humanity is fearfully and wonderfully made — each person bears the mark of God's extraordinary craftsmanship" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 16, verse_end: nil,
+    notes: 'Blue underline — "in your book were written, every one of them, the days that were formed for me, when as yet there was none of them"',
+    categories: [
+      { name: "Theological Anthropology", notes: "Every day of a person's life was written in God's book before birth — humanity is known and planned by God before existence" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 17, verse_end: 18,
+    notes: 'Yellow highlight — "How precious to me are your thoughts, O God! How vast is the sum of them! If I would count them, they are more than the sand"',
+    categories: [
+      { name: "Theology", notes: "God's thoughts are precious and innumerable — more than the sand; his mind is vast beyond all human comprehension" }
+    ]
+  },
+  {
+    chapter: 139, verse_start: 23, verse_end: 24,
+    notes: 'Blue underline — "Search me, O God, and know my heart! Try me and know my thoughts! And see if there be any grievous way in me, and lead me in the way everlasting"',
+    categories: [
+      { name: "Theology", notes: "God's omniscience invited — the psalmist asks God to search and know his heart completely, trusting his all-seeing judgment" },
+      { name: "Theological Anthropology", notes: "The human heart is searchable by God — he knows thoughts and discerns grievous ways hidden even from ourselves" },
+      { name: "Hamartiology", notes: "The presence of grievous ways within — sin may lurk unseen in the heart, requiring God's searching light to expose and correct it" }
+    ]
+  },
+  {
+    chapter: 148, verse_start: 2, verse_end: nil,
+    notes: 'Pink underline — "Praise him, all his angels; praise him, all his hosts!" — the angelic hosts called to worship',
+    categories: [
+      { name: "Angelology", notes: "The angelic hosts as worshippers — all angels and heavenly hosts called to praise the LORD" }
+    ]
+  },
+  {
+    chapter: 148, verse_start: 5, verse_end: nil,
+    notes: 'Pink/red underline on "they were created" — the angels and heavenly hosts are created beings, brought into existence by God\'s command',
+    categories: [
+      { name: "Theology", notes: "God as creator by sovereign command — he spoke and the angels and heavenly hosts came into existence" },
+      { name: "Angelology", notes: "Angels are created beings — they are not eternal or self-existent but brought forth by God's decree" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# JOB
+# ------------------------------------------------------------
+
+job_verses = [
+  {
+    chapter: 1, verse_start: 6, verse_end: nil,
+    notes: 'Red underline — Satan appears among the sons of God before the LORD. Footnote: "Hebrew the Accuser or the Adversary; so throughout chapters 1–2"',
+    categories: [
+      { name: "Demonology", notes: "Satan's access to God's presence as the Accuser/Adversary — his Hebrew name reveals his role" }
+    ]
+  },
+  {
+    chapter: 1, verse_start: 7, verse_end: nil,
+    notes: 'Red underline — Satan describes himself as roaming the earth; reveals his active, restless presence throughout the world',
+    categories: [
+      { name: "Demonology", notes: "Satan as a roaming adversary — going to and fro on the earth, walking up and down on it" }
+    ]
+  },
+  {
+    chapter: 2, verse_start: 2, verse_end: nil,
+    notes: 'Red underline — Satan again describes himself as roaming the earth; the repetition reinforces his persistent, active presence',
+    categories: [
+      { name: "Demonology", notes: "Satan's roaming nature repeated — a consistent pattern of active adversarial presence throughout the earth" }
+    ]
+  },
+  {
+    chapter: 26, verse_start: 13, verse_end: nil,
+    notes: 'Red box around "the fleeing serpent" — God\'s hand pierced the fleeing serpent; connects to the serpent of Genesis 3 and the ultimate defeat of Satan',
+    categories: [
+      { name: "Demonology", notes: "Satan portrayed as the fleeing serpent — his defeat at the hand of God foreshadowed" },
+      { name: "Eschatology", notes: "God's piercing of the fleeing serpent points forward to Satan's ultimate defeat and judgment" }
+    ]
+  },
+  {
+    chapter: 26, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight on "small a whisper do we hear of him" and "the thunder of his power" — what humanity perceives of God is merely the faintest outskirts of his ways',
+    categories: [
+      { name: "Pneumatology", notes: "The breath and spirit of God as the medium through which his power operates in creation" },
+      { name: "Theology", notes: "God's incomprehensibility — the full thunder of his power is beyond human understanding; we only perceive a whisper" }
+    ]
+  },
+  {
+    chapter: 41, verse_start: 33, verse_end: 34,
+    notes: 'Highlight should be pink-black (Demonology) — Leviathan described as without equal on earth, without fear, king over all the sons of pride; a creature of chaos and demonic character',
+    categories: [
+      { name: "Demonology", notes: "Leviathan as a symbol of chaos and evil — fearless, unmatched, king over pride; a creature with satanic/demonic overtones in biblical literature" }
+    ]
+  },
+  {
+    chapter: 42, verse_start: 2, verse_end: nil,
+    notes: 'Yellow highlight — Job\'s confession: "I know that you can do all things, and that no purpose of yours can be thwarted"',
+    categories: [
+      { name: "Theology", notes: "God's omnipotence and sovereignty — no purpose of his can be thwarted by any creature or circumstance" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# JUDGES
+# ------------------------------------------------------------
+
+judges_verses = [
+  {
+    chapter: 19, verse_start: 22, verse_end: 23,
+    notes: 'Black underline — worthless men demand the visitor be brought out; the host pleads "do not act so wickedly...do not do this vile thing"',
+    categories: [
+      { name: "Ponerology", notes: "The nature of evil on full display — collective depravity mirroring the sin of Sodom in Genesis 19" },
+      { name: "Hamartiology", notes: "Collective, unrestrained sin; the moral collapse of Israel echoing the wickedness of Sodom" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
 # 2 SAMUEL
 # ------------------------------------------------------------
 
@@ -191,22 +519,6 @@ samuel2_verses = [
       { name: "Christology", notes: "The Davidic Covenant as messianic promise — the eternal offspring from David's body whose throne is established forever points to Christ" },
       { name: "Theology", notes: "God's covenant-keeping faithfulness — he binds himself by promise to David and fulfills it across generations" },
       { name: "Eschatology", notes: "The eternal throne and kingdom established forever — an eschatological promise reaching its fulfillment in the reign of Christ" }
-    ]
-  },
-]
-
-# ------------------------------------------------------------
-# 2 CHRONICLES
-# ------------------------------------------------------------
-
-chronicles2_verses = [
-  {
-    chapter: 7, verse_start: 14, verse_end: nil,
-    notes: 'Yellow highlight — "if my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land"',
-    categories: [
-      { name: "Theology", notes: "God's conditional promise reveals his character — he hears prayer, forgives sin, and heals; responsive to humility and repentance" },
-      { name: "Hagiasmology", notes: "Humbling, praying, seeking God's face, and turning from wickedness are sanctification lived out — the marks of a people growing in holiness" },
-      { name: "Ecclesiology", notes: '"My people who are called by my name" — the covenant community, the Church, called to corporate repentance and renewal' }
     ]
   },
 ]
@@ -226,16 +538,17 @@ kings1_verses = [
 ]
 
 # ------------------------------------------------------------
-# JUDGES
+# 2 CHRONICLES
 # ------------------------------------------------------------
 
-judges_verses = [
+chronicles2_verses = [
   {
-    chapter: 19, verse_start: 22, verse_end: 23,
-    notes: 'Black underline — worthless men demand the visitor be brought out; the host pleads "do not act so wickedly...do not do this vile thing"',
+    chapter: 7, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight — "if my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land"',
     categories: [
-      { name: "Ponerology", notes: "The nature of evil on full display — collective depravity mirroring the sin of Sodom in Genesis 19" },
-      { name: "Hamartiology", notes: "Collective, unrestrained sin; the moral collapse of Israel echoing the wickedness of Sodom" }
+      { name: "Theology", notes: "God's conditional promise reveals his character — he hears prayer, forgives sin, and heals; responsive to humility and repentance" },
+      { name: "Hagiasmology", notes: "Humbling, praying, seeking God's face, and turning from wickedness are sanctification lived out — the marks of a people growing in holiness" },
+      { name: "Ecclesiology", notes: '"My people who are called by my name" — the covenant community, the Church, called to corporate repentance and renewal' }
     ]
   },
 ]
@@ -425,9 +738,12 @@ seed_verses.call("Numbers",      numbers_verses)
 seed_verses.call("Deuteronomy",  deuteronomy_verses)
 seed_verses.call("Joshua",       joshua_verses)
 seed_verses.call("Judges",       judges_verses)
+seed_verses.call("Job",          job_verses)
+seed_verses.call("Psalms",       psalms_verses)
 seed_verses.call("1 Kings",      kings1_verses)
 seed_verses.call("2 Samuel",     samuel2_verses)
 seed_verses.call("2 Chronicles", chronicles2_verses)
+seed_verses.call("Matthew",      matthew_verses)
 seed_verses.call("Acts",         acts_verses)
 seed_verses.call("Romans",       romans_verses)
 
@@ -445,6 +761,30 @@ verse_references = [
   {
     verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
     referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
+  },
+  {
+    verse:            { book: "Genesis", chapter: 3, verse_start: 1, verse_end: nil },
+    referenced_verse: { book: "Job",     chapter: 26, verse_start: 13, verse_end: nil }
+  },
+  {
+    verse:            { book: "Psalms", chapter: 53, verse_start: 3, verse_end: nil },
+    referenced_verse: { book: "Romans", chapter: 3,  verse_start: 10, verse_end: nil }
+  },
+  {
+    verse:            { book: "Psalms", chapter: 90, verse_start: 2, verse_end: nil },
+    referenced_verse: { book: "Psalms", chapter: 90, verse_start: 4, verse_end: nil }
+  },
+  {
+    verse:            { book: "Exodus", chapter: 34, verse_start: 6, verse_end: 7 },
+    referenced_verse: { book: "Psalms", chapter: 103, verse_start: 8, verse_end: nil }
+  },
+  {
+    verse:            { book: "Psalms", chapter: 103, verse_start: 11, verse_end: nil },
+    referenced_verse: { book: "Psalms", chapter: 103, verse_start: 12, verse_end: nil }
+  },
+  {
+    verse:            { book: "Psalms",  chapter: 110, verse_start: 1, verse_end: nil },
+    referenced_verse: { book: "Matthew", chapter: 22,  verse_start: 44, verse_end: nil }
   },
 ]
 
@@ -485,26 +825,26 @@ tags = [
   { name: "conscience",        description: "The innate moral awareness written on the human heart" },
   { name: "covenant",          description: "A binding promise or agreement between God and his people" },
   { name: "creation",          description: "God's act of bringing the world into existence" },
-  { name: "Davidic Covenant",  description: "God's promise to David of an eternal throne and offspring, fulfilled in Christ" },
-  { name: "Day of Wrath",      description: "The specific eschatological event of God's final judgment and outpouring of wrath" },
+  { name: "davidic covenant",  description: "God's promise to David of an eternal throne and offspring, fulfilled in Christ" },
+  { name: "day of wrath",      description: "The specific eschatological event of God's final judgment and outpouring of wrath" },
   { name: "dominion",          description: "Humanity's God-given authority over creation" },
   { name: "end of days",       description: "General references to the last days, end times, or eschatological future" },
   { name: "eternal life",      description: "The gift of everlasting life granted to those who are justified by faith" },
   { name: "faith",             description: "Trust and belief directed toward God or Christ as the instrument of salvation" },
   { name: "faithfulness",      description: "God's unwavering reliability to his promises and covenant" },
   { name: "forgiveness",       description: "The remission of sin and guilt by God" },
-  { name: "glory of God",      description: "The visible or manifest splendor and presence of God" },
+  { name: "glory of god",      description: "The visible or manifest splendor and presence of God" },
   { name: "grace",             description: "God's unmerited favor toward sinners" },
   { name: "holiness",          description: "The state of being set apart and morally pure, as God is holy" },
   { name: "humility",          description: "The posture of lowering oneself before God or others" },
-  { name: "I AM",              description: "God's self-revelation of his eternal, self-existent name (YHWH)" },
-  { name: "image of God",      description: "Humanity created in the likeness and image of God (imago Dei)" },
+  { name: "i am",              description: "God's self-revelation of his eternal, self-existent name (YHWH)" },
+  { name: "image of god",      description: "Humanity created in the likeness and image of God (imago Dei)" },
   { name: "immutability",      description: "God's unchanging nature — he does not lie or alter his purposes" },
   { name: "jealousy",          description: "God's righteous jealousy — he will not share his glory or worship with another" },
   { name: "judgment",          description: "God's act of rendering justice and accountability for sin" },
   { name: "justification",     description: "Being declared righteous before God, by faith apart from works" },
   { name: "mercy",             description: "God's compassionate withholding of deserved punishment" },
-  { name: "Messianic promise", description: "OT passages that point forward to the coming of Christ" },
+  { name: "messianic promise", description: "OT passages that point forward to the coming of Christ" },
   { name: "monotheism",        description: "The foundational truth that there is only one God" },
   { name: "natural law",       description: "The moral law written on human hearts by God, knowable apart from Scripture" },
   { name: "prayer",            description: "Communication directed toward God" },
@@ -516,16 +856,38 @@ tags = [
   { name: "righteousness",     description: "Moral uprightness; God's perfect standard; imputed to believers through faith" },
   { name: "sanctification",    description: "The ongoing process of being made holy" },
   { name: "seeking",           description: "Actively pursuing God in prayer, worship, or obedience" },
-  { name: "Shema",             description: "The foundational Jewish confession: 'The LORD our God, the LORD is one'" },
+  { name: "shema",             description: "The foundational Jewish confession: 'The LORD our God, the LORD is one'" },
   { name: "sin",               description: "Transgression against God's law and character" },
   { name: "slow to anger",     description: "God's patient forbearance — he is not quick to judge or punish" },
-  { name: "Sodom",             description: "Passages referencing the wickedness of Sodom or its parallel patterns" },
+  { name: "sodom",             description: "Passages referencing the wickedness of Sodom or its parallel patterns" },
   { name: "sovereignty",       description: "God's supreme authority and control over all creation and history" },
   { name: "steadfast love",    description: "God's hesed — his loyal, covenantal, unfailing love" },
   { name: "throne",            description: "References to God's throne or the establishment of a royal/eternal throne" },
   { name: "truthfulness",      description: "God's absolute honesty — he cannot lie or be deceived" },
   { name: "wickedness",        description: "Extreme moral evil and depravity" },
   { name: "wrath",             description: "God's righteous anger and opposition toward sin" },
+  { name: "accuser",          description: "Satan's role as the one who brings charges against God's people before God" },
+  { name: "adversary",        description: "Satan as the active opponent and enemy of God and humanity" },
+  { name: "satan",            description: "References to Satan — the Accuser, Adversary, and enemy of God" },
+  { name: "serpent",          description: "The serpent as a symbol of Satan — from Genesis 3 through Revelation" },
+  { name: "incomprehensibility of god", description: "God's nature and power are beyond full human understanding — we perceive only the faintest outskirts" },
+  { name: "spirit of god",    description: "References to the Spirit/breath of God at work in creation or revelation" },
+  { name: "leviathan",        description: "The fearsome creature of chaos in Job — used symbolically of demonic/satanic power and pride" },
+  { name: "omnipotence",      description: "God's all-encompassing power — nothing can thwart his purposes" },
+  { name: "pride",            description: "The root sin of self-exaltation; associated with Satan and his domain" },
+  { name: "purity",           description: "The absolute moral and spiritual purity of God and his word" },
+  { name: "word of god",      description: "References to Scripture or God's spoken word as pure, authoritative, and trustworthy" },
+  { name: "presence of god",  description: "The nearness and constant availability of God to his people" },
+  { name: "beauty of god",    description: "The transcendent loveliness and splendor of God's own nature and presence" },
+  { name: "omniscience",      description: "God's all-knowing nature — he sees and knows all things, including every person on earth" },
+  { name: "original sin",     description: "The inherited sinful nature of humanity present from conception, traced to the Fall" },
+  { name: "depravity",        description: "The total corruption of human nature — no one does good apart from God; universal sinfulness" },
+  { name: "eternality",       description: "God's existence from everlasting to everlasting — unbound by time, without beginning or end" },
+  { name: "goodness",         description: "God's inherent moral goodness and benevolence toward his creation" },
+  { name: "trinity",          description: "Passages revealing or implying the triune nature of God — Father, Son, and Holy Spirit as distinct persons" },
+  { name: "christology",      description: "Passages pointing to Christ's identity, nature, pre-existence, or work" },
+  { name: "angels",           description: "References to angels — their nature, role, worship, and created status" },
+  { name: "worship",          description: "The act of ascribing worth and praise to God, by humanity or angelic beings" },
 ]
 
 puts "Seeding tags..."
@@ -539,6 +901,12 @@ puts "Created #{Tag.count} tags"
 # Verse tag associations
 # Format: { book:, chapter:, verse_start:, verse_end:, tags: [] }
 verse_tag_data = [
+  # Matthew
+  {
+    book: "Matthew", chapter: 22, verse_start: 44, verse_end: nil,
+    tags: ["christology", "trinity", "messianic promise", "throne"]
+  },
+
   # Genesis
   {
     book: "Genesis", chapter: 1, verse_start: 1, verse_end: nil,
@@ -546,7 +914,7 @@ verse_tag_data = [
   },
   {
     book: "Genesis", chapter: 1, verse_start: 25, verse_end: 27,
-    tags: ["image of God"]
+    tags: ["image of god"]
   },
   {
     book: "Genesis", chapter: 1, verse_start: 28, verse_end: 30,
@@ -554,13 +922,13 @@ verse_tag_data = [
   },
   {
     book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8,
-    tags: ["sin", "wickedness", "Sodom"]
+    tags: ["sin", "wickedness", "sodom"]
   },
 
   # Exodus
   {
     book: "Exodus", chapter: 3, verse_start: 14, verse_end: nil,
-    tags: ["I AM", "sovereignty"]
+    tags: ["i am", "sovereignty"]
   },
   {
     book: "Exodus", chapter: 20, verse_start: 5, verse_end: nil,
@@ -584,7 +952,7 @@ verse_tag_data = [
   },
   {
     book: "Exodus", chapter: 34, verse_start: 35, verse_end: nil,
-    tags: ["glory of God", "radiance"]
+    tags: ["glory of god", "radiance"]
   },
 
   # Leviticus
@@ -602,7 +970,7 @@ verse_tag_data = [
   # Deuteronomy
   {
     book: "Deuteronomy", chapter: 6, verse_start: 4, verse_end: 5,
-    tags: ["Shema", "monotheism"]
+    tags: ["shema", "monotheism"]
   },
   {
     book: "Deuteronomy", chapter: 6, verse_start: 5, verse_end: 9,
@@ -614,7 +982,7 @@ verse_tag_data = [
   },
   {
     book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19,
-    tags: ["prophet", "Messianic promise", "covenant"]
+    tags: ["prophet", "messianic promise", "covenant"]
   },
   {
     book: "Deuteronomy", chapter: 21, verse_start: 8, verse_end: nil,
@@ -634,13 +1002,177 @@ verse_tag_data = [
   # Judges
   {
     book: "Judges", chapter: 19, verse_start: 22, verse_end: 23,
-    tags: ["sin", "wickedness", "Sodom"]
+    tags: ["sin", "wickedness", "sodom"]
+  },
+
+  # Psalms
+  {
+    book: "Psalms", chapter: 12, verse_start: 6, verse_end: nil,
+    tags: ["purity", "truthfulness", "word of god"]
+  },
+  {
+    book: "Psalms", chapter: 16, verse_start: 8, verse_end: nil,
+    tags: ["sovereignty", "presence of god"]
+  },
+  {
+    book: "Psalms", chapter: 19, verse_start: 1, verse_end: 2,
+    tags: ["glory of god", "creation", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 19, verse_start: 7, verse_end: 11,
+    tags: ["word of god", "purity", "truthfulness"]
+  },
+  {
+    book: "Psalms", chapter: 24, verse_start: 8, verse_end: nil,
+    tags: ["omnipotence", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 27, verse_start: 4, verse_end: nil,
+    tags: ["beauty of god", "presence of god"]
+  },
+  {
+    book: "Psalms", chapter: 33, verse_start: 13, verse_end: 14,
+    tags: ["omniscience", "sovereignty", "throne"]
+  },
+  {
+    book: "Psalms", chapter: 51, verse_start: 5, verse_end: nil,
+    tags: ["original sin", "sin", "image of god"]
+  },
+  {
+    book: "Psalms", chapter: 53, verse_start: 3, verse_end: nil,
+    tags: ["sin", "depravity"]
+  },
+  {
+    book: "Psalms", chapter: 90, verse_start: 2, verse_end: nil,
+    tags: ["eternality", "sovereignty", "i am"]
+  },
+  {
+    book: "Psalms", chapter: 90, verse_start: 4, verse_end: nil,
+    tags: ["eternality", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 102, verse_start: 26, verse_end: 27,
+    tags: ["eternality", "immutability", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 103, verse_start: 8, verse_end: nil,
+    tags: ["mercy", "grace", "slow to anger", "steadfast love", "faithfulness"]
+  },
+  {
+    book: "Psalms", chapter: 103, verse_start: 11, verse_end: nil,
+    tags: ["steadfast love", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 103, verse_start: 12, verse_end: nil,
+    tags: ["forgiveness", "redemption", "sin"]
+  },
+  {
+    book: "Psalms", chapter: 106, verse_start: 1, verse_end: nil,
+    tags: ["steadfast love", "goodness", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 110, verse_start: 1, verse_end: nil,
+    tags: ["messianic promise", "trinity", "throne", "christology"]
+  },
+  {
+    book: "Psalms", chapter: 115, verse_start: 3, verse_end: nil,
+    tags: ["sovereignty", "omnipotence"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 1, verse_end: nil,
+    tags: ["omniscience", "presence of god", "image of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 4, verse_end: nil,
+    tags: ["omniscience"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 6, verse_end: nil,
+    tags: ["omniscience", "incomprehensibility of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 7, verse_end: nil,
+    tags: ["spirit of god", "omniscience", "presence of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 10, verse_end: nil,
+    tags: ["sovereignty", "presence of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 12, verse_end: nil,
+    tags: ["omniscience", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 13, verse_end: nil,
+    tags: ["creation", "image of god", "sovereignty"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 14, verse_end: nil,
+    tags: ["creation", "image of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 16, verse_end: nil,
+    tags: ["sovereignty", "image of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 17, verse_end: 18,
+    tags: ["omniscience", "incomprehensibility of god"]
+  },
+  {
+    book: "Psalms", chapter: 139, verse_start: 23, verse_end: 24,
+    tags: ["omniscience", "sin", "conscience", "holiness"]
+  },
+  {
+    book: "Psalms", chapter: 148, verse_start: 2, verse_end: nil,
+    tags: ["angels", "worship"]
+  },
+  {
+    book: "Psalms", chapter: 148, verse_start: 5, verse_end: nil,
+    tags: ["angels", "creation", "sovereignty"]
+  },
+
+  # Job
+  {
+    book: "Job", chapter: 1, verse_start: 6, verse_end: nil,
+    tags: ["satan", "accuser", "adversary"]
+  },
+  {
+    book: "Job", chapter: 1, verse_start: 7, verse_end: nil,
+    tags: ["satan", "adversary"]
+  },
+  {
+    book: "Job", chapter: 2, verse_start: 2, verse_end: nil,
+    tags: ["satan", "adversary"]
+  },
+  {
+    book: "Job", chapter: 26, verse_start: 13, verse_end: nil,
+    tags: ["satan", "serpent", "eschatology"]
+  },
+  {
+    book: "Job", chapter: 26, verse_start: 14, verse_end: nil,
+    tags: ["incomprehensibility of god", "spirit of god", "sovereignty"]
+  },
+  {
+    book: "Job", chapter: 41, verse_start: 33, verse_end: 34,
+    tags: ["satan", "leviathan", "wickedness"]
+  },
+  {
+    book: "Job", chapter: 42, verse_start: 2, verse_end: nil,
+    tags: ["sovereignty", "omnipotence"]
+  },
+  {
+    book: "Job", chapter: 41, verse_start: 33, verse_end: 34,
+    tags: ["leviathan", "pride", "satan"]
+  },
+  {
+    book: "Job", chapter: 42, verse_start: 2, verse_end: nil,
+    tags: ["omnipotence", "sovereignty"]
   },
 
   # 2 Samuel
   {
     book: "2 Samuel", chapter: 7, verse_start: 12, verse_end: 14,
-    tags: ["Davidic Covenant", "Messianic promise", "covenant", "throne", "steadfast love"]
+    tags: ["davidic covenant", "messianic promise", "covenant", "throne", "steadfast love"]
   },
 
   # 1 Kings
@@ -658,7 +1190,7 @@ verse_tag_data = [
   # Acts
   {
     book: "Acts", chapter: 3, verse_start: 22, verse_end: nil,
-    tags: ["prophet", "Messianic promise"]
+    tags: ["prophet", "messianic promise"]
   },
 
   # Romans
@@ -668,7 +1200,7 @@ verse_tag_data = [
   },
   {
     book: "Romans", chapter: 2, verse_start: 5, verse_end: nil,
-    tags: ["wrath", "Day of Wrath", "judgment", "end of days"]
+    tags: ["wrath", "day of wrath", "judgment", "end of days"]
   },
   {
     book: "Romans", chapter: 2, verse_start: 6, verse_end: nil,
