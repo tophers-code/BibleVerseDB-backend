@@ -829,6 +829,7 @@ tags = [
   { name: "day of wrath",      description: "The specific eschatological event of God's final judgment and outpouring of wrath" },
   { name: "dominion",          description: "Humanity's God-given authority over creation" },
   { name: "end of days",       description: "General references to the last days, end times, or eschatological future" },
+  { name: "eschatology",       description: "Passages addressing the final events of history — judgment, resurrection, the defeat of evil, and the coming of God's eternal kingdom" },
   { name: "eternal life",      description: "The gift of everlasting life granted to those who are justified by faith" },
   { name: "faith",             description: "Trust and belief directed toward God or Christ as the instrument of salvation" },
   { name: "faithfulness",      description: "God's unwavering reliability to his promises and covenant" },
