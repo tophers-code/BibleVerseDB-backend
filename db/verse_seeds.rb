@@ -723,7 +723,7 @@ psalms_verses = [
 job_verses = [
   {
     chapter: 1, verse_start: 6, verse_end: nil,
-    notes: 'Red underline — Satan appears among the sons of God before the LORD. Footnote: "Hebrew the Accuser or the Adversary; so throughout chapters 1–2"',
+    notes: 'Red underline — Satan appears among the sons of God before the LORD. Footnote: "Hebrew the Accuser or the Adversary; so throughout chapters 1-2"',
     categories: [
       { name: "Demonology", notes: "Satan's access to God's presence as the Accuser/Adversary — his Hebrew name reveals his role" }
     ]
@@ -1050,44 +1050,44 @@ puts "Additional verse seeding complete (#{Verse.count} total verses, #{VerseCat
 
 verse_references = [
   {
-    verse:            { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 },
-    referenced_verse: { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil }
+    verse:            { book: "Acts",        chapter: 3,  verse_start: 22, verse_end: nil },
+    referenced_verse: { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19 }
   },
   {
-    verse:            { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8 },
-    referenced_verse: { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 }
+    verse:            { book: "Judges",  chapter: 19, verse_start: 22, verse_end: 23 },
+    referenced_verse: { book: "Genesis", chapter: 19, verse_start: 4,  verse_end: 8 }
   },
   {
-    verse:            { book: "Genesis", chapter: 3, verse_start: 1, verse_end: nil },
-    referenced_verse: { book: "Job",     chapter: 26, verse_start: 13, verse_end: nil }
+    verse:            { book: "Job",     chapter: 26, verse_start: 13, verse_end: nil },
+    referenced_verse: { book: "Genesis", chapter: 3,  verse_start: 1,  verse_end: nil }
   },
   {
-    verse:            { book: "Psalms", chapter: 53, verse_start: 3, verse_end: nil },
-    referenced_verse: { book: "Romans", chapter: 3,  verse_start: 10, verse_end: nil }
+    verse:            { book: "Romans", chapter: 3,  verse_start: 10, verse_end: nil },
+    referenced_verse: { book: "Psalms", chapter: 53, verse_start: 3,  verse_end: nil }
   },
   {
     verse:            { book: "Psalms", chapter: 90, verse_start: 2, verse_end: nil },
     referenced_verse: { book: "Psalms", chapter: 90, verse_start: 4, verse_end: nil }
   },
   {
-    verse:            { book: "Exodus", chapter: 34, verse_start: 6, verse_end: 7 },
-    referenced_verse: { book: "Psalms", chapter: 103, verse_start: 8, verse_end: nil }
+    verse:            { book: "Psalms", chapter: 103, verse_start: 8,  verse_end: nil },
+    referenced_verse: { book: "Exodus", chapter: 34,  verse_start: 6,  verse_end: 7 }
   },
   {
     verse:            { book: "Psalms", chapter: 103, verse_start: 11, verse_end: nil },
     referenced_verse: { book: "Psalms", chapter: 103, verse_start: 12, verse_end: nil }
   },
   {
-    verse:            { book: "Psalms",  chapter: 110, verse_start: 1, verse_end: nil },
-    referenced_verse: { book: "Matthew", chapter: 22,  verse_start: 44, verse_end: nil }
+    verse:            { book: "Matthew", chapter: 22, verse_start: 44, verse_end: nil },
+    referenced_verse: { book: "Psalms",  chapter: 110, verse_start: 1,  verse_end: nil }
   },
   {
-    verse:            { book: "Isaiah",        chapter: 25, verse_start: 7, verse_end: 8 },
-    referenced_verse: { book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil }
+    verse:            { book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil },
+    referenced_verse: { book: "Isaiah",        chapter: 25, verse_start: 7,  verse_end: 8 }
   },
   {
-    verse:            { book: "Isaiah",  chapter: 53, verse_start: 5, verse_end: nil },
-    referenced_verse: { book: "1 Peter", chapter: 2,  verse_start: 24, verse_end: nil }
+    verse:            { book: "1 Peter", chapter: 2,  verse_start: 24, verse_end: nil },
+    referenced_verse: { book: "Isaiah",  chapter: 53, verse_start: 5,  verse_end: nil }
   },
 ]
 
@@ -1121,7 +1121,6 @@ puts "Verse references seeded (#{VerseReference.count} total)"
 # Tags & Verse Tags (run after all verses exist)
 # ------------------------------------------------------------
 
-# Seed tags
 tags = [
   { name: "atonement",         description: "Passages referencing the covering or removal of sin through sacrifice or Christ's work" },
   { name: "consecration",      description: "Being set apart as holy unto the LORD" },
@@ -1132,7 +1131,6 @@ tags = [
   { name: "day of wrath",      description: "The specific eschatological event of God's final judgment and outpouring of wrath" },
   { name: "dominion",          description: "Humanity's God-given authority over creation" },
   { name: "end of days",       description: "General references to the last days, end times, or eschatological future" },
-  { name: "eschatology",       description: "Passages addressing the final events of history — judgment, resurrection, the defeat of evil, and the coming of God's eternal kingdom" },
   { name: "eternal life",      description: "The gift of everlasting life granted to those who are justified by faith" },
   { name: "faith",             description: "Trust and belief directed toward God or Christ as the instrument of salvation" },
   { name: "faithfulness",      description: "God's unwavering reliability to his promises and covenant" },
@@ -1170,43 +1168,41 @@ tags = [
   { name: "truthfulness",      description: "God's absolute honesty — he cannot lie or be deceived" },
   { name: "wickedness",        description: "Extreme moral evil and depravity" },
   { name: "wrath",             description: "God's righteous anger and opposition toward sin" },
-  { name: "accuser",          description: "Satan's role as the one who brings charges against God's people before God" },
-  { name: "adversary",        description: "Satan as the active opponent and enemy of God and humanity" },
-  { name: "satan",            description: "References to Satan — the Accuser, Adversary, and enemy of God" },
-  { name: "serpent",          description: "The serpent as a symbol of Satan — from Genesis 3 through Revelation" },
+  { name: "accuser",           description: "Satan's role as the one who brings charges against God's people before God" },
+  { name: "adversary",         description: "Satan as the active opponent and enemy of God and humanity" },
+  { name: "satan",             description: "References to Satan — the Accuser, Adversary, and enemy of God" },
+  { name: "serpent",           description: "The serpent as a symbol of Satan — from Genesis 3 through Revelation" },
   { name: "incomprehensibility of god", description: "God's nature and power are beyond full human understanding — we perceive only the faintest outskirts" },
-  { name: "spirit of god",    description: "References to the Spirit/breath of God at work in creation or revelation" },
-  { name: "leviathan",        description: "The fearsome creature of chaos in Job — used symbolically of demonic/satanic power and pride" },
-  { name: "omnipotence",      description: "God's all-encompassing power — nothing can thwart his purposes" },
-  { name: "pride",            description: "The root sin of self-exaltation; associated with Satan and his domain" },
-  { name: "purity",           description: "The absolute moral and spiritual purity of God and his word" },
-  { name: "word of god",      description: "References to Scripture or God's spoken word as pure, authoritative, and trustworthy" },
-  { name: "presence of god",  description: "The nearness and constant availability of God to his people" },
-  { name: "beauty of god",    description: "The transcendent loveliness and splendor of God's own nature and presence" },
-  { name: "omniscience",      description: "God's all-knowing nature — he sees and knows all things, including every person on earth" },
-  { name: "original sin",     description: "The inherited sinful nature of humanity present from conception, traced to the Fall" },
-  { name: "depravity",        description: "The total corruption of human nature — no one does good apart from God; universal sinfulness" },
-  { name: "eternality",       description: "God's existence from everlasting to everlasting — unbound by time, without beginning or end" },
-  { name: "goodness",         description: "God's inherent moral goodness and benevolence toward his creation" },
-  { name: "trinity",          description: "Passages revealing or implying the triune nature of God — Father, Son, and Holy Spirit as distinct persons" },
-  { name: "christology",      description: "Passages pointing to Christ's identity, nature, pre-existence, or work" },
-  { name: "angels",           description: "References to angels — their nature, role, worship, and created status" },
-  { name: "worship",          description: "The act of ascribing worth and praise to God, by humanity or angelic beings" },
-  { name: "fear of the lord", description: "Reverent awe and submission before God — the beginning of wisdom and knowledge" },
-  { name: "wisdom",           description: "Godly wisdom — practical and moral insight rooted in the fear of the LORD" },
-  { name: "knowledge",        description: "True knowledge that begins with the fear of the LORD" },
-  { name: "trust",            description: "Wholehearted reliance on God rather than self — the posture of faith in daily life" },
-  { name: "community",        description: "The gathered people of God in relationship with one another" },
-  { name: "discipleship",     description: "The mutual sharpening and building up of believers through relationship and counsel" },
-  { name: "church",           description: "The body of Christ — the gathered community of believers" },
-  { name: "vanity",           description: "The emptiness and futility of life lived apart from God — a key theme of Ecclesiastes" },
-  { name: "fallen world",     description: "The brokenness of creation after the Fall — the pervasive effects of sin on human existence" },
-  { name: "human condition",  description: "The universal state of humanity — its limitations, mortality, and need for God" },
-  { name: "mortality",        description: "The finite, dust-to-dust nature of human life — all humanity returns to the ground" },
+  { name: "spirit of god",     description: "References to the Spirit/breath of God at work in creation or revelation" },
+  { name: "leviathan",         description: "The fearsome creature of chaos in Job — used symbolically of demonic/satanic power and pride" },
+  { name: "omnipotence",       description: "God's all-encompassing power — nothing can thwart his purposes" },
+  { name: "pride",             description: "The root sin of self-exaltation; associated with Satan and his domain" },
+  { name: "purity",            description: "The absolute moral and spiritual purity of God and his word" },
+  { name: "word of god",       description: "References to Scripture or God's spoken word as pure, authoritative, and trustworthy" },
+  { name: "presence of god",   description: "The nearness and constant availability of God to his people" },
+  { name: "beauty of god",     description: "The transcendent loveliness and splendor of God's own nature and presence" },
+  { name: "omniscience",       description: "God's all-knowing nature — he sees and knows all things, including every person on earth" },
+  { name: "original sin",      description: "The inherited sinful nature of humanity present from conception, traced to the Fall" },
+  { name: "depravity",         description: "The total corruption of human nature — no one does good apart from God; universal sinfulness" },
+  { name: "eternality",        description: "God's existence from everlasting to everlasting — unbound by time, without beginning or end" },
+  { name: "goodness",          description: "God's inherent moral goodness and benevolence toward his creation" },
+  { name: "trinity",           description: "Passages revealing or implying the triune nature of God — Father, Son, and Holy Spirit as distinct persons" },
+  { name: "angels",            description: "References to angels — their nature, role, worship, and created status" },
+  { name: "worship",           description: "The act of ascribing worth and praise to God, by humanity or angelic beings" },
+  { name: "fear of the lord",  description: "Reverent awe and submission before God — the beginning of wisdom and knowledge" },
+  { name: "wisdom",            description: "Godly wisdom — practical and moral insight rooted in the fear of the LORD" },
+  { name: "knowledge",         description: "True knowledge that begins with the fear of the LORD" },
+  { name: "trust",             description: "Wholehearted reliance on God rather than self — the posture of faith in daily life" },
+  { name: "community",         description: "The gathered people of God in relationship with one another" },
+  { name: "discipleship",      description: "The mutual sharpening and building up of believers through relationship and counsel" },
+  { name: "church",            description: "The body of Christ — the gathered community of believers" },
+  { name: "vanity",            description: "The emptiness and futility of life lived apart from God — a key theme of Ecclesiastes" },
+  { name: "fallen world",      description: "The brokenness of creation after the Fall — the pervasive effects of sin on human existence" },
+  { name: "human condition",   description: "The universal state of humanity — its limitations, mortality, and need for God" },
+  { name: "mortality",         description: "The finite, dust-to-dust nature of human life — all humanity returns to the ground" },
   { name: "sufficiency of scripture", description: "The completeness and adequacy of God's word — nothing needs to be added to what God has already given" },
-  { name: "missiology",   description: "God's sending purpose — the mission of God to the world through his people" },
-  { name: "lucifer",      description: "The name given to Satan before his fall — from the Latin Vulgate translation of the Hebrew helel (Day Star/shining one)" },
-  { name: "separation",   description: "The relational rupture between humanity and God caused by sin — the barrier that salvation must bridge" },
+  { name: "lucifer",           description: "The name given to Satan before his fall — from the Latin Vulgate translation of the Hebrew helel (Day Star/shining one)" },
+  { name: "separation",        description: "The relational rupture between humanity and God caused by sin — the barrier that salvation must bridge" },
 ]
 
 puts "Seeding tags..."
@@ -1217,516 +1213,161 @@ tags.each do |tag_data|
 end
 puts "Created #{Tag.count} tags"
 
-# Verse tag associations
-# Format: { book:, chapter:, verse_start:, verse_end:, tags: [] }
 verse_tag_data = [
   # Isaiah
-  {
-    book: "Isaiah", chapter: 6, verse_start: 3, verse_end: nil,
-    tags: ["holiness", "glory of god", "worship", "trinity"]
-  },
-  {
-    book: "Isaiah", chapter: 6, verse_start: 5, verse_end: nil,
-    tags: ["christology", "messianic promise", "throne"]
-  },
-  {
-    book: "Isaiah", chapter: 6, verse_start: 8, verse_end: nil,
-    tags: ["trinity", "missiology", "spirit of god", "christology"]
-  },
-  {
-    book: "Isaiah", chapter: 14, verse_start: 12, verse_end: nil,
-    tags: ["satan", "adversary", "fallen world", "lucifer"]
-  },
-  {
-    book: "Isaiah", chapter: 14, verse_start: 13, verse_end: 15,
-    tags: ["satan", "pride", "wickedness", "judgment"]
-  },
-  {
-    book: "Isaiah", chapter: 25, verse_start: 1, verse_end: nil,
-    tags: ["faithfulness", "sovereignty", "goodness"]
-  },
-  {
-    book: "Isaiah", chapter: 25, verse_start: 4, verse_end: nil,
-    tags: ["sovereignty", "mercy", "steadfast love"]
-  },
-  {
-    book: "Isaiah", chapter: 25, verse_start: 6, verse_end: nil,
-    tags: ["end of days", "sovereignty", "goodness"]
-  },
-  {
-    book: "Isaiah", chapter: 25, verse_start: 7, verse_end: 8,
-    tags: ["christology", "messianic promise", "end of days", "redemption"]
-  },
-  {
-    book: "Isaiah", chapter: 26, verse_start: 3, verse_end: nil,
-    tags: ["sovereignty", "trust", "presence of god"]
-  },
-  {
-    book: "Isaiah", chapter: 26, verse_start: 4, verse_end: nil,
-    tags: ["trust", "sovereignty", "immutability", "sanctification"]
-  },
-  {
-    book: "Isaiah", chapter: 43, verse_start: 7, verse_end: nil,
-    tags: ["glory of god", "creation", "image of god", "sovereignty"]
-  },
-  {
-    book: "Isaiah", chapter: 43, verse_start: 11, verse_end: nil,
-    tags: ["christology", "monotheism", "redemption", "sovereignty"]
-  },
-  {
-    book: "Isaiah", chapter: 45, verse_start: 5, verse_end: nil,
-    tags: ["monotheism", "sovereignty", "i am"]
-  },
-  {
-    book: "Isaiah", chapter: 53, verse_start: 5, verse_end: nil,
-    tags: ["christology", "atonement", "redemption", "messianic promise"]
-  },
-  {
-    book: "Isaiah", chapter: 53, verse_start: 6, verse_end: nil,
-    tags: ["atonement", "sin", "redemption", "depravity"]
-  },
-  {
-    book: "Isaiah", chapter: 59, verse_start: 2, verse_end: nil,
-    tags: ["sin", "separation", "fallen world", "human condition"]
-  },
+  { book: "Isaiah", chapter: 6, verse_start: 3, verse_end: nil, tags: ["holiness", "glory of god", "worship", "trinity"] },
+  { book: "Isaiah", chapter: 6, verse_start: 5, verse_end: nil, tags: ["messianic promise", "throne"] },
+  { book: "Isaiah", chapter: 6, verse_start: 8, verse_end: nil, tags: ["trinity", "spirit of god"] },
+  { book: "Isaiah", chapter: 14, verse_start: 12, verse_end: nil, tags: ["satan", "adversary", "fallen world", "lucifer"] },
+  { book: "Isaiah", chapter: 14, verse_start: 13, verse_end: 15, tags: ["satan", "pride", "wickedness", "judgment"] },
+  { book: "Isaiah", chapter: 25, verse_start: 1, verse_end: nil, tags: ["faithfulness", "sovereignty", "goodness"] },
+  { book: "Isaiah", chapter: 25, verse_start: 4, verse_end: nil, tags: ["sovereignty", "mercy", "steadfast love"] },
+  { book: "Isaiah", chapter: 25, verse_start: 6, verse_end: nil, tags: ["end of days", "sovereignty", "goodness"] },
+  { book: "Isaiah", chapter: 25, verse_start: 7, verse_end: 8, tags: ["messianic promise", "end of days", "redemption"] },
+  { book: "Isaiah", chapter: 26, verse_start: 3, verse_end: nil, tags: ["sovereignty", "trust", "presence of god"] },
+  { book: "Isaiah", chapter: 26, verse_start: 4, verse_end: nil, tags: ["trust", "sovereignty", "immutability", "sanctification"] },
+  { book: "Isaiah", chapter: 43, verse_start: 7, verse_end: nil, tags: ["glory of god", "creation", "image of god", "sovereignty"] },
+  { book: "Isaiah", chapter: 43, verse_start: 11, verse_end: nil, tags: ["monotheism", "redemption", "sovereignty"] },
+  { book: "Isaiah", chapter: 45, verse_start: 5, verse_end: nil, tags: ["monotheism", "sovereignty", "i am"] },
+  { book: "Isaiah", chapter: 53, verse_start: 5, verse_end: nil, tags: ["atonement", "redemption", "messianic promise"] },
+  { book: "Isaiah", chapter: 53, verse_start: 6, verse_end: nil, tags: ["atonement", "sin", "redemption", "depravity"] },
+  { book: "Isaiah", chapter: 59, verse_start: 2, verse_end: nil, tags: ["sin", "separation", "fallen world", "human condition"] },
 
   # Ecclesiastes
-  {
-    book: "Ecclesiastes", chapter: 1, verse_start: 2, verse_end: nil,
-    tags: ["vanity", "fallen world", "human condition"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 2, verse_start: 24, verse_end: 25,
-    tags: ["human condition", "sovereignty", "goodness"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 3, verse_start: 14, verse_end: nil,
-    tags: ["sovereignty", "eternality", "fear of the lord", "immutability"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 3, verse_start: 18, verse_end: nil,
-    tags: ["human condition", "sin", "pride", "fallen world"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 3, verse_start: 20, verse_end: nil,
-    tags: ["human condition", "mortality", "creation"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 4, verse_start: 9, verse_end: 12,
-    tags: ["community", "church", "discipleship", "sovereignty"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 12, verse_start: 12, verse_end: nil,
-    tags: ["word of god", "sufficiency of scripture"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 12, verse_start: 13, verse_end: nil,
-    tags: ["fear of the lord", "sanctification", "human condition", "holiness"]
-  },
-  {
-    book: "Ecclesiastes", chapter: 12, verse_start: 14, verse_end: nil,
-    tags: ["judgment", "end of days", "omniscience", "sovereignty"]
-  },
+  { book: "Ecclesiastes", chapter: 1, verse_start: 2, verse_end: nil, tags: ["vanity", "fallen world", "human condition"] },
+  { book: "Ecclesiastes", chapter: 2, verse_start: 24, verse_end: 25, tags: ["human condition", "sovereignty", "goodness"] },
+  { book: "Ecclesiastes", chapter: 3, verse_start: 14, verse_end: nil, tags: ["sovereignty", "eternality", "fear of the lord", "immutability"] },
+  { book: "Ecclesiastes", chapter: 3, verse_start: 18, verse_end: nil, tags: ["human condition", "sin", "pride", "fallen world"] },
+  { book: "Ecclesiastes", chapter: 3, verse_start: 20, verse_end: nil, tags: ["human condition", "mortality", "creation"] },
+  { book: "Ecclesiastes", chapter: 4, verse_start: 9, verse_end: 12, tags: ["community", "church", "discipleship", "sovereignty"] },
+  { book: "Ecclesiastes", chapter: 12, verse_start: 12, verse_end: nil, tags: ["word of god", "sufficiency of scripture"] },
+  { book: "Ecclesiastes", chapter: 12, verse_start: 13, verse_end: nil, tags: ["fear of the lord", "sanctification", "human condition", "holiness"] },
+  { book: "Ecclesiastes", chapter: 12, verse_start: 14, verse_end: nil, tags: ["judgment", "end of days", "omniscience", "sovereignty"] },
 
   # Proverbs
-  {
-    book: "Proverbs", chapter: 1, verse_start: 7, verse_end: nil,
-    tags: ["fear of the lord", "wisdom", "knowledge"]
-  },
-  {
-    book: "Proverbs", chapter: 3, verse_start: 5, verse_end: 6,
-    tags: ["trust", "sovereignty", "wisdom", "sanctification"]
-  },
-  {
-    book: "Proverbs", chapter: 27, verse_start: 17, verse_end: nil,
-    tags: ["community", "discipleship", "church"]
-  },
-  {
-    book: "Proverbs", chapter: 30, verse_start: 5, verse_end: nil,
-    tags: ["word of god", "truthfulness", "purity", "sovereignty"]
-  },
+  { book: "Proverbs", chapter: 1, verse_start: 7, verse_end: nil, tags: ["fear of the lord", "wisdom", "knowledge"] },
+  { book: "Proverbs", chapter: 3, verse_start: 5, verse_end: 6, tags: ["trust", "sovereignty", "wisdom", "sanctification"] },
+  { book: "Proverbs", chapter: 27, verse_start: 17, verse_end: nil, tags: ["community", "discipleship", "church"] },
+  { book: "Proverbs", chapter: 30, verse_start: 5, verse_end: nil, tags: ["word of god", "truthfulness", "purity", "sovereignty"] },
 
   # Matthew
-  {
-    book: "Matthew", chapter: 22, verse_start: 44, verse_end: nil,
-    tags: ["christology", "trinity", "messianic promise", "throne"]
-  },
+  { book: "Matthew", chapter: 22, verse_start: 44, verse_end: nil, tags: ["trinity", "messianic promise", "throne"] },
 
   # Genesis
-  {
-    book: "Genesis", chapter: 1, verse_start: 1, verse_end: nil,
-    tags: ["creation"]
-  },
-  {
-    book: "Genesis", chapter: 1, verse_start: 25, verse_end: 27,
-    tags: ["image of god"]
-  },
-  {
-    book: "Genesis", chapter: 1, verse_start: 28, verse_end: 30,
-    tags: ["dominion"]
-  },
-  {
-    book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8,
-    tags: ["sin", "wickedness", "sodom"]
-  },
+  { book: "Genesis", chapter: 1, verse_start: 1, verse_end: nil, tags: ["creation"] },
+  { book: "Genesis", chapter: 1, verse_start: 25, verse_end: 27, tags: ["image of god"] },
+  { book: "Genesis", chapter: 1, verse_start: 28, verse_end: 30, tags: ["dominion"] },
+  { book: "Genesis", chapter: 19, verse_start: 4, verse_end: 8, tags: ["sin", "wickedness", "sodom"] },
 
   # Exodus
-  {
-    book: "Exodus", chapter: 3, verse_start: 14, verse_end: nil,
-    tags: ["i am", "sovereignty"]
-  },
-  {
-    book: "Exodus", chapter: 20, verse_start: 5, verse_end: nil,
-    tags: ["jealousy"]
-  },
-  {
-    book: "Exodus", chapter: 29, verse_start: 36, verse_end: 37,
-    tags: ["atonement"]
-  },
-  {
-    book: "Exodus", chapter: 30, verse_start: 10, verse_end: nil,
-    tags: ["atonement"]
-  },
-  {
-    book: "Exodus", chapter: 30, verse_start: 15, verse_end: 16,
-    tags: ["atonement", "redemption"]
-  },
-  {
-    book: "Exodus", chapter: 34, verse_start: 6, verse_end: 7,
-    tags: ["mercy", "grace", "slow to anger", "faithfulness", "forgiveness", "steadfast love"]
-  },
-  {
-    book: "Exodus", chapter: 34, verse_start: 35, verse_end: nil,
-    tags: ["glory of god", "radiance"]
-  },
+  { book: "Exodus", chapter: 3, verse_start: 14, verse_end: nil, tags: ["i am", "sovereignty"] },
+  { book: "Exodus", chapter: 20, verse_start: 5, verse_end: nil, tags: ["jealousy"] },
+  { book: "Exodus", chapter: 29, verse_start: 36, verse_end: 37, tags: ["atonement"] },
+  { book: "Exodus", chapter: 30, verse_start: 10, verse_end: nil, tags: ["atonement"] },
+  { book: "Exodus", chapter: 30, verse_start: 15, verse_end: 16, tags: ["atonement", "redemption"] },
+  { book: "Exodus", chapter: 34, verse_start: 6, verse_end: 7, tags: ["mercy", "grace", "slow to anger", "faithfulness", "forgiveness", "steadfast love"] },
+  { book: "Exodus", chapter: 34, verse_start: 35, verse_end: nil, tags: ["glory of god", "radiance"] },
 
   # Leviticus
-  {
-    book: "Leviticus", chapter: 11, verse_start: 44, verse_end: 45,
-    tags: ["holiness", "consecration", "sanctification"]
-  },
+  { book: "Leviticus", chapter: 11, verse_start: 44, verse_end: 45, tags: ["holiness", "consecration", "sanctification"] },
 
   # Numbers
-  {
-    book: "Numbers", chapter: 23, verse_start: 19, verse_end: nil,
-    tags: ["immutability", "truthfulness", "sovereignty"]
-  },
+  { book: "Numbers", chapter: 23, verse_start: 19, verse_end: nil, tags: ["immutability", "truthfulness", "sovereignty"] },
 
   # Deuteronomy
-  {
-    book: "Deuteronomy", chapter: 6, verse_start: 4, verse_end: 5,
-    tags: ["shema", "monotheism"]
-  },
-  {
-    book: "Deuteronomy", chapter: 6, verse_start: 5, verse_end: 9,
-    tags: ["sanctification"]
-  },
-  {
-    book: "Deuteronomy", chapter: 10, verse_start: 14, verse_end: nil,
-    tags: ["sovereignty", "creation"]
-  },
-  {
-    book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19,
-    tags: ["prophet", "messianic promise", "covenant"]
-  },
-  {
-    book: "Deuteronomy", chapter: 21, verse_start: 8, verse_end: nil,
-    tags: ["atonement", "redemption"]
-  },
+  { book: "Deuteronomy", chapter: 6, verse_start: 4, verse_end: 5, tags: ["shema", "monotheism"] },
+  { book: "Deuteronomy", chapter: 6, verse_start: 5, verse_end: 9, tags: ["sanctification"] },
+  { book: "Deuteronomy", chapter: 10, verse_start: 14, verse_end: nil, tags: ["sovereignty", "creation"] },
+  { book: "Deuteronomy", chapter: 18, verse_start: 18, verse_end: 19, tags: ["prophet", "messianic promise", "covenant"] },
+  { book: "Deuteronomy", chapter: 21, verse_start: 8, verse_end: nil, tags: ["atonement", "redemption"] },
 
   # Joshua
-  {
-    book: "Joshua", chapter: 24, verse_start: 14, verse_end: nil,
-    tags: ["holiness", "sanctification"]
-  },
-  {
-    book: "Joshua", chapter: 24, verse_start: 15, verse_end: nil,
-    tags: ["sanctification"]
-  },
+  { book: "Joshua", chapter: 24, verse_start: 14, verse_end: nil, tags: ["holiness", "sanctification"] },
+  { book: "Joshua", chapter: 24, verse_start: 15, verse_end: nil, tags: ["sanctification"] },
 
   # Judges
-  {
-    book: "Judges", chapter: 19, verse_start: 22, verse_end: 23,
-    tags: ["sin", "wickedness", "sodom"]
-  },
+  { book: "Judges", chapter: 19, verse_start: 22, verse_end: 23, tags: ["sin", "wickedness", "sodom"] },
 
   # Psalms
-  {
-    book: "Psalms", chapter: 12, verse_start: 6, verse_end: nil,
-    tags: ["purity", "truthfulness", "word of god"]
-  },
-  {
-    book: "Psalms", chapter: 16, verse_start: 8, verse_end: nil,
-    tags: ["sovereignty", "presence of god"]
-  },
-  {
-    book: "Psalms", chapter: 19, verse_start: 1, verse_end: 2,
-    tags: ["glory of god", "creation", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 19, verse_start: 7, verse_end: 11,
-    tags: ["word of god", "purity", "truthfulness"]
-  },
-  {
-    book: "Psalms", chapter: 24, verse_start: 8, verse_end: nil,
-    tags: ["omnipotence", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 27, verse_start: 4, verse_end: nil,
-    tags: ["beauty of god", "presence of god"]
-  },
-  {
-    book: "Psalms", chapter: 33, verse_start: 13, verse_end: 14,
-    tags: ["omniscience", "sovereignty", "throne"]
-  },
-  {
-    book: "Psalms", chapter: 51, verse_start: 5, verse_end: nil,
-    tags: ["original sin", "sin", "image of god"]
-  },
-  {
-    book: "Psalms", chapter: 53, verse_start: 3, verse_end: nil,
-    tags: ["sin", "depravity"]
-  },
-  {
-    book: "Psalms", chapter: 90, verse_start: 2, verse_end: nil,
-    tags: ["eternality", "sovereignty", "i am"]
-  },
-  {
-    book: "Psalms", chapter: 90, verse_start: 4, verse_end: nil,
-    tags: ["eternality", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 102, verse_start: 26, verse_end: 27,
-    tags: ["eternality", "immutability", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 103, verse_start: 8, verse_end: nil,
-    tags: ["mercy", "grace", "slow to anger", "steadfast love", "faithfulness"]
-  },
-  {
-    book: "Psalms", chapter: 103, verse_start: 11, verse_end: nil,
-    tags: ["steadfast love", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 103, verse_start: 12, verse_end: nil,
-    tags: ["forgiveness", "redemption", "sin"]
-  },
-  {
-    book: "Psalms", chapter: 106, verse_start: 1, verse_end: nil,
-    tags: ["steadfast love", "goodness", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 110, verse_start: 1, verse_end: nil,
-    tags: ["messianic promise", "trinity", "throne", "christology"]
-  },
-  {
-    book: "Psalms", chapter: 115, verse_start: 3, verse_end: nil,
-    tags: ["sovereignty", "omnipotence"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 1, verse_end: nil,
-    tags: ["omniscience", "presence of god", "image of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 4, verse_end: nil,
-    tags: ["omniscience"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 6, verse_end: nil,
-    tags: ["omniscience", "incomprehensibility of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 7, verse_end: nil,
-    tags: ["spirit of god", "omniscience", "presence of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 10, verse_end: nil,
-    tags: ["sovereignty", "presence of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 12, verse_end: nil,
-    tags: ["omniscience", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 13, verse_end: nil,
-    tags: ["creation", "image of god", "sovereignty"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 14, verse_end: nil,
-    tags: ["creation", "image of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 16, verse_end: nil,
-    tags: ["sovereignty", "image of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 17, verse_end: 18,
-    tags: ["omniscience", "incomprehensibility of god"]
-  },
-  {
-    book: "Psalms", chapter: 139, verse_start: 23, verse_end: 24,
-    tags: ["omniscience", "sin", "conscience", "holiness"]
-  },
-  {
-    book: "Psalms", chapter: 148, verse_start: 2, verse_end: nil,
-    tags: ["angels", "worship"]
-  },
-  {
-    book: "Psalms", chapter: 148, verse_start: 5, verse_end: nil,
-    tags: ["angels", "creation", "sovereignty"]
-  },
+  { book: "Psalms", chapter: 12, verse_start: 6, verse_end: nil, tags: ["purity", "truthfulness", "word of god"] },
+  { book: "Psalms", chapter: 16, verse_start: 8, verse_end: nil, tags: ["sovereignty", "presence of god"] },
+  { book: "Psalms", chapter: 19, verse_start: 1, verse_end: 2, tags: ["glory of god", "creation", "sovereignty"] },
+  { book: "Psalms", chapter: 19, verse_start: 7, verse_end: 11, tags: ["word of god", "purity", "truthfulness"] },
+  { book: "Psalms", chapter: 24, verse_start: 8, verse_end: nil, tags: ["omnipotence", "sovereignty"] },
+  { book: "Psalms", chapter: 27, verse_start: 4, verse_end: nil, tags: ["beauty of god", "presence of god"] },
+  { book: "Psalms", chapter: 33, verse_start: 13, verse_end: 14, tags: ["omniscience", "sovereignty", "throne"] },
+  { book: "Psalms", chapter: 51, verse_start: 5, verse_end: nil, tags: ["original sin", "sin", "image of god"] },
+  { book: "Psalms", chapter: 53, verse_start: 3, verse_end: nil, tags: ["sin", "depravity"] },
+  { book: "Psalms", chapter: 90, verse_start: 2, verse_end: nil, tags: ["eternality", "sovereignty", "i am"] },
+  { book: "Psalms", chapter: 90, verse_start: 4, verse_end: nil, tags: ["eternality", "sovereignty"] },
+  { book: "Psalms", chapter: 102, verse_start: 26, verse_end: 27, tags: ["eternality", "immutability", "sovereignty"] },
+  { book: "Psalms", chapter: 103, verse_start: 8, verse_end: nil, tags: ["mercy", "grace", "slow to anger", "steadfast love", "faithfulness"] },
+  { book: "Psalms", chapter: 103, verse_start: 11, verse_end: nil, tags: ["steadfast love", "sovereignty"] },
+  { book: "Psalms", chapter: 103, verse_start: 12, verse_end: nil, tags: ["forgiveness", "redemption", "sin"] },
+  { book: "Psalms", chapter: 106, verse_start: 1, verse_end: nil, tags: ["steadfast love", "goodness", "sovereignty"] },
+  { book: "Psalms", chapter: 110, verse_start: 1, verse_end: nil, tags: ["messianic promise", "trinity", "throne"] },
+  { book: "Psalms", chapter: 115, verse_start: 3, verse_end: nil, tags: ["sovereignty", "omnipotence"] },
+  { book: "Psalms", chapter: 139, verse_start: 1, verse_end: nil, tags: ["omniscience", "presence of god", "image of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 4, verse_end: nil, tags: ["omniscience"] },
+  { book: "Psalms", chapter: 139, verse_start: 6, verse_end: nil, tags: ["omniscience", "incomprehensibility of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 7, verse_end: nil, tags: ["spirit of god", "omniscience", "presence of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 10, verse_end: nil, tags: ["sovereignty", "presence of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 12, verse_end: nil, tags: ["omniscience", "sovereignty"] },
+  { book: "Psalms", chapter: 139, verse_start: 13, verse_end: nil, tags: ["creation", "image of god", "sovereignty"] },
+  { book: "Psalms", chapter: 139, verse_start: 14, verse_end: nil, tags: ["creation", "image of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 16, verse_end: nil, tags: ["sovereignty", "image of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 17, verse_end: 18, tags: ["omniscience", "incomprehensibility of god"] },
+  { book: "Psalms", chapter: 139, verse_start: 23, verse_end: 24, tags: ["omniscience", "sin", "conscience", "holiness"] },
+  { book: "Psalms", chapter: 148, verse_start: 2, verse_end: nil, tags: ["angels", "worship"] },
+  { book: "Psalms", chapter: 148, verse_start: 5, verse_end: nil, tags: ["angels", "creation", "sovereignty"] },
 
   # Job
-  {
-    book: "Job", chapter: 1, verse_start: 6, verse_end: nil,
-    tags: ["satan", "accuser", "adversary"]
-  },
-  {
-    book: "Job", chapter: 1, verse_start: 7, verse_end: nil,
-    tags: ["satan", "adversary"]
-  },
-  {
-    book: "Job", chapter: 2, verse_start: 2, verse_end: nil,
-    tags: ["satan", "adversary"]
-  },
-  {
-    book: "Job", chapter: 26, verse_start: 13, verse_end: nil,
-    tags: ["satan", "serpent", "eschatology"]
-  },
-  {
-    book: "Job", chapter: 26, verse_start: 14, verse_end: nil,
-    tags: ["incomprehensibility of god", "spirit of god", "sovereignty"]
-  },
-  {
-    book: "Job", chapter: 41, verse_start: 33, verse_end: 34,
-    tags: ["satan", "leviathan", "wickedness"]
-  },
-  {
-    book: "Job", chapter: 42, verse_start: 2, verse_end: nil,
-    tags: ["sovereignty", "omnipotence"]
-  },
-  {
-    book: "Job", chapter: 41, verse_start: 33, verse_end: 34,
-    tags: ["leviathan", "pride", "satan"]
-  },
-  {
-    book: "Job", chapter: 42, verse_start: 2, verse_end: nil,
-    tags: ["omnipotence", "sovereignty"]
-  },
+  { book: "Job", chapter: 1, verse_start: 6, verse_end: nil, tags: ["satan", "accuser", "adversary"] },
+  { book: "Job", chapter: 1, verse_start: 7, verse_end: nil, tags: ["satan", "adversary"] },
+  { book: "Job", chapter: 2, verse_start: 2, verse_end: nil, tags: ["satan", "adversary"] },
+  { book: "Job", chapter: 26, verse_start: 13, verse_end: nil, tags: ["satan", "serpent"] },
+  { book: "Job", chapter: 26, verse_start: 14, verse_end: nil, tags: ["incomprehensibility of god", "spirit of god", "sovereignty"] },
+  { book: "Job", chapter: 41, verse_start: 33, verse_end: 34, tags: ["leviathan", "pride", "satan"] },
+  { book: "Job", chapter: 42, verse_start: 2, verse_end: nil, tags: ["omnipotence", "sovereignty"] },
 
   # 2 Samuel
-  {
-    book: "2 Samuel", chapter: 7, verse_start: 12, verse_end: 14,
-    tags: ["davidic covenant", "messianic promise", "covenant", "throne", "steadfast love"]
-  },
+  { book: "2 Samuel", chapter: 7, verse_start: 12, verse_end: 14, tags: ["davidic covenant", "messianic promise", "covenant", "throne", "steadfast love"] },
 
   # 1 Kings
-  {
-    book: "1 Kings", chapter: 8, verse_start: 23, verse_end: nil,
-    tags: ["covenant", "steadfast love", "faithfulness", "mercy", "monotheism", "prayer"]
-  },
+  { book: "1 Kings", chapter: 8, verse_start: 23, verse_end: nil, tags: ["covenant", "steadfast love", "faithfulness", "mercy", "monotheism", "prayer"] },
 
   # 2 Chronicles
-  {
-    book: "2 Chronicles", chapter: 7, verse_start: 14, verse_end: nil,
-    tags: ["prayer", "humility", "seeking", "repentance", "forgiveness"]
-  },
+  { book: "2 Chronicles", chapter: 7, verse_start: 14, verse_end: nil, tags: ["prayer", "humility", "seeking", "repentance", "forgiveness"] },
 
   # Acts
-  {
-    book: "Acts", chapter: 3, verse_start: 22, verse_end: nil,
-    tags: ["prophet", "messianic promise"]
-  },
-  {
-    book: "Acts", chapter: 28, verse_start: 26, verse_end: 27,
-    tags: ["word of god", "missiology", "sufficiency of scripture"]
-  },
+  { book: "Acts", chapter: 3, verse_start: 22, verse_end: nil, tags: ["prophet", "messianic promise"] },
+  { book: "Acts", chapter: 28, verse_start: 26, verse_end: 27, tags: ["word of god", "sufficiency of scripture"] },
 
   # 1 Corinthians
-  {
-    book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil,
-    tags: ["christology", "messianic promise", "end of days", "redemption"]
-  },
+  { book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil, tags: ["messianic promise", "end of days", "redemption"] },
 
   # 1 Peter
-  {
-    book: "1 Peter", chapter: 2, verse_start: 24, verse_end: nil,
-    tags: ["christology", "atonement", "redemption", "messianic promise"]
-  },
+  { book: "1 Peter", chapter: 2, verse_start: 24, verse_end: nil, tags: ["atonement", "redemption", "messianic promise"] },
 
   # Romans
-  {
-    book: "Romans", chapter: 2, verse_start: 4, verse_end: nil,
-    tags: ["repentance", "mercy"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 5, verse_end: nil,
-    tags: ["wrath", "day of wrath", "judgment", "end of days"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 6, verse_end: nil,
-    tags: ["judgment"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 7, verse_end: nil,
-    tags: ["eternal life"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 12, verse_end: nil,
-    tags: ["sin", "judgment"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 14, verse_end: 15,
-    tags: ["natural law", "conscience"]
-  },
-  {
-    book: "Romans", chapter: 2, verse_start: 16, verse_end: nil,
-    tags: ["judgment", "end of days"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 10, verse_end: nil,
-    tags: ["sin"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 19, verse_end: nil,
-    tags: ["sin", "judgment"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 20, verse_end: nil,
-    tags: ["sin", "justification", "righteousness"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 21, verse_end: 22,
-    tags: ["righteousness", "faith"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 22, verse_end: nil,
-    tags: ["faith", "justification"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 22, verse_end: 25,
-    tags: ["faith", "justification", "righteousness"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 24, verse_end: 25,
-    tags: ["redemption", "propitiation", "atonement"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 25, verse_end: 26,
-    tags: ["righteousness", "justification", "atonement"]
-  },
-  {
-    book: "Romans", chapter: 3, verse_start: 30, verse_end: nil,
-    tags: ["monotheism", "justification", "faith"]
-  },
-  {
-    book: "Romans", chapter: 4, verse_start: 2, verse_end: nil,
-    tags: ["justification", "righteousness", "faith"]
-  },
-  {
-    book: "Romans", chapter: 4, verse_start: 5, verse_end: nil,
-    tags: ["justification", "righteousness", "faith"]
-  },
+  { book: "Romans", chapter: 2, verse_start: 4, verse_end: nil, tags: ["repentance", "mercy"] },
+  { book: "Romans", chapter: 2, verse_start: 5, verse_end: nil, tags: ["wrath", "day of wrath", "judgment", "end of days"] },
+  { book: "Romans", chapter: 2, verse_start: 6, verse_end: nil, tags: ["judgment"] },
+  { book: "Romans", chapter: 2, verse_start: 7, verse_end: nil, tags: ["eternal life"] },
+  { book: "Romans", chapter: 2, verse_start: 12, verse_end: nil, tags: ["sin", "judgment"] },
+  { book: "Romans", chapter: 2, verse_start: 14, verse_end: 15, tags: ["natural law", "conscience"] },
+  { book: "Romans", chapter: 2, verse_start: 16, verse_end: nil, tags: ["judgment", "end of days"] },
+  { book: "Romans", chapter: 3, verse_start: 10, verse_end: nil, tags: ["sin"] },
+  { book: "Romans", chapter: 3, verse_start: 19, verse_end: nil, tags: ["sin", "judgment"] },
+  { book: "Romans", chapter: 3, verse_start: 20, verse_end: nil, tags: ["sin", "justification", "righteousness"] },
+  { book: "Romans", chapter: 3, verse_start: 21, verse_end: 22, tags: ["righteousness", "faith"] },
+  { book: "Romans", chapter: 3, verse_start: 22, verse_end: nil, tags: ["faith", "justification"] },
+  { book: "Romans", chapter: 3, verse_start: 22, verse_end: 25, tags: ["faith", "justification", "righteousness"] },
+  { book: "Romans", chapter: 3, verse_start: 24, verse_end: 25, tags: ["redemption", "propitiation", "atonement"] },
+  { book: "Romans", chapter: 3, verse_start: 25, verse_end: 26, tags: ["righteousness", "justification", "atonement"] },
+  { book: "Romans", chapter: 3, verse_start: 30, verse_end: nil, tags: ["monotheism", "justification", "faith"] },
+  { book: "Romans", chapter: 4, verse_start: 2, verse_end: nil, tags: ["justification", "righteousness", "faith"] },
+  { book: "Romans", chapter: 4, verse_start: 5, verse_end: nil, tags: ["justification", "righteousness", "faith"] },
 ]
 
 puts "Seeding verse tags..."
