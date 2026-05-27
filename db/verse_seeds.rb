@@ -1014,9 +1014,10 @@ seed_verses = lambda do |book_name, verses|
 
     verse_data[:categories].each do |cat_data|
       category = Category.find_by!(name: cat_data[:name])
-      VerseCategory.find_or_create_by!(verse: verse, category: category) do |vc|
-        vc.notes = cat_data[:notes]
-      end
+      vc = VerseCategory.find_or_initialize_by(verse: verse, category: category)
+      vc.notes = cat_data[:notes]
+      vc.prominent = cat_data[:prominent] || false
+      vc.save!
     end
   end
 end
