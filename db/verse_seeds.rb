@@ -1082,14 +1082,6 @@ verse_references = [
     referenced_verse: { book: "Matthew", chapter: 22,  verse_start: 44, verse_end: nil }
   },
   {
-    verse:            { book: "Isaiah", chapter: 6, verse_start: 9, verse_end: 10 },
-    referenced_verse: { book: "Acts",   chapter: 28, verse_start: 26, verse_end: 27 }
-  },
-  {
-    verse:            { book: "Isaiah", chapter: 6, verse_start: 5, verse_end: nil },
-    referenced_verse: { book: "John",   chapter: 12, verse_start: 41, verse_end: nil }
-  },
-  {
     verse:            { book: "Isaiah",        chapter: 25, verse_start: 7, verse_end: 8 },
     referenced_verse: { book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil }
   },
