@@ -180,6 +180,288 @@ joshua_verses = [
 ]
 
 # ------------------------------------------------------------
+# 1 PETER
+# ------------------------------------------------------------
+
+peter1_verses = [
+  {
+    chapter: 2, verse_start: 24, verse_end: nil,
+    notes: 'NT citation — Peter quotes Isaiah 53:5: "by his wounds you have been healed" — the atonement of Christ as the fulfillment of the Suffering Servant prophecy',
+    categories: [
+      { name: "Christology", notes: "Christ's wounds as the fulfillment of Isaiah 53:5 — the Suffering Servant prophecy realized in the crucifixion of Jesus" },
+      { name: "Soteriology", notes: "Healing through Christ's wounds — sin borne on the cross; by his stripes we are healed; substitutionary atonement fulfilled" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# 1 CORINTHIANS
+# ------------------------------------------------------------
+
+corinthians1_verses = [
+  {
+    chapter: 15, verse_start: 54, verse_end: nil,
+    notes: 'NT citation — Paul quotes Isaiah 25:8: "Death is swallowed up in victory" — the resurrection of Christ as the fulfillment of Isaiah\'s promise',
+    categories: [
+      { name: "Christology", notes: "Christ's resurrection as the fulfillment of Isaiah 25:8 — death swallowed up in victory through the risen Christ" },
+      { name: "Eschatology", notes: "The final defeat of death at the resurrection — the eschatological promise of Isaiah realized in Christ and his people" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# ISAIAH
+# ------------------------------------------------------------
+
+isaiah_verses = [
+  {
+    chapter: 6, verse_start: 3, verse_end: nil,
+    notes: 'Yellow highlight — "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!" — the Trisagion; the seraphim\'s declaration of God\'s holiness',
+    categories: [
+      { name: "Theology", notes: "The threefold declaration of God's holiness — the Trisagion; his glory fills the whole earth and his holiness is beyond measure" }
+    ]
+  },
+  {
+    chapter: 6, verse_start: 5, verse_end: nil,
+    notes: 'Purple underline — "my eyes have seen the King, the LORD of hosts!" — Isaiah\'s vision of the enthroned Lord, understood in John 12:41 as a vision of the pre-incarnate Christ',
+    categories: [
+      { name: "Christology", notes: "Isaiah's vision of the pre-incarnate Christ enthroned — John 12:41 identifies this as a vision of Christ's glory" }
+    ]
+  },
+  {
+    chapter: 6, verse_start: 8, verse_end: nil,
+    notes: 'Yellow highlight — "Whom shall I send, and who will go for us?" — the plural "us" reveals the Trinitarian voice; the commissioning of Isaiah as a missionary',
+    categories: [
+      { name: "Theology", notes: "The plural \"us\" in God's commissioning voice — a Trinitarian window; the Father, Son, and Spirit together send the prophet" },
+      { name: "Christology", notes: "Christ's voice in the divine commissioning — the pre-incarnate Son present in the sending" },
+      { name: "Pneumatology", notes: "The Holy Spirit's role in the divine commissioning — the Spirit as part of the plural \"us\" who sends" },
+      { name: "Missiology", notes: "God's call to send — \"who will go for us?\" establishes the missionary nature of God; he sends his people into the world" }
+    ]
+  },
+  {
+    chapter: 14, verse_start: 12, verse_end: nil,
+    notes: 'Red underline — "How you are fallen from heaven, O Day Star, son of Dawn!" — the fall of Satan/Lucifer. Note: "Lucifer" comes from the Latin Vulgate translation of the Hebrew helel ("shining one" or "Day Star"), translated by Jerome in the 4th century as Lucifer ("light-bearer")',
+    categories: [
+      { name: "Demonology", notes: "Satan's fall from heaven — the Day Star/Lucifer cast down; the origin of the great adversary in his rebellion and defeat" }
+    ]
+  },
+  {
+    chapter: 14, verse_start: 13, verse_end: 15,
+    notes: 'Red underline — Satan\'s five "I will" statements of pride: ascending to heaven, setting his throne above God\'s stars, sitting on the mount of assembly, ascending above the clouds, making himself like the Most High — followed by his judgment: brought down to Sheol',
+    categories: [
+      { name: "Demonology", notes: "Satan's five declarations of self-exaltation — the pride and ambition that led to his fall and judgment to Sheol" },
+      { name: "Ponerology", notes: "The nature of evil revealed as self-exaltation against God — pride as the root of all evil, embodied in Satan's \"I will\" statements" }
+    ]
+  },
+  {
+    chapter: 25, verse_start: 1, verse_end: nil,
+    notes: 'Yellow highlight on "for you have done wonderful things, plans formed of old, faithful and sure" — praise to God for his wonderful works and eternal faithfulness',
+    categories: [
+      { name: "Theology", notes: "God's wonderful works and eternal faithfulness — his plans formed of old are sure and faithful; he accomplishes all he purposes" }
+    ]
+  },
+  {
+    chapter: 25, verse_start: 4, verse_end: nil,
+    notes: 'Yellow highlight — "a stronghold to the poor, a stronghold to the needy in his distress, a shelter from the storm and a shade from the heat"',
+    categories: [
+      { name: "Theology", notes: "God as protector of the poor and needy — he is their stronghold, shelter, and shade; his care for the vulnerable reveals his character" }
+    ]
+  },
+  {
+    chapter: 25, verse_start: 6, verse_end: nil,
+    notes: 'Yellow highlight — "the LORD of hosts will make for all peoples a feast of rich food" — the eschatological banquet prepared for all nations',
+    categories: [
+      { name: "Theology", notes: "The LORD of hosts as the universal host — his provision extends to all peoples; his blessing knows no ethnic boundary" },
+      { name: "Eschatology", notes: "The eschatological feast for all peoples — a picture of the final restoration when God gathers all nations to his mountain" }
+    ]
+  },
+  {
+    chapter: 25, verse_start: 7, verse_end: 8,
+    notes: 'Purple underline — "He will swallow up on this mountain the covering cast over all peoples...He will swallow up death forever" — the ultimate defeat of death; quoted by Paul in 1 Corinthians 15:54',
+    categories: [
+      { name: "Christology", notes: "Christ's ultimate victory over death — 'He will swallow up death forever' points to the resurrection; Paul cites this in 1 Cor 15:54 as fulfilled in Christ" }
+    ]
+  },
+  {
+    chapter: 26, verse_start: 3, verse_end: nil,
+    notes: 'No highlight yet (to be added) — "You keep him in perfect peace whose mind is stayed on you, because he trusts in you" — God\'s peace given to the steadfast mind',
+    categories: [
+      { name: "Theology", notes: "God as the keeper of perfect peace — he sustains and guards the mind that is stayed on him; his peace is a gift flowing from his character" }
+    ]
+  },
+  {
+    chapter: 26, verse_start: 4, verse_end: nil,
+    notes: 'No highlight yet (to be added) — "Trust in the LORD forever, for the LORD GOD is an everlasting rock" — the call to perpetual trust grounded in God\'s eternal nature',
+    categories: [
+      { name: "Theology", notes: "The LORD God as an everlasting rock — his eternal, unchanging nature is the foundation for trust" },
+      { name: "Hagiasmology", notes: "Trust in the LORD forever — the sanctified life is one of perpetual, active trust in God as the everlasting rock" }
+    ]
+  },
+  {
+    chapter: 43, verse_start: 7, verse_end: nil,
+    notes: 'Yellow highlight on "whom I created for my glory, whom I formed and made" — God\'s declared purpose in creating humanity',
+    categories: [
+      { name: "Theology", notes: "God created humanity for his own glory — the ultimate purpose of human existence is to reflect and magnify the Creator" },
+      { name: "Theological Anthropology", notes: "Humanity's purpose defined — created, formed, and made by God for his glory; this is the foundational identity of every person" }
+    ]
+  },
+  {
+    chapter: 43, verse_start: 11, verse_end: nil,
+    notes: 'Purple underline — "I, I am the LORD, and besides me there is no savior" — God\'s exclusive identity as the only savior',
+    categories: [
+      { name: "Christology", notes: "The pre-incarnate Christ declaring exclusive salvation — \"besides me there is no savior\" points forward to Christ as the sole Savior of the world" },
+      { name: "Theology", notes: "God's exclusive identity as the only savior — monotheism and salvation united; no other god or means of salvation exists" }
+    ]
+  },
+  {
+    chapter: 45, verse_start: 5, verse_end: nil,
+    notes: 'Yellow highlight — "I am the LORD, and there is no other, besides me there is no God" — the strongest monotheistic declaration in Isaiah',
+    categories: [
+      { name: "Theology", notes: "God's absolute uniqueness and exclusive deity — there is no other god; the LORD alone is God and there is none beside him" }
+    ]
+  },
+  {
+    chapter: 53, verse_start: 5, verse_end: nil,
+    notes: 'Purple underline on "he was pierced for our transgressions; he was crushed for our iniquities"; red underline on "and with his wounds we are healed" — the substitutionary atonement of the Suffering Servant; quoted in 1 Peter 2:24',
+    categories: [
+      { name: "Christology", notes: "Christ as the Suffering Servant — pierced for transgressions, crushed for iniquities; his suffering is the ground of our healing" },
+      { name: "Soteriology", notes: "Substitutionary atonement — Christ bore our sins and by his wounds we are healed; salvation accomplished through his suffering" }
+    ]
+  },
+  {
+    chapter: 53, verse_start: 6, verse_end: nil,
+    notes: 'Red underline — "All we like sheep have gone astray; we have turned — every one — to his own way; and the LORD has laid on him the iniquity of us all"',
+    categories: [
+      { name: "Soteriology", notes: "Universal sin laid on Christ — every person has gone astray, yet God laid the iniquity of all on the Suffering Servant; the heart of substitutionary atonement" }
+    ]
+  },
+  {
+    chapter: 59, verse_start: 2, verse_end: nil,
+    notes: 'Blue underline with red margin line — "your iniquities have made a separation between you and your God, and your sins have hidden his face from you so that he does not hear"',
+    categories: [
+      { name: "Hamartiology", notes: "Sin as the cause of separation from God — iniquity creates a barrier between humanity and the holy God" },
+      { name: "Theological Anthropology", notes: "The human condition of separation — sin defines the broken state of humanity before God; his face is hidden and he does not hear" },
+      { name: "Soteriology", notes: "The problem that salvation must solve — the separation caused by sin is the precise need that Christ's atonement bridges" },
+      { name: "Ponerology", notes: "Sin's nature as relational rupture — evil hides God's face and breaks the communication between Creator and creature" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# ECCLESIASTES
+# ------------------------------------------------------------
+
+ecclesiastes_verses = [
+  {
+    chapter: 1, verse_start: 2, verse_end: nil,
+    notes: 'Underline on "vanity of vanities! All is vanity" — the thesis of Ecclesiastes; the futility and emptiness of life lived apart from God',
+    categories: [
+      { name: "Theological Anthropology", notes: "The condition of human existence under the sun — life apart from God is vanity; humanity's striving is ultimately empty and futile" },
+      { name: "Ponerology", notes: "The pervasive emptiness of the fallen world — vanity as the mark of existence under the curse, pointing to the brokenness of creation after the Fall" }
+    ]
+  },
+  {
+    chapter: 2, verse_start: 24, verse_end: 25,
+    notes: 'Red underline — "a person than that he should eat and drink and find enjoyment in his toil...from the hand of God, for apart from him who can have enjoyment?"',
+    categories: [
+      { name: "Theological Anthropology", notes: "Human enjoyment and satisfaction come only from God's hand — apart from him, no one can truly enjoy anything" },
+      { name: "Theology", notes: "God as the source of all good gifts — enjoyment in toil is not self-generated but given from the hand of God" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 14, verse_end: nil,
+    notes: 'Yellow highlight — "whatever God does endures forever; nothing can be added to it, nor anything taken from it. God has done it, so that people fear before him"',
+    categories: [
+      { name: "Theology", notes: "God's works are eternal and unchangeable — nothing can be added or taken away; his sovereign permanence inspires reverent fear" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 18, verse_end: nil,
+    notes: 'Red underline — "God is testing them that they may see that they themselves are but beasts"',
+    categories: [
+      { name: "Theological Anthropology", notes: "Humanity tested and humbled — apart from God, human beings are shown to be no better than beasts; a sobering view of the human condition" },
+      { name: "Hamartiology", notes: "The humbling of human pride before God — sin reduces humanity to the level of beasts when God is left out of the equation" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 20, verse_end: nil,
+    notes: 'Underline — "All go to one place. All are from the dust, and to dust all return" — the mortality and creaturely limitation of all humanity',
+    categories: [
+      { name: "Theological Anthropology", notes: "Humanity's creaturely mortality — all return to dust; a reminder of the finite, created nature of human beings" }
+    ]
+  },
+  {
+    chapter: 4, verse_start: 9, verse_end: 12,
+    notes: 'Red underline — "Two are better than one...a threefold cord is not quickly broken" — community, mutual support, and the strength of God as the third strand',
+    categories: [
+      { name: "Ecclesiology", notes: "The body of believers as a community of mutual support — two are better than one; the Church is stronger together than apart" },
+      { name: "Theology", notes: "The threefold cord as a picture of God binding relationships — his presence as the third strand makes the bond unbreakable" }
+    ]
+  },
+  {
+    chapter: 12, verse_start: 12, verse_end: nil,
+    notes: 'Black highlight — warning against making many books; much study is weariness of flesh — points to the sufficiency of what God has already given',
+    categories: [
+      { name: "Bibliology", notes: "The sufficiency of Scripture — the warning against endless books implies that what has been given is complete and sufficient; adding beyond it leads to weariness" }
+    ]
+  },
+  {
+    chapter: 12, verse_start: 13, verse_end: nil,
+    notes: '"Fear God and keep his commandments, for this is the whole duty of man" — the summary conclusion of Ecclesiastes',
+    categories: [
+      { name: "Hagiasmology", notes: "The sanctified life defined — fearing God and keeping his commandments is the whole of what it means to live rightly before God" },
+      { name: "Theological Anthropology", notes: "The whole duty of man — human purpose and identity is found in fearing God and keeping his commandments; nothing else defines humanity more fundamentally" }
+    ]
+  },
+  {
+    chapter: 12, verse_start: 14, verse_end: nil,
+    notes: 'Brown highlight — "For God will bring every deed into judgment, with every secret thing, whether good or evil" — the closing eschatological declaration of Ecclesiastes',
+    categories: [
+      { name: "Eschatology", notes: "Final judgment over every deed — nothing is hidden; every secret thing, good or evil, will be brought before God" },
+      { name: "Theology", notes: "God as the righteous and all-knowing judge — his judgment is universal, thorough, and inescapable" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
+# PROVERBS
+# ------------------------------------------------------------
+
+proverbs_verses = [
+  {
+    chapter: 1, verse_start: 7, verse_end: nil,
+    notes: 'Red underline on "The fear of the LORD is the beginning of knowledge"; blue underline on "fools despise wisdom and instruction"',
+    categories: [
+      { name: "Soteriology", notes: "The fear of the LORD as the foundation of all true knowledge — right relationship with God is the necessary starting point for wisdom" },
+      { name: "Theological Anthropology", notes: "Fools despise wisdom and instruction — humanity apart from God rejects the very foundation of knowledge" }
+    ]
+  },
+  {
+    chapter: 3, verse_start: 5, verse_end: 6,
+    notes: 'Red underline — "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths"',
+    categories: [
+      { name: "Hagiasmology", notes: "Wholehearted trust and acknowledgment of God in all ways — the sanctified life is one that depends on God rather than self" },
+      { name: "Theology", notes: "God's sovereign direction of the believer's path — he who is acknowledged in all ways will make the paths straight" }
+    ]
+  },
+  {
+    chapter: 27, verse_start: 17, verse_end: nil,
+    notes: 'Green underline — "Iron sharpens iron, and one man sharpens another" — mutual edification within the community of believers',
+    categories: [
+      { name: "Ecclesiology", notes: "The Church as a community of mutual sharpening — believers build up and refine one another through relationship and honest counsel" }
+    ]
+  },
+  {
+    chapter: 30, verse_start: 5, verse_end: nil,
+    notes: 'Teal underline — "Every word of God proves true; he is a shield to those who take refuge in him"',
+    categories: [
+      { name: "Bibliology", notes: "Every word of God proves true — the complete truthfulness and reliability of Scripture; not one word fails" },
+      { name: "Theology", notes: "God as shield and refuge — his character as protector is inseparable from the trustworthiness of his word" }
+    ]
+  },
+]
+
+# ------------------------------------------------------------
 # MATTHEW
 # ------------------------------------------------------------
 
@@ -565,6 +847,14 @@ acts_verses = [
       { name: "Christology", notes: "Jesus as the fulfillment of the Mosaic prophetic promise — the prophet like Moses through whom God speaks definitively" }
     ]
   },
+  {
+    chapter: 28, verse_start: 26, verse_end: 27,
+    notes: 'Paul quotes Isaiah 6:9-10 when addressing the Jews in Rome — the hardening of hearts and the turning to the Gentiles',
+    categories: [
+      { name: "Bibliology", notes: "Paul's citation of Isaiah 6:9-10 demonstrates OT-NT continuity — Isaiah's commission finds its fulfillment in the Gentile mission" },
+      { name: "Missiology", notes: "The turning to the Gentiles as the fulfillment of God's missionary purpose — those who will not hear make way for those who will" }
+    ]
+  },
 ]
 
 # ------------------------------------------------------------
@@ -740,11 +1030,16 @@ seed_verses.call("Joshua",       joshua_verses)
 seed_verses.call("Judges",       judges_verses)
 seed_verses.call("Job",          job_verses)
 seed_verses.call("Psalms",       psalms_verses)
+seed_verses.call("Proverbs",     proverbs_verses)
+seed_verses.call("Ecclesiastes", ecclesiastes_verses)
+seed_verses.call("Isaiah",       isaiah_verses)
 seed_verses.call("1 Kings",      kings1_verses)
 seed_verses.call("2 Samuel",     samuel2_verses)
 seed_verses.call("2 Chronicles", chronicles2_verses)
 seed_verses.call("Matthew",      matthew_verses)
 seed_verses.call("Acts",         acts_verses)
+seed_verses.call("1 Corinthians", corinthians1_verses)
+seed_verses.call("1 Peter",      peter1_verses)
 seed_verses.call("Romans",       romans_verses)
 
 puts "Additional verse seeding complete (#{Verse.count} total verses, #{VerseCategory.count} total category associations)"
@@ -785,6 +1080,22 @@ verse_references = [
   {
     verse:            { book: "Psalms",  chapter: 110, verse_start: 1, verse_end: nil },
     referenced_verse: { book: "Matthew", chapter: 22,  verse_start: 44, verse_end: nil }
+  },
+  {
+    verse:            { book: "Isaiah", chapter: 6, verse_start: 9, verse_end: 10 },
+    referenced_verse: { book: "Acts",   chapter: 28, verse_start: 26, verse_end: 27 }
+  },
+  {
+    verse:            { book: "Isaiah", chapter: 6, verse_start: 5, verse_end: nil },
+    referenced_verse: { book: "John",   chapter: 12, verse_start: 41, verse_end: nil }
+  },
+  {
+    verse:            { book: "Isaiah",        chapter: 25, verse_start: 7, verse_end: 8 },
+    referenced_verse: { book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil }
+  },
+  {
+    verse:            { book: "Isaiah",  chapter: 53, verse_start: 5, verse_end: nil },
+    referenced_verse: { book: "1 Peter", chapter: 2,  verse_start: 24, verse_end: nil }
   },
 ]
 
@@ -889,6 +1200,21 @@ tags = [
   { name: "christology",      description: "Passages pointing to Christ's identity, nature, pre-existence, or work" },
   { name: "angels",           description: "References to angels — their nature, role, worship, and created status" },
   { name: "worship",          description: "The act of ascribing worth and praise to God, by humanity or angelic beings" },
+  { name: "fear of the lord", description: "Reverent awe and submission before God — the beginning of wisdom and knowledge" },
+  { name: "wisdom",           description: "Godly wisdom — practical and moral insight rooted in the fear of the LORD" },
+  { name: "knowledge",        description: "True knowledge that begins with the fear of the LORD" },
+  { name: "trust",            description: "Wholehearted reliance on God rather than self — the posture of faith in daily life" },
+  { name: "community",        description: "The gathered people of God in relationship with one another" },
+  { name: "discipleship",     description: "The mutual sharpening and building up of believers through relationship and counsel" },
+  { name: "church",           description: "The body of Christ — the gathered community of believers" },
+  { name: "vanity",           description: "The emptiness and futility of life lived apart from God — a key theme of Ecclesiastes" },
+  { name: "fallen world",     description: "The brokenness of creation after the Fall — the pervasive effects of sin on human existence" },
+  { name: "human condition",  description: "The universal state of humanity — its limitations, mortality, and need for God" },
+  { name: "mortality",        description: "The finite, dust-to-dust nature of human life — all humanity returns to the ground" },
+  { name: "sufficiency of scripture", description: "The completeness and adequacy of God's word — nothing needs to be added to what God has already given" },
+  { name: "missiology",   description: "God's sending purpose — the mission of God to the world through his people" },
+  { name: "lucifer",      description: "The name given to Satan before his fall — from the Latin Vulgate translation of the Hebrew helel (Day Star/shining one)" },
+  { name: "separation",   description: "The relational rupture between humanity and God caused by sin — the barrier that salvation must bridge" },
 ]
 
 puts "Seeding tags..."
@@ -902,6 +1228,132 @@ puts "Created #{Tag.count} tags"
 # Verse tag associations
 # Format: { book:, chapter:, verse_start:, verse_end:, tags: [] }
 verse_tag_data = [
+  # Isaiah
+  {
+    book: "Isaiah", chapter: 6, verse_start: 3, verse_end: nil,
+    tags: ["holiness", "glory of god", "worship", "trinity"]
+  },
+  {
+    book: "Isaiah", chapter: 6, verse_start: 5, verse_end: nil,
+    tags: ["christology", "messianic promise", "throne"]
+  },
+  {
+    book: "Isaiah", chapter: 6, verse_start: 8, verse_end: nil,
+    tags: ["trinity", "missiology", "spirit of god", "christology"]
+  },
+  {
+    book: "Isaiah", chapter: 14, verse_start: 12, verse_end: nil,
+    tags: ["satan", "adversary", "fallen world", "lucifer"]
+  },
+  {
+    book: "Isaiah", chapter: 14, verse_start: 13, verse_end: 15,
+    tags: ["satan", "pride", "wickedness", "judgment"]
+  },
+  {
+    book: "Isaiah", chapter: 25, verse_start: 1, verse_end: nil,
+    tags: ["faithfulness", "sovereignty", "goodness"]
+  },
+  {
+    book: "Isaiah", chapter: 25, verse_start: 4, verse_end: nil,
+    tags: ["sovereignty", "mercy", "steadfast love"]
+  },
+  {
+    book: "Isaiah", chapter: 25, verse_start: 6, verse_end: nil,
+    tags: ["end of days", "sovereignty", "goodness"]
+  },
+  {
+    book: "Isaiah", chapter: 25, verse_start: 7, verse_end: 8,
+    tags: ["christology", "messianic promise", "end of days", "redemption"]
+  },
+  {
+    book: "Isaiah", chapter: 26, verse_start: 3, verse_end: nil,
+    tags: ["sovereignty", "trust", "presence of god"]
+  },
+  {
+    book: "Isaiah", chapter: 26, verse_start: 4, verse_end: nil,
+    tags: ["trust", "sovereignty", "immutability", "sanctification"]
+  },
+  {
+    book: "Isaiah", chapter: 43, verse_start: 7, verse_end: nil,
+    tags: ["glory of god", "creation", "image of god", "sovereignty"]
+  },
+  {
+    book: "Isaiah", chapter: 43, verse_start: 11, verse_end: nil,
+    tags: ["christology", "monotheism", "redemption", "sovereignty"]
+  },
+  {
+    book: "Isaiah", chapter: 45, verse_start: 5, verse_end: nil,
+    tags: ["monotheism", "sovereignty", "i am"]
+  },
+  {
+    book: "Isaiah", chapter: 53, verse_start: 5, verse_end: nil,
+    tags: ["christology", "atonement", "redemption", "messianic promise"]
+  },
+  {
+    book: "Isaiah", chapter: 53, verse_start: 6, verse_end: nil,
+    tags: ["atonement", "sin", "redemption", "depravity"]
+  },
+  {
+    book: "Isaiah", chapter: 59, verse_start: 2, verse_end: nil,
+    tags: ["sin", "separation", "fallen world", "human condition"]
+  },
+
+  # Ecclesiastes
+  {
+    book: "Ecclesiastes", chapter: 1, verse_start: 2, verse_end: nil,
+    tags: ["vanity", "fallen world", "human condition"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 2, verse_start: 24, verse_end: 25,
+    tags: ["human condition", "sovereignty", "goodness"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 3, verse_start: 14, verse_end: nil,
+    tags: ["sovereignty", "eternality", "fear of the lord", "immutability"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 3, verse_start: 18, verse_end: nil,
+    tags: ["human condition", "sin", "pride", "fallen world"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 3, verse_start: 20, verse_end: nil,
+    tags: ["human condition", "mortality", "creation"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 4, verse_start: 9, verse_end: 12,
+    tags: ["community", "church", "discipleship", "sovereignty"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 12, verse_start: 12, verse_end: nil,
+    tags: ["word of god", "sufficiency of scripture"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 12, verse_start: 13, verse_end: nil,
+    tags: ["fear of the lord", "sanctification", "human condition", "holiness"]
+  },
+  {
+    book: "Ecclesiastes", chapter: 12, verse_start: 14, verse_end: nil,
+    tags: ["judgment", "end of days", "omniscience", "sovereignty"]
+  },
+
+  # Proverbs
+  {
+    book: "Proverbs", chapter: 1, verse_start: 7, verse_end: nil,
+    tags: ["fear of the lord", "wisdom", "knowledge"]
+  },
+  {
+    book: "Proverbs", chapter: 3, verse_start: 5, verse_end: 6,
+    tags: ["trust", "sovereignty", "wisdom", "sanctification"]
+  },
+  {
+    book: "Proverbs", chapter: 27, verse_start: 17, verse_end: nil,
+    tags: ["community", "discipleship", "church"]
+  },
+  {
+    book: "Proverbs", chapter: 30, verse_start: 5, verse_end: nil,
+    tags: ["word of god", "truthfulness", "purity", "sovereignty"]
+  },
+
   # Matthew
   {
     book: "Matthew", chapter: 22, verse_start: 44, verse_end: nil,
@@ -1192,6 +1644,22 @@ verse_tag_data = [
   {
     book: "Acts", chapter: 3, verse_start: 22, verse_end: nil,
     tags: ["prophet", "messianic promise"]
+  },
+  {
+    book: "Acts", chapter: 28, verse_start: 26, verse_end: 27,
+    tags: ["word of god", "missiology", "sufficiency of scripture"]
+  },
+
+  # 1 Corinthians
+  {
+    book: "1 Corinthians", chapter: 15, verse_start: 54, verse_end: nil,
+    tags: ["christology", "messianic promise", "end of days", "redemption"]
+  },
+
+  # 1 Peter
+  {
+    book: "1 Peter", chapter: 2, verse_start: 24, verse_end: nil,
+    tags: ["christology", "atonement", "redemption", "messianic promise"]
   },
 
   # Romans
