@@ -26,7 +26,7 @@ genesis_verses_additions = [
     notes: "The men of Sodom demand Lot's visitors; Lot pleads with them not to act wickedly",
     categories: [
       { name: "Hamartiology", notes: "The men of Sodom exemplify collective, unrestrained sin" },
-      { name: "Ponerology", notes: "The nature of evil on display in the wickedness of Sodom" }
+      { name: "Ponerology", notes: "The nature of evil on display in the wickedness of Sodom", prominent: true }
     ]
   },
 ]
@@ -40,7 +40,7 @@ exodus_verses = [
     chapter: 3, verse_start: 14, verse_end: nil,
     notes: '"I AM WHO I AM" — God reveals his divine name and self-existence to Moses',
     categories: [
-      { name: "Theology", notes: "God's self-revelation as the self-existent, eternal I AM" }
+      { name: "Theology", notes: "God's self-revelation as the self-existent, eternal I AM", prominent: true }
     ]
   },
   {
@@ -75,7 +75,7 @@ exodus_verses = [
     chapter: 34, verse_start: 6, verse_end: 7,
     notes: "God proclaims his own attributes to Moses — the foundational self-description of God's character",
     categories: [
-      { name: "Theology", notes: "God's attributes: merciful, gracious, slow to anger, abounding in steadfast love and faithfulness, forgiving" }
+      { name: "Theology", notes: "God's attributes: merciful, gracious, slow to anger, abounding in steadfast love and faithfulness, forgiving", prominent: true }
     ]
   },
   {
@@ -97,7 +97,7 @@ leviticus_verses = [
     notes: '"Be holy, for I am holy" — God grounds the call to consecration in his own holy nature',
     categories: [
       { name: "Theology", notes: "God's holiness as his defining attribute — the basis for all moral commands" },
-      { name: "Hagiasmology", notes: "The call to consecration and sanctification flows directly from the holiness of God himself" }
+      { name: "Hagiasmology", notes: "The call to consecration and sanctification flows directly from the holiness of God himself", prominent: true }
     ]
   },
 ]
@@ -125,14 +125,14 @@ deuteronomy_verses = [
     chapter: 6, verse_start: 4, verse_end: 5,
     notes: 'The Shema — "The LORD our God, the LORD is one" and the greatest commandment to love God with all heart, soul, and might',
     categories: [
-      { name: "Theology", notes: "The foundational declaration of God's oneness (monotheism) and the corresponding call to total devotion" }
+      { name: "Theology", notes: "The foundational declaration of God's oneness (monotheism) and the corresponding call to total devotion", prominent: true }
     ]
   },
   {
     chapter: 6, verse_start: 5, verse_end: 9,
     notes: 'No highlight yet (to be added). Daily embodied practices of devotion — loving God wholly and keeping his words ever-present in life, home, and family',
     categories: [
-      { name: "Hagiasmology", notes: "Sanctification lived out daily — God's word on the heart, taught to children, spoken constantly, bound on the body, written on the home" }
+      { name: "Hagiasmology", notes: "Sanctification lived out daily — God's word on the heart, taught to children, spoken constantly, bound on the body, written on the home", prominent: true }
     ]
   },
   {
@@ -153,7 +153,7 @@ deuteronomy_verses = [
     chapter: 21, verse_start: 8, verse_end: nil,
     notes: 'Red box around "atonement" and "redeemed" — the prayer pairs atonement and redemption together in a single plea to the LORD',
     categories: [
-      { name: "Soteriology", notes: "Atonement and redemption linked — God both covers guilt and redeems his people; an early pairing of two key salvation concepts" }
+      { name: "Soteriology", notes: "Atonement and redemption linked — God both covers guilt and redeems his people; an early pairing of two key salvation concepts", prominent: true }
     ]
   },
 ]
@@ -174,7 +174,7 @@ joshua_verses = [
     chapter: 24, verse_start: 15, verse_end: nil,
     notes: 'Light-red underline on "choose this day whom you will serve...but as for me and my house, we will serve the LORD"',
     categories: [
-      { name: "Hagiasmology", notes: "Sanctification requires a decisive, daily choice — Joshua's household commitment to serve the LORD as a model of whole-life devotion" }
+      { name: "Hagiasmology", notes: "Sanctification requires a decisive, daily choice — Joshua's household commitment to serve the LORD as a model of whole-life devotion", prominent: true }
     ]
   },
 ]
@@ -218,14 +218,14 @@ isaiah_verses = [
     chapter: 6, verse_start: 3, verse_end: nil,
     notes: 'Yellow highlight — "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!" — the Trisagion; the seraphim\'s declaration of God\'s holiness',
     categories: [
-      { name: "Theology", notes: "The threefold declaration of God's holiness — the Trisagion; his glory fills the whole earth and his holiness is beyond measure" }
+      { name: "Theology", notes: "The threefold declaration of God's holiness — the Trisagion; his glory fills the whole earth and his holiness is beyond measure", prominent: true }
     ]
   },
   {
     chapter: 6, verse_start: 5, verse_end: nil,
     notes: 'Purple underline — "my eyes have seen the King, the LORD of hosts!" — Isaiah\'s vision of the enthroned Lord, understood in John 12:41 as a vision of the pre-incarnate Christ',
     categories: [
-      { name: "Christology", notes: "Isaiah's vision of the pre-incarnate Christ enthroned — John 12:41 identifies this as a vision of Christ's glory" }
+      { name: "Christology", notes: "Isaiah's vision of the pre-incarnate Christ enthroned — John 12:41 identifies this as a vision of Christ's glory", prominent: true }
     ]
   },
   {
@@ -242,15 +242,15 @@ isaiah_verses = [
     chapter: 14, verse_start: 12, verse_end: nil,
     notes: 'Red underline — "How you are fallen from heaven, O Day Star, son of Dawn!" — the fall of Satan/Lucifer. Note: "Lucifer" comes from the Latin Vulgate translation of the Hebrew helel ("shining one" or "Day Star"), translated by Jerome in the 4th century as Lucifer ("light-bearer")',
     categories: [
-      { name: "Demonology", notes: "Satan's fall from heaven — the Day Star/Lucifer cast down; the origin of the great adversary in his rebellion and defeat" }
+      { name: "Demonology", notes: "Satan's fall from heaven — the Day Star/Lucifer cast down; the origin of the great adversary in his rebellion and defeat", prominent: true }
     ]
   },
   {
     chapter: 14, verse_start: 13, verse_end: 15,
     notes: 'Red underline — Satan\'s five "I will" statements of pride: ascending to heaven, setting his throne above God\'s stars, sitting on the mount of assembly, ascending above the clouds, making himself like the Most High — followed by his judgment: brought down to Sheol',
     categories: [
-      { name: "Demonology", notes: "Satan's five declarations of self-exaltation — the pride and ambition that led to his fall and judgment to Sheol" },
-      { name: "Ponerology", notes: "The nature of evil revealed as self-exaltation against God — pride as the root of all evil, embodied in Satan's \"I will\" statements" }
+      { name: "Demonology", notes: "Satan's five declarations of self-exaltation — the pride and ambition that led to his fall and judgment to Sheol", prominent: true },
+      { name: "Ponerology", notes: "The nature of evil revealed as self-exaltation against God — pride as the root of all evil, embodied in Satan's \"I will\" statements", prominent: true }
     ]
   },
   {
@@ -302,7 +302,7 @@ isaiah_verses = [
     notes: 'Yellow highlight on "whom I created for my glory, whom I formed and made" — God\'s declared purpose in creating humanity',
     categories: [
       { name: "Theology", notes: "God created humanity for his own glory — the ultimate purpose of human existence is to reflect and magnify the Creator" },
-      { name: "Theological Anthropology", notes: "Humanity's purpose defined — created, formed, and made by God for his glory; this is the foundational identity of every person" }
+      { name: "Theological Anthropology", notes: "Humanity's purpose defined — created, formed, and made by God for his glory; this is the foundational identity of every person", prominent: true }
     ]
   },
   {
@@ -324,22 +324,22 @@ isaiah_verses = [
     chapter: 53, verse_start: 5, verse_end: nil,
     notes: 'Purple underline on "he was pierced for our transgressions; he was crushed for our iniquities"; red underline on "and with his wounds we are healed" — the substitutionary atonement of the Suffering Servant; quoted in 1 Peter 2:24',
     categories: [
-      { name: "Christology", notes: "Christ as the Suffering Servant — pierced for transgressions, crushed for iniquities; his suffering is the ground of our healing" },
-      { name: "Soteriology", notes: "Substitutionary atonement — Christ bore our sins and by his wounds we are healed; salvation accomplished through his suffering" }
+      { name: "Christology", notes: "Christ as the Suffering Servant — pierced for transgressions, crushed for iniquities; his suffering is the ground of our healing", prominent: true },
+      { name: "Soteriology", notes: "Substitutionary atonement — Christ bore our sins and by his wounds we are healed; salvation accomplished through his suffering", prominent: true }
     ]
   },
   {
     chapter: 53, verse_start: 6, verse_end: nil,
     notes: 'Red underline — "All we like sheep have gone astray; we have turned — every one — to his own way; and the LORD has laid on him the iniquity of us all"',
     categories: [
-      { name: "Soteriology", notes: "Universal sin laid on Christ — every person has gone astray, yet God laid the iniquity of all on the Suffering Servant; the heart of substitutionary atonement" }
+      { name: "Soteriology", notes: "Universal sin laid on Christ — every person has gone astray, yet God laid the iniquity of all on the Suffering Servant; the heart of substitutionary atonement", prominent: true }
     ]
   },
   {
     chapter: 59, verse_start: 2, verse_end: nil,
     notes: 'Blue underline with red margin line — "your iniquities have made a separation between you and your God, and your sins have hidden his face from you so that he does not hear"',
     categories: [
-      { name: "Hamartiology", notes: "Sin as the cause of separation from God — iniquity creates a barrier between humanity and the holy God" },
+      { name: "Hamartiology", notes: "Sin as the cause of separation from God — iniquity creates a barrier between humanity and the holy God", prominent: true },
       { name: "Theological Anthropology", notes: "The human condition of separation — sin defines the broken state of humanity before God; his face is hidden and he does not hear" },
       { name: "Soteriology", notes: "The problem that salvation must solve — the separation caused by sin is the precise need that Christ's atonement bridges" },
       { name: "Ponerology", notes: "Sin's nature as relational rupture — evil hides God's face and breaks the communication between Creator and creature" }
@@ -394,7 +394,7 @@ ecclesiastes_verses = [
     chapter: 4, verse_start: 9, verse_end: 12,
     notes: 'Red underline — "Two are better than one...a threefold cord is not quickly broken" — community, mutual support, and the strength of God as the third strand',
     categories: [
-      { name: "Ecclesiology", notes: "The body of believers as a community of mutual support — two are better than one; the Church is stronger together than apart" },
+      { name: "Ecclesiology", notes: "The body of believers as a community of mutual support — two are better than one; the Church is stronger together than apart", prominent: true },
       { name: "Theology", notes: "The threefold cord as a picture of God binding relationships — his presence as the third strand makes the bond unbreakable" }
     ]
   },
@@ -410,7 +410,7 @@ ecclesiastes_verses = [
     notes: '"Fear God and keep his commandments, for this is the whole duty of man" — the summary conclusion of Ecclesiastes',
     categories: [
       { name: "Hagiasmology", notes: "The sanctified life defined — fearing God and keeping his commandments is the whole of what it means to live rightly before God" },
-      { name: "Theological Anthropology", notes: "The whole duty of man — human purpose and identity is found in fearing God and keeping his commandments; nothing else defines humanity more fundamentally" }
+      { name: "Theological Anthropology", notes: "The whole duty of man — human purpose and identity is found in fearing God and keeping his commandments; nothing else defines humanity more fundamentally", prominent: true }
     ]
   },
   {
@@ -448,14 +448,14 @@ proverbs_verses = [
     chapter: 27, verse_start: 17, verse_end: nil,
     notes: 'Green underline — "Iron sharpens iron, and one man sharpens another" — mutual edification within the community of believers',
     categories: [
-      { name: "Ecclesiology", notes: "The Church as a community of mutual sharpening — believers build up and refine one another through relationship and honest counsel" }
+      { name: "Ecclesiology", notes: "The Church as a community of mutual sharpening — believers build up and refine one another through relationship and honest counsel", prominent: true }
     ]
   },
   {
     chapter: 30, verse_start: 5, verse_end: nil,
     notes: 'Teal underline — "Every word of God proves true; he is a shield to those who take refuge in him"',
     categories: [
-      { name: "Bibliology", notes: "Every word of God proves true — the complete truthfulness and reliability of Scripture; not one word fails" },
+      { name: "Bibliology", notes: "Every word of God proves true — the complete truthfulness and reliability of Scripture; not one word fails", prominent: true },
       { name: "Theology", notes: "God as shield and refuge — his character as protector is inseparable from the trustworthiness of his word" }
     ]
   },
@@ -485,7 +485,7 @@ psalms_verses = [
     chapter: 12, verse_start: 6, verse_end: nil,
     notes: 'Teal highlight on full verse; yellow highlight on "pure words, like silver refined" — the words of the LORD are absolutely pure, refined like silver seven times over',
     categories: [
-      { name: "Bibliology", notes: "God's words are perfectly pure and trustworthy — refined beyond any impurity, the standard of truth" },
+      { name: "Bibliology", notes: "God's words are perfectly pure and trustworthy — refined beyond any impurity, the standard of truth", prominent: true },
       { name: "Theology", notes: "God's purity reflected in his word — \"pure words, like silver refined\" reveals his own unblemished character" }
     ]
   },
@@ -507,7 +507,7 @@ psalms_verses = [
     chapter: 19, verse_start: 7, verse_end: 11,
     notes: 'Teal highlight — the law of the LORD is perfect, sure, right, pure, clean, true, and righteous; reviving the soul, making wise, rejoicing the heart, enlightening the eyes; more desirable than gold, sweeter than honey; great reward in keeping them',
     categories: [
-      { name: "Bibliology", notes: "The perfection and sufficiency of God's word — each attribute of the law (perfect, sure, right, pure, clean, true) paired with its benefit to the one who keeps it" }
+      { name: "Bibliology", notes: "The perfection and sufficiency of God's word — each attribute of the law (perfect, sure, right, pure, clean, true) paired with its benefit to the one who keeps it", prominent: true }
     ]
   },
   {
@@ -536,21 +536,21 @@ psalms_verses = [
     notes: 'Blue underline — "I was brought forth in iniquity, and in sin did my mother conceive me" — original sin declared; humanity is sinful from conception',
     categories: [
       { name: "Theological Anthropology", notes: "Humanity's sinful nature is not acquired but innate — conceived and brought forth in iniquity; the doctrine of original sin" },
-      { name: "Hamartiology", notes: "Sin is not merely behavioral but ontological — present from conception, embedded in human nature from the start" }
+      { name: "Hamartiology", notes: "Sin is not merely behavioral but ontological — present from conception, embedded in human nature from the start", prominent: true }
     ]
   },
   {
     chapter: 53, verse_start: 3, verse_end: nil,
     notes: 'Red underline — "there is none who does good, not even one" — universal human depravity; cited by Paul in Romans 3:10-12',
     categories: [
-      { name: "Hamartiology", notes: "Universal depravity — not one person does good; the total corruption of human nature apart from God" }
+      { name: "Hamartiology", notes: "Universal depravity — not one person does good; the total corruption of human nature apart from God", prominent: true }
     ]
   },
   {
     chapter: 90, verse_start: 2, verse_end: nil,
     notes: 'Yellow highlight on "from everlasting to everlasting you are God" — Moses declares God\'s eternal, self-existent nature outside of time',
     categories: [
-      { name: "Theology", notes: "God's eternality — he exists from everlasting to everlasting, uncreated and unbound by time" }
+      { name: "Theology", notes: "God's eternality — he exists from everlasting to everlasting, uncreated and unbound by time", prominent: true }
     ]
   },
   {
@@ -643,7 +643,7 @@ psalms_verses = [
     chapter: 139, verse_start: 7, verse_end: nil,
     notes: 'Orange highlight — "Where shall I go from your Spirit? Or where shall I flee from your presence?" — the omnipresence of the Holy Spirit',
     categories: [
-      { name: "Pneumatology", notes: "The Holy Spirit's omnipresence — there is nowhere one can go to escape God's Spirit; he fills all of creation" }
+      { name: "Pneumatology", notes: "The Holy Spirit's omnipresence — there is nowhere one can go to escape God's Spirit; he fills all of creation", prominent: true }
     ]
   },
   {
@@ -725,7 +725,7 @@ job_verses = [
     chapter: 1, verse_start: 6, verse_end: nil,
     notes: 'Red underline — Satan appears among the sons of God before the LORD. Footnote: "Hebrew the Accuser or the Adversary; so throughout chapters 1-2"',
     categories: [
-      { name: "Demonology", notes: "Satan's access to God's presence as the Accuser/Adversary — his Hebrew name reveals his role" }
+      { name: "Demonology", notes: "Satan's access to God's presence as the Accuser/Adversary — his Hebrew name reveals his role", prominent: true }
     ]
   },
   {
@@ -754,7 +754,7 @@ job_verses = [
     chapter: 26, verse_start: 14, verse_end: nil,
     notes: 'Yellow highlight on "small a whisper do we hear of him" and "the thunder of his power" — what humanity perceives of God is merely the faintest outskirts of his ways',
     categories: [
-      { name: "Pneumatology", notes: "The breath and spirit of God as the medium through which his power operates in creation" },
+      { name: "Pneumatology", notes: "The breath and spirit of God as the medium through which his power operates in creation", prominent: true },
       { name: "Theology", notes: "God's incomprehensibility — the full thunder of his power is beyond human understanding; we only perceive a whisper" }
     ]
   },
@@ -798,7 +798,7 @@ samuel2_verses = [
     chapter: 7, verse_start: 12, verse_end: 14,
     notes: 'Purple highlight — the Davidic Covenant: God promises an eternal offspring, an eternal kingdom, and a father-son relationship; ultimately fulfilled in Christ',
     categories: [
-      { name: "Christology", notes: "The Davidic Covenant as messianic promise — the eternal offspring from David's body whose throne is established forever points to Christ" },
+      { name: "Christology", notes: "The Davidic Covenant as messianic promise — the eternal offspring from David's body whose throne is established forever points to Christ", prominent: true },
       { name: "Theology", notes: "God's covenant-keeping faithfulness — he binds himself by promise to David and fulfills it across generations" },
       { name: "Eschatology", notes: "The eternal throne and kingdom established forever — an eschatological promise reaching its fulfillment in the reign of Christ" }
     ]
@@ -829,8 +829,8 @@ chronicles2_verses = [
     notes: 'Yellow highlight — "if my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land"',
     categories: [
       { name: "Theology", notes: "God's conditional promise reveals his character — he hears prayer, forgives sin, and heals; responsive to humility and repentance" },
-      { name: "Hagiasmology", notes: "Humbling, praying, seeking God's face, and turning from wickedness are sanctification lived out — the marks of a people growing in holiness" },
-      { name: "Ecclesiology", notes: '"My people who are called by my name" — the covenant community, the Church, called to corporate repentance and renewal' }
+      { name: "Hagiasmology", notes: "Humbling, praying, seeking God's face, and turning from wickedness are sanctification lived out — the marks of a people growing in holiness", prominent: true },
+      { name: "Ecclesiology", notes: '"My people who are called by my name" — the covenant community, the Church, called to corporate repentance and renewal', prominent: true }
     ]
   },
 ]
@@ -924,7 +924,7 @@ romans_verses = [
     chapter: 3, verse_start: 19, verse_end: nil,
     notes: 'Black underline on "the whole world may be held accountable to God" (v19b only)',
     categories: [
-      { name: "Hamartiology", notes: "Universal human accountability before God — no one is exempt from judgment" }
+      { name: "Hamartiology", notes: "Universal human accountability before God — no one is exempt from judgment", prominent: true }
     ]
   },
   {
@@ -954,7 +954,7 @@ romans_verses = [
     chapter: 3, verse_start: 22, verse_end: 25,
     notes: 'Red highlight — "all who believe...For there is no distinction...to be received by faith"',
     categories: [
-      { name: "Soteriology", notes: "Universal availability of salvation by faith — no distinction between Jew and Greek; all have sinned and all may be justified" }
+      { name: "Soteriology", notes: "Universal availability of salvation by faith — no distinction between Jew and Greek; all have sinned and all may be justified", prominent: true }
     ]
   },
   {
@@ -991,7 +991,7 @@ romans_verses = [
     chapter: 4, verse_start: 5, verse_end: nil,
     notes: 'Red highlight — "believes in him who justifies the ungodly...faith is counted as righteousness"',
     categories: [
-      { name: "Soteriology", notes: "God justifies the ungodly — faith counted as righteousness apart from works" }
+      { name: "Soteriology", notes: "God justifies the ungodly — faith counted as righteousness apart from works", prominent: true }
     ]
   },
 ]
